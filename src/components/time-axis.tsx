@@ -1,20 +1,21 @@
 "use client";
 
-const HOUR_HEIGHT = 60;
-const HOURS = Array.from({ length: 24 }, (_, i) => i);
+import type { HourInfo } from "@/lib/timezone";
 
-export default function TimeAxis() {
+export default function TimeAxis({ hourInfos }: { hourInfos: HourInfo[] }) {
   return (
-    <div className="relative" style={{ height: 24 * HOUR_HEIGHT }}>
-      {HOURS.map((h) => (
+    <div className="relative" style={{ height: hourInfos[23].top + hourInfos[23].height }}>
+      {hourInfos.map((info) => (
         <div
-          key={h}
-          className="absolute left-0 right-0 border-t border-black/5 dark:border-white/10"
-          style={{ top: h * HOUR_HEIGHT }}
+          key={info.hour}
+          className="absolute left-0 right-0 overflow-hidden"
+          style={{ top: info.top, height: info.height }}
         >
-          <span className="ml-1 -mt-2 inline-block text-[10px] opacity-50">
-            {`${h.toString().padStart(2, "0")}:00`}
-          </span>
+          <div className="border-t border-black/5 dark:border-white/10 pt-[1px]">
+            <span className="ml-1 inline-block text-[10px] leading-[14px] opacity-50">
+              {`${info.hour.toString().padStart(2, "0")}:00`}
+            </span>
+          </div>
         </div>
       ))}
     </div>

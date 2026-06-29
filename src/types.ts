@@ -31,6 +31,7 @@ export type SessionType =
 export interface SeriesConfig {
   id: SeriesId;
   label: string;
+  shortLabel: string;
   color: string;
   colorDark: string;
   defaultOn: boolean;

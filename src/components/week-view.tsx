@@ -1,52 +1,47 @@
 "use client";
 
 import { useMemo } from "react";
-import type { Session } from "@/types";
+import type { Session, SeriesId } from "@/types";
 import { computeLayout } from "@/lib/layout";
 import {
   dayStartIso,
   dayEndIso,
   daysWithSessionsInWeek,
   formatDateLabel,
+  computeWeekHourHasEvents,
+  buildHourInfos,
 } from "@/lib/timezone";
 import SessionBlock from "@/components/session-block";
-
-const HOUR_HEIGHT = 60;
-const DAY_HEIGHT = 24 * HOUR_HEIGHT;
-const HOUR_LABELS = Array.from({ length: 24 }, (_, i) => i);
 
 export default function WeekView({
   weekStartIso,
   offsetMin,
   sessions,
-  selectedEventKey,
+  isolatedId,
   onSelectSession,
   onClearSelection,
 }: {
   weekStartIso: string;
   offsetMin: number;
   sessions: Session[];
-  selectedEventKey: string | null;
-  onSelectSession: (eventKey: string) => void;
+  isolatedId: string | null;
+  onSelectSession: (series: SeriesId, eventKey: string) => void;
   onClearSelection: () => void;
 }) {
-  const days = useMemo(() => {
+  const { days, hourInfos } = useMemo(() => {
     const present = daysWithSessionsInWeek(weekStartIso, sessions, offsetMin);
-    if (present.length === 0) return [];
-    const base = new Date(`${weekStartIso}T00:00:00Z`).getTime();
+    if (present.length === 0) return { days: [], hourInfos: buildHourInfos(Object.fromEntries(Array.from({ length: 24 }, (_, i) => [i, false]))) };
+    const baseMs = new Date(`${weekStartIso}T00:00:00Z`).getTime();
     const presentSet = new Set(present);
-    const out: { iso: string; label: string }[] = [];
+    const dayList: { iso: string; label: string }[] = [];
     for (let i = 0; i < 7; i++) {
-      const d = new Date(base + i * 24 * 60 * 60 * 1000);
-      const iso = d.toISOString().slice(0, 10);
+      const iso = new Date(baseMs + i * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
       if (presentSet.has(iso)) {
-        out.push({
-          iso,
-          label: formatDateLabel(iso, offsetMin),
-        });
+        dayList.push({ iso, label: formatDateLabel(iso, offsetMin) });
       }
     }
-    return out;
+    const weekHasEvents = computeWeekHourHasEvents(dayList, offsetMin, sessions);
+    return { days: dayList, hourInfos: buildHourInfos(weekHasEvents) };
   }, [weekStartIso, sessions, offsetMin]);
 
   if (days.length === 0) {
@@ -61,6 +56,7 @@ export default function WeekView({
   }
 
   const n = days.length;
+  const totalPx = hourInfos[23].top + hourInfos[23].height;
   const gridTemplate = `42px repeat(${n}, minmax(0, 1fr))`;
 
   return (
@@ -78,18 +74,20 @@ export default function WeekView({
       </div>
       <div
         className="relative grid overflow-x-auto"
-        style={{ height: DAY_HEIGHT, gridTemplateColumns: gridTemplate }}
+        style={{ height: totalPx, gridTemplateColumns: gridTemplate }}
       >
         <div className="relative">
-          {HOUR_LABELS.map((h) => (
+          {hourInfos.map((info) => (
             <div
-              key={h}
-              className="absolute left-0 right-0 border-t border-black/5 dark:border-white/10"
-              style={{ top: h * HOUR_HEIGHT }}
+              key={info.hour}
+              className="absolute left-0 right-0 overflow-hidden"
+              style={{ top: info.top, height: info.height }}
             >
-              <span className="ml-1 -mt-2 inline-block text-[10px] opacity-50">
-                {`${h.toString().padStart(2, "0")}:00`}
-              </span>
+              <div className="border-t border-black/5 dark:border-white/10 pt-[1px]">
+                <span className="ml-1 inline-block text-[10px] leading-[14px] opacity-50">
+                  {`${info.hour.toString().padStart(2, "0")}:00`}
+                </span>
+              </div>
             </div>
           ))}
         </div>
@@ -102,7 +100,7 @@ export default function WeekView({
             <div
               key={d.iso}
               className="relative border-l border-black/10 dark:border-white/10"
-              style={{ minHeight: DAY_HEIGHT }}
+              style={{ minHeight: totalPx }}
             >
               {daySessions.map((s) => {
                 const li = layout.get(s.id);
@@ -113,8 +111,9 @@ export default function WeekView({
                     session={s}
                     layout={li}
                     dayStartIso={start}
+                    hourInfos={hourInfos}
                     offsetMin={offsetMin}
-                    selectedEventKey={selectedEventKey}
+                    isolatedId={isolatedId}
                     onSelect={onSelectSession}
                   />
                 );

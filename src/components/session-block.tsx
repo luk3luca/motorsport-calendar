@@ -2,40 +2,43 @@
 
 import { SERIES_BY_ID } from "@/lib/series";
 import { SESSION_TYPE_LABEL } from "@/lib/sources/durations";
-import { formatTime } from "@/lib/timezone";
+import { formatTime, getSessionPosition } from "@/lib/timezone";
+import type { HourInfo } from "@/lib/timezone";
 import type { LayoutInfo } from "@/lib/layout";
-import type { Session } from "@/types";
-
-const MIN_HEIGHT = 1;
+import type { Session, SeriesId } from "@/types";
 
 export default function SessionBlock({
   session,
   layout,
   dayStartIso,
+  hourInfos,
   offsetMin,
-  selectedEventKey,
+  isolatedId,
   onSelect,
 }: {
   session: Session;
   layout: LayoutInfo;
   dayStartIso: string;
+  hourInfos: HourInfo[];
   offsetMin: number;
-  selectedEventKey: string | null;
-  onSelect: (eventKey: string) => void;
+  isolatedId: string | null;
+  onSelect: (series: SeriesId, eventKey: string) => void;
 }) {
   const series = SERIES_BY_ID[session.series];
-  const startMin = Math.max(0, Math.round((Date.parse(session.startUtc) - Date.parse(dayStartIso)) / 60_000));
-  const durationMin = Math.max(15, session.durationMin);
-  const top = startMin * MIN_HEIGHT;
-  const height = durationMin * MIN_HEIGHT;
+  const { top, height } = getSessionPosition(
+    session.startUtc,
+    session.durationMin,
+    dayStartIso,
+    hourInfos,
+  );
   const widthPct = 100 / layout.columnCount;
   const leftPct = layout.column * widthPct;
 
   const startLabel = session.isEstimatedStart ? "TBC" : formatTime(session.startUtc, offsetMin);
   const endLabel = session.isEstimatedEnd ? "?" : formatTime(session.endUtc, offsetMin);
 
-  const isIsolated = selectedEventKey !== null;
-  const matches = !isIsolated || selectedEventKey === session.eventKey;
+  const isIsolated = isolatedId !== null;
+  const matches = isIsolated && isolatedId === session.series + ":" + session.eventKey;
   const isOther = isIsolated && !matches;
 
   return (
@@ -43,9 +46,9 @@ export default function SessionBlock({
       type="button"
       onClick={(e) => {
         e.stopPropagation();
-        onSelect(session.eventKey);
+        onSelect(session.series, session.eventKey);
       }}
-      className="absolute overflow-hidden rounded p-1 text-left text-[10px] leading-tight transition-opacity"
+      className="absolute overflow-hidden rounded p-1 text-center text-xs leading-tight transition-opacity"
       style={{
         top,
         height,
@@ -59,6 +62,12 @@ export default function SessionBlock({
       }}
       title={`${session.name}\n${series.label} ${SESSION_TYPE_LABEL[session.sessionType]}\n${startLabel}-${endLabel}\n${session.venue}`}
     >
+      <span
+        className="mb-px block rounded px-1 text-[10px] font-bold leading-[14px] uppercase"
+        style={{ background: isOther ? "#888" : series.color, color: "#fff" }}
+      >
+        {series.shortLabel}
+      </span>
       <div
         className="font-semibold truncate"
         style={{ color: isOther ? "#888" : series.color }}

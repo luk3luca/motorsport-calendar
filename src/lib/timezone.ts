@@ -128,6 +128,98 @@ export function weekdayLabels(weekStart: string, offsetMin: number): { iso: stri
   return out;
 }
 
+export const HEIGHT_EMPTY = 28;
+export const HEIGHT_BUSY = 90;
+
+export interface HourInfo {
+  hour: number;
+  hasEvents: boolean;
+  top: number;
+  height: number;
+}
+
+export function computeDayHourHasEvents(
+  dayIso: string,
+  offsetMin: number,
+  sessions: { startUtc: string; endUtc: string; isEstimatedStart?: boolean }[],
+): Record<number, boolean> {
+  const result: Record<number, boolean> = {};
+  for (let h = 0; h < 24; h++) result[h] = false;
+  const start = dayStartIso(dayIso, offsetMin);
+  const end = dayEndIso(dayIso, offsetMin);
+  const daySessions = sessions.filter(
+    (s) => s.startUtc < end && s.endUtc > start && !s.isEstimatedStart,
+  );
+  const startMs = Date.parse(start);
+  for (const s of daySessions) {
+    const sStart = Math.max(0, (Date.parse(s.startUtc) - startMs) / 60_000);
+    const sEnd = Math.min(1440, (Date.parse(s.endUtc) - startMs) / 60_000);
+    const firstHour = Math.floor(sStart / 60);
+    const lastHour = Math.min(23, Math.ceil(sEnd / 60) - 1);
+    for (let h = firstHour; h <= lastHour; h++) result[h] = true;
+  }
+  return result;
+}
+
+export function computeWeekHourHasEvents(
+  days: { iso: string }[],
+  offsetMin: number,
+  sessions: { startUtc: string; endUtc: string; isEstimatedStart?: boolean }[],
+): Record<number, boolean> {
+  const result: Record<number, boolean> = {};
+  for (let h = 0; h < 24; h++) result[h] = false;
+  for (const day of days) {
+    const dayHas = computeDayHourHasEvents(day.iso, offsetMin, sessions);
+    for (let h = 0; h < 24; h++) {
+      if (dayHas[h]) result[h] = true;
+    }
+  }
+  return result;
+}
+
+export function buildHourInfos(hourHasEvents: Record<number, boolean>): HourInfo[] {
+  let top = 0;
+  const out: HourInfo[] = [];
+  for (let h = 0; h < 24; h++) {
+    const hasEvents = hourHasEvents[h];
+    const height = hasEvents ? HEIGHT_BUSY : HEIGHT_EMPTY;
+    out.push({ hour: h, hasEvents, top, height });
+    top += height;
+  }
+  return out;
+}
+
+export function getSessionPosition(
+  sessionStartUtc: string,
+  durationMin: number,
+  dayStartIsoStr: string,
+  hourInfos: HourInfo[],
+): { top: number; height: number } {
+  const startMs = Date.parse(dayStartIsoStr);
+  const startMin = Math.max(0, (Date.parse(sessionStartUtc) - startMs) / 60_000);
+  const endMin = Math.min(1440, startMin + durationMin);
+  const startHour = Math.max(0, Math.min(23, Math.floor(startMin / 60)));
+  const startMinInHour = Math.max(0, startMin - startHour * 60);
+  const endHour = Math.max(0, Math.min(23, Math.floor(endMin / 60)));
+  const endMinInHour = endMin - endHour * 60;
+
+  const info = hourInfos[startHour];
+  const top = info.top + (startMinInHour / 60) * info.height;
+
+  let height: number;
+  if (startHour === endHour || endHour < startHour) {
+    height = ((durationMin) / 60) * info.height;
+  } else {
+    height = ((60 - startMinInHour) / 60) * hourInfos[startHour].height;
+    for (let h = startHour + 1; h < endHour; h++) {
+      height += hourInfos[h].height;
+    }
+    height += (endMinInHour / 60) * hourInfos[endHour].height;
+  }
+
+  return { top, height: Math.max(24, height) };
+}
+
 export function daysWithSessionsInWeek(
   weekStart: string,
   sessions: { startUtc: string; endUtc: string }[],

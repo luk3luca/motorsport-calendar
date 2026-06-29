@@ -6,7 +6,7 @@ const DURATION_TABLE_MIN: Record<SeriesId, Partial<Record<SessionType, number>>>
     practice: 60,
     qualifying: 60,
     sprint_qualifying: 60,
-    sprint: 24,
+    sprint: 60,
     race: 120,
     test: 480,
   },

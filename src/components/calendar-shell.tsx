@@ -23,7 +23,7 @@ export default function CalendarShell() {
     if (typeof window === "undefined") return "2026-07-03";
     return "2026-07-03";
   });
-  const [selectedEventKey, setSelectedEventKey] = useState<string | null>(null);
+  const [isolatedId, setIsolatedId] = useState<string | null>(null);
 
   useEffect(() => {
     const stored = window.localStorage.getItem(TZ_KEY);
@@ -82,18 +82,18 @@ export default function CalendarShell() {
           dayIso={cursor}
           offsetMin={offsetMin}
           sessions={filteredSessions}
-          selectedEventKey={selectedEventKey}
-          onSelectSession={setSelectedEventKey}
-          onClearSelection={() => setSelectedEventKey(null)}
+          isolatedId={isolatedId}
+          onSelectSession={(s, ek) => setIsolatedId(s + ":" + ek)}
+          onClearSelection={() => setIsolatedId(null)}
         />
       ) : (
         <WeekView
           weekStartIso={weekStartIso(cursor)}
           offsetMin={offsetMin}
           sessions={filteredSessions}
-          selectedEventKey={selectedEventKey}
-          onSelectSession={setSelectedEventKey}
-          onClearSelection={() => setSelectedEventKey(null)}
+          isolatedId={isolatedId}
+          onSelectSession={(s, ek) => setIsolatedId(s + ":" + ek)}
+          onClearSelection={() => setIsolatedId(null)}
         />
       )}
 
