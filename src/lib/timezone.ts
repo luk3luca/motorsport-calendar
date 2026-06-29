@@ -128,7 +128,7 @@ export function weekdayLabels(weekStart: string, offsetMin: number): { iso: stri
   return out;
 }
 
-export const HEIGHT_EMPTY = 28;
+export const HEIGHT_EMPTY = 20;
 export const HEIGHT_BUSY = 90;
 
 export interface HourInfo {
