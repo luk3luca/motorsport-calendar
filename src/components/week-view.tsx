@@ -83,7 +83,7 @@ export default function WeekView({
               className="absolute left-0 right-0 overflow-hidden"
               style={{ top: info.top, height: info.height }}
             >
-              <div className="border-t border-black/5 dark:border-white/10 pt-[1px]">
+              <div className={`border-t border-black/5 dark:border-white/10 ${info.hasEvents ? 'pt-[1px]' : 'flex items-center'}`}>
                 <span className="ml-1 inline-block text-[10px] leading-[14px] opacity-50">
                   {`${info.hour.toString().padStart(2, "0")}:00`}
                 </span>

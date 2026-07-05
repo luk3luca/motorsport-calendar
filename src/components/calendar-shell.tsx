@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { SeriesId } from "@/types";
 import { getAllSessions } from "@/lib/data";
-import { DEFAULT_OFFSET_MIN, weekStartIso, todayIso } from "@/lib/timezone";
+import { DEFAULT_OFFSET_MIN, weekStartIso, todayIso, setLocalTz } from "@/lib/timezone";
 import { loadInitial } from "@/components/series-toggle";
 import SeriesToggle from "@/components/series-toggle";
 import ThemeToggle from "@/components/theme-toggle";
@@ -13,6 +13,7 @@ import DayView from "@/components/day-view";
 import WeekView from "@/components/week-view";
 
 const TZ_KEY = "mc:offsetMin";
+const LOCAL_KEY = "mc:localActive";
 
 export default function CalendarShell() {
   const allSessions = useMemo(() => getAllSessions(), []);
@@ -24,21 +25,40 @@ export default function CalendarShell() {
     return "2026-07-03";
   });
   const [isolatedId, setIsolatedId] = useState<string | null>(null);
+  const [localActive, setLocalActive] = useState<boolean>(false);
 
   useEffect(() => {
-    const stored = window.localStorage.getItem(TZ_KEY);
-    if (stored) {
-      const n = Number(stored);
+    const storedTz = window.localStorage.getItem(TZ_KEY);
+    if (storedTz) {
+      const n = Number(storedTz);
       if (Number.isFinite(n)) {
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setOffsetMin(n);
       }
+    }
+    const storedLocal = window.localStorage.getItem(LOCAL_KEY);
+    if (storedLocal === "true") {
+      const detected = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
+      setLocalTz(detected);
+      setLocalActive(true);
     }
     const t = todayIso(DEFAULT_OFFSET_MIN);
     if (t >= "2026-07-03" && t <= "2026-07-08") {
       setCursor(t);
     }
   }, []);
+
+  const toggleLocal = () => {
+    const next = !localActive;
+    if (next) {
+      const detected = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
+      setLocalTz(detected);
+    } else {
+      setLocalTz(null);
+    }
+    window.localStorage.setItem(LOCAL_KEY, next ? "true" : "false");
+    setLocalActive(next);
+  };
 
   const filteredSessions = useMemo(() => {
     const selectedSet = new Set(selected);
@@ -68,7 +88,7 @@ export default function CalendarShell() {
             </button>
           </div>
           <SeriesToggle selected={selected} onChange={setSelected} />
-          <TimezonePicker value={offsetMin} onChange={setOffsetMin} />
+          <TimezonePicker value={offsetMin} onChange={setOffsetMin} localActive={localActive} onToggleLocal={toggleLocal} />
           <ThemeToggle />
         </div>
       </header>

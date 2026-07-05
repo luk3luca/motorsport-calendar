@@ -1,11 +1,27 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 
 dayjs.extend(utc);
+dayjs.extend(timezone);
 dayjs.extend(customParseFormat);
 
 export const DEFAULT_OFFSET_MIN = 60;
+
+let _localTz: string | null = null;
+
+export function setLocalTz(tz: string | null): void {
+  _localTz = tz;
+}
+
+export function getLocalTz(): string | null {
+  return _localTz;
+}
+
+export function isLocalActive(): boolean {
+  return _localTz !== null;
+}
 
 export interface OffsetOption {
   offsetMin: number;
@@ -69,23 +85,28 @@ export const OFFSET_OPTIONS: OffsetOption[] = (() => {
 })();
 
 export function formatTime(iso: string, offsetMin: number): string {
+  if (_localTz) return dayjs.utc(iso).tz(_localTz).format("HH:mm");
   return dayjs.utc(iso).utcOffset(offsetMin).format("HH:mm");
 }
 
 export function formatDateLabel(dateIso: string, offsetMin: number): string {
+  if (_localTz) return dayjs.utc(`${dateIso}T12:00:00Z`).tz(_localTz).format("ddd D MMM");
   return dayjs.utc(`${dateIso}T12:00:00Z`).utcOffset(offsetMin).format("ddd D MMM");
 }
 
 export function formatDateShort(dateIso: string, offsetMin: number): string {
+  if (_localTz) return dayjs.utc(`${dateIso}T12:00:00Z`).tz(_localTz).format("ddd D");
   return dayjs.utc(`${dateIso}T12:00:00Z`).utcOffset(offsetMin).format("ddd D");
 }
 
 export function dayStartIso(dateIso: string, offsetMin: number): string {
+  if (_localTz) return dayjs.tz(dateIso, _localTz).startOf("day").toISOString();
   const ms = Date.parse(`${dateIso}T00:00:00Z`) - offsetMin * 60_000;
   return new Date(ms).toISOString();
 }
 
 export function dayEndIso(dateIso: string, offsetMin: number): string {
+  if (_localTz) return dayjs.tz(dateIso, _localTz).endOf("day").toISOString();
   const ms = Date.parse(`${dateIso}T00:00:00Z`) - offsetMin * 60_000 + 24 * 60 * 60 * 1000 - 1;
   return new Date(ms).toISOString();
 }
@@ -107,6 +128,7 @@ export function nextWeekStartIso(current: string): string {
 }
 
 export function todayIso(offsetMin: number = DEFAULT_OFFSET_MIN): string {
+  if (_localTz) return dayjs().tz(_localTz).format("YYYY-MM-DD");
   return dayjs().utcOffset(offsetMin).format("YYYY-MM-DD");
 }
 
@@ -123,7 +145,11 @@ export function weekdayLabels(weekStart: string, offsetMin: number): { iso: stri
   for (let i = 0; i < 7; i++) {
     const d = base.add(i, "day");
     const iso = d.format("YYYY-MM-DD");
-    out.push({ iso, label: dayjs.utc(`${iso}T12:00:00Z`).utcOffset(offsetMin).format("ddd D") });
+    if (_localTz) {
+      out.push({ iso, label: dayjs.utc(`${iso}T12:00:00Z`).tz(_localTz).format("ddd D") });
+    } else {
+      out.push({ iso, label: dayjs.utc(`${iso}T12:00:00Z`).utcOffset(offsetMin).format("ddd D") });
+    }
   }
   return out;
 }

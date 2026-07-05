@@ -1,12 +1,28 @@
 import type { CalendarData, Session } from "@/types";
+import { classifySessionType, estimateDurationMin } from "@/lib/sources/durations";
 
-import calendarDev from "../../data/calendar-2026-dev.json";
+import calendarData from "../../data/calendar-2026.json";
 
 let _data: CalendarData | null = null;
 
+function applyDurationOverride(s: Session): Session {
+  const sessionType = classifySessionType(s.name);
+  const { durationMin, isEstimatedEnd } = estimateDurationMin(s.series, sessionType, s.name);
+  if (durationMin === s.durationMin && sessionType === s.sessionType) return s;
+  const startMs = Date.parse(s.startUtc);
+  return {
+    ...s,
+    sessionType,
+    durationMin,
+    endUtc: new Date(startMs + durationMin * 60_000).toISOString(),
+    isEstimatedEnd,
+  };
+}
+
 export function getCalendar(): CalendarData {
   if (!_data) {
-    _data = calendarDev as unknown as CalendarData;
+    _data = calendarData as unknown as CalendarData;
+    _data.sessions = _data.sessions.map(applyDurationOverride);
   }
   return _data;
 }

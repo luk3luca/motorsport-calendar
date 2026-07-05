@@ -66,7 +66,7 @@ export default function SessionBlock({
         className="mb-px block rounded px-1 text-[10px] font-bold leading-[14px] uppercase"
         style={{ background: isOther ? "#888" : series.color, color: "#fff" }}
       >
-        {series.shortLabel}
+        {series.label}
       </span>
       <div
         className="font-semibold truncate"

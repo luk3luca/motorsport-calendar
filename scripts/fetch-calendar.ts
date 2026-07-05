@@ -7,6 +7,7 @@ import {
   normalizeTsdEvent,
   type TsdEvent,
 } from "../src/lib/sources/thesportsdb";
+import { fetchFiaSeriesCalendar, getFiaSeries } from "../src/lib/sources/fia";
 import { LEAGUES } from "../src/lib/sources/leagues";
 import type { CalendarData, Session, SeriesId } from "../src/types";
 
@@ -117,15 +118,21 @@ async function main(): Promise<void> {
   const days = eachDay(from, WINDOW_END);
   const seriesIncluded: SeriesId[] = [];
 
+  /* ------------------------------------------------------------------ */
+  /*  1. Fetch TheSportsDB for all leagues EXCEPT those we get from FIA */
+  /* ------------------------------------------------------------------ */
+  const fiaSeries = getFiaSeries(); // ["f2", "f3"]
+  const tsdLeagues = LEAGUES.filter((l) => !fiaSeries.includes(l.series));
+
   const allEvents: TsdEvent[] = [];
-  for (const league of LEAGUES) {
-    process.stdout.write(`\n=== ${league.label} (id ${league.leagueId}) ===\n`);
+  for (const league of tsdLeagues) {
+    process.stdout.write(`\n=== ${league.label} (id ${league.leagueId}) [TheSportsDB] ===\n`);
     const evs = await fetchLeague(league.leagueId, league.label, days);
     allEvents.push(...evs);
     seriesIncluded.push(league.series);
   }
 
-  process.stdout.write(`\nTotal raw events: ${allEvents.length}\n`);
+  process.stdout.write(`\nTotal raw events from TheSportsDB: ${allEvents.length}\n`);
   const deduped = dedupeEvents(allEvents);
   process.stdout.write(`After dedupe: ${deduped.length}\n`);
 
@@ -134,6 +141,36 @@ async function main(): Promise<void> {
     const s = normalizeTsdEvent(e);
     if (s) sessions.push(s);
   }
+
+  /* ------------------------------------------------------------------ */
+  /*  2. Fetch FIA sources (F2, F3) — they have complete session data   */
+  /* ------------------------------------------------------------------ */
+  for (const series of fiaSeries) {
+    process.stdout.write(`\n=== ${series.toUpperCase()} [FIA source] ===\n`);
+    try {
+      const fiaSessions = await fetchFiaSeriesCalendar(series);
+      process.stdout.write(`  Fetched ${fiaSessions.length} sessions from FIA source\n`);
+      sessions.push(...fiaSessions);
+      seriesIncluded.push(series);
+    } catch (err) {
+      process.stdout.write(`  ERROR fetching FIA source for ${series}: ${(err as Error).message}\n`);
+      // Fallback: try TheSportsDB for this series
+      const league = LEAGUES.find((l) => l.series === series);
+      if (league) {
+        process.stdout.write(`  Falling back to TheSportsDB for ${league.label}...\n`);
+        const evs = await fetchLeague(league.leagueId, league.label, days);
+        for (const e of evs) {
+          const s = normalizeTsdEvent(e);
+          if (s) sessions.push(s);
+        }
+        seriesIncluded.push(series);
+      }
+    }
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  3. Sort & write                                                    */
+  /* ------------------------------------------------------------------ */
   sessions.sort((a, b) => a.startUtc.localeCompare(b.startUtc));
 
   const payload: CalendarData = {
@@ -146,7 +183,7 @@ async function main(): Promise<void> {
 
   const outPath = join(DATA_DIR, "calendar-2026.json");
   writeFileSync(outPath, JSON.stringify(payload, null, 2));
-  process.stdout.write(`\nWrote ${outPath} (${sessions.length} sessions)\n`);
+  process.stdout.write(`\nWrote ${outPath} (${sessions.length} sessions across ${seriesIncluded.length} series)\n`);
 
   try {
     rmSync(CACHE_DIR, { recursive: true, force: true });
