@@ -24,7 +24,7 @@ export default function DateNav({
   const today = todayIso(offsetMin);
   const isToday = cursor === today;
   return (
-    <div className="flex items-center gap-2 text-xs">
+    <div className="flex flex-nowrap items-center gap-2 text-xs">
       <button
         type="button"
         onClick={() => onChange(prev)}

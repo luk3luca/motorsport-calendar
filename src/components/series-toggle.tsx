@@ -51,7 +51,7 @@ export default function SeriesToggle({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="rounded border border-black/15 dark:border-white/20 px-2 py-1 text-xs"
+        className="min-w-[90px] rounded border border-black/15 dark:border-white/20 px-2 py-1 text-xs"
       >
         Series ({selected.length})
       </button>

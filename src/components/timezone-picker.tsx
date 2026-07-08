@@ -34,7 +34,7 @@ export default function TimezonePicker({
             onChange(v);
           }}
           disabled={localActive}
-          className="rounded border border-black/15 dark:border-white/20 bg-transparent px-1 py-1 disabled:opacity-40"
+          className="min-w-[170px] rounded border border-black/15 dark:border-white/20 bg-transparent px-1 py-1 disabled:opacity-40"
         >
           {zoneList.map((z) => (
             <option key={z.offsetMin} value={z.offsetMin} className="text-black dark:text-white">
@@ -46,7 +46,7 @@ export default function TimezonePicker({
       <button
         type="button"
         onClick={onToggleLocal}
-        className={`rounded border px-2 py-1 ${localActive ? "bg-black text-white dark:bg-white dark:text-black" : "border-black/15 dark:border-white/20"}`}
+        className={`min-w-[130px] justify-center rounded border px-2 py-1 ${localActive ? "bg-black text-white dark:bg-white dark:text-black" : "border-black/15 dark:border-white/20"}`}
       >
         {btnLabel}
       </button>

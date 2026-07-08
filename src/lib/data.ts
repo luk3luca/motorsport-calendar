@@ -3,9 +3,8 @@ import { classifySessionType, estimateDurationMin } from "@/lib/sources/duration
 
 import calendarData from "../../data/calendar-2026.json";
 
-let _data: CalendarData | null = null;
-
 function applyDurationOverride(s: Session): Session {
+  if (!s.isEstimatedEnd) return s;
   const sessionType = classifySessionType(s.name);
   const { durationMin, isEstimatedEnd } = estimateDurationMin(s.series, sessionType, s.name);
   if (durationMin === s.durationMin && sessionType === s.sessionType) return s;
@@ -20,11 +19,9 @@ function applyDurationOverride(s: Session): Session {
 }
 
 export function getCalendar(): CalendarData {
-  if (!_data) {
-    _data = calendarData as unknown as CalendarData;
-    _data.sessions = _data.sessions.map(applyDurationOverride);
-  }
-  return _data;
+  const data = JSON.parse(JSON.stringify(calendarData)) as CalendarData;
+  data.sessions = data.sessions.map(applyDurationOverride);
+  return data;
 }
 
 export function getAllSessions(): Session[] {

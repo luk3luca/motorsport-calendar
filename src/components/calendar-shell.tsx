@@ -67,7 +67,7 @@ export default function CalendarShell() {
 
   return (
     <div className="mx-auto flex max-w-[1400px] flex-col gap-3 p-3">
-      <header className="flex flex-wrap items-center gap-2">
+      <header className="sticky top-0 z-10 flex flex-wrap items-center gap-2 border-b border-black/10 bg-[var(--background)] pb-2 dark:border-white/10">
         <h1 className="text-lg font-bold">Motorsport Calendar</h1>
         <div className="ml-auto flex flex-wrap items-center gap-2">
           <DateNav view={view} cursor={cursor} offsetMin={offsetMin} onChange={setCursor} />
