@@ -217,13 +217,20 @@ export function buildHourInfos(hourHasEvents: Record<number, boolean>): HourInfo
 
 export function getSessionPosition(
   sessionStartUtc: string,
-  durationMin: number,
+  sessionEndUtc: string,
   dayStartIsoStr: string,
   hourInfos: HourInfo[],
 ): { top: number; height: number } {
   const startMs = Date.parse(dayStartIsoStr);
-  const startMin = Math.max(0, (Date.parse(sessionStartUtc) - startMs) / 60_000);
-  const endMin = Math.min(1440, startMin + durationMin);
+  const sessionStartMs = Date.parse(sessionStartUtc);
+  const sessionEndMs = Date.parse(sessionEndUtc);
+
+  const startMin = Math.max(0, (sessionStartMs - startMs) / 60_000);
+  // Clip the end to (a) the actual session end within this day, or (b) 24h from day start
+  const actualEndMin = (sessionEndMs - startMs) / 60_000;
+  const endMin = Math.min(1440, Math.max(startMin, actualEndMin));
+  const sessionDurationMin = Math.max(endMin - startMin, 1); // visible minutes in this day
+
   const startHour = Math.max(0, Math.min(23, Math.floor(startMin / 60)));
   const startMinInHour = Math.max(0, startMin - startHour * 60);
   const endHour = Math.max(0, Math.min(23, Math.floor(endMin / 60)));
@@ -234,7 +241,7 @@ export function getSessionPosition(
 
   let height: number;
   if (startHour === endHour || endHour < startHour) {
-    height = ((durationMin) / 60) * info.height;
+    height = (sessionDurationMin / 60) * info.height;
   } else {
     height = ((60 - startMinInHour) / 60) * hourInfos[startHour].height;
     for (let h = startHour + 1; h < endHour; h++) {
@@ -269,7 +276,24 @@ export function daysWithSessionsInWeek(
       }
     }
   }
-  return days.filter((d) => present.has(d.iso)).map((d) => d.iso);
+  const result = days.filter((d) => present.has(d.iso)).map((d) => d.iso);
+
+  // If any session on the last day of the week spills past midnight,
+  // include the following day so the user can see the tail end.
+  const lastDay = days[days.length - 1];
+  if (lastDay) {
+    const spills = sessions.some(
+      (s) =>
+        Date.parse(s.startUtc) <= lastDay.end &&
+        Date.parse(s.endUtc) > lastDay.end,
+    );
+    if (spills) {
+      const nextIso = dayjs.utc(lastDay.iso).add(1, "day").format("YYYY-MM-DD");
+      result.push(nextIso);
+    }
+  }
+
+  return result;
 }
 
 export { dayjs };

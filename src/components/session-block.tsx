@@ -27,7 +27,7 @@ export default function SessionBlock({
   const series = SERIES_BY_ID[session.series];
   const { top, height } = getSessionPosition(
     session.startUtc,
-    session.durationMin,
+    session.endUtc,
     dayStartIso,
     hourInfos,
   );
@@ -38,7 +38,7 @@ export default function SessionBlock({
   const endLabel = session.isEstimatedEnd ? "?" : formatTime(session.endUtc, offsetMin);
 
   const isIsolated = isolatedId !== null;
-  const matches = isIsolated && isolatedId === session.series + ":" + session.eventKey;
+  const matches = isIsolated && isolatedId === session.series;
   const isOther = isIsolated && !matches;
 
   return (

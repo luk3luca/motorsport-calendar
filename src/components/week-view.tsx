@@ -34,11 +34,17 @@ export default function WeekView({
     const baseMs = new Date(`${weekStartIso}T00:00:00Z`).getTime();
     const presentSet = new Set(present);
     const dayList: { iso: string; label: string }[] = [];
+    const weekEndMs = baseMs + 7 * 24 * 60 * 60 * 1000;
     for (let i = 0; i < 7; i++) {
       const iso = new Date(baseMs + i * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
       if (presentSet.has(iso)) {
         dayList.push({ iso, label: formatDateLabel(iso, offsetMin) });
       }
+    }
+    // Include the extra day if a session spills past Sunday midnight
+    const spillIso = new Date(weekEndMs).toISOString().slice(0, 10);
+    if (presentSet.has(spillIso)) {
+      dayList.push({ iso: spillIso, label: formatDateLabel(spillIso, offsetMin) });
     }
     const weekHasEvents = computeWeekHourHasEvents(dayList, offsetMin, sessions);
     return { days: dayList, hourInfos: buildHourInfos(weekHasEvents) };

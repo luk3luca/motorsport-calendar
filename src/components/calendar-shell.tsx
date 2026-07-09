@@ -103,7 +103,7 @@ export default function CalendarShell() {
           offsetMin={offsetMin}
           sessions={filteredSessions}
           isolatedId={isolatedId}
-          onSelectSession={(s, ek) => setIsolatedId(s + ":" + ek)}
+          onSelectSession={(s) => setIsolatedId(s)}
           onClearSelection={() => setIsolatedId(null)}
         />
       ) : (
@@ -112,7 +112,7 @@ export default function CalendarShell() {
           offsetMin={offsetMin}
           sessions={filteredSessions}
           isolatedId={isolatedId}
-          onSelectSession={(s, ek) => setIsolatedId(s + ":" + ek)}
+          onSelectSession={(s) => setIsolatedId(s)}
           onClearSelection={() => setIsolatedId(null)}
         />
       )}

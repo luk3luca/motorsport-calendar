@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "fetch-calendar": "tsx scripts/fetch-calendar.ts",
-    "fetch-fia": "tsx scripts/fetch-fia-supplement.ts"
+    "fetch-fia": "tsx scripts/fetch-fia-supplement.ts",
+    "scrape-motogp": "tsx scripts/scrape-motogp.ts"
   },
   "dependencies": {
     "dayjs": "^1.11.21",
@@ -24,6 +25,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "playwright": "^1.61.1",
     "tailwindcss": "^4",
     "tsx": "^4.22.4",
     "typescript": "^5",

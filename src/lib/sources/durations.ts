@@ -102,27 +102,105 @@ const DURATION_TABLE_MIN: Record<SeriesId, Partial<Record<SessionType, number>>>
 
 const FALLBACK_MIN = 90;
 
-function parseHoursFromName(name: string): number | null {
-  const m = name.match(/(\d+)\s*hours?(?:\s+of)?/i);
-  if (m) return parseInt(m[1], 10) * 60;
-  const m2 = name.match(/\b(\d+)h\b/i);
-  if (m2) return parseInt(m2[1], 10) * 60;
+/**
+ * Parse race duration from name patterns like "6 Hours", "24h", "1812 KM".
+ * Returns minutes, or null if no pattern matched.
+ * Skips names containing "hyperpole" or "Hyperpole" since those are short sessions
+ * that happen to include the race duration in their name.
+ */
+function parseDurationFromName(name: string): number | null {
+  // Skip hyperpole sessions — they include "6 Hours" in the name but are short
+  if (/\bhyperpole\b/i.test(name)) return null;
+
+  // "6 Hours of São Paulo" → 360 min, "8 Hours of Bahrain" → 480 min
+  const hours = name.match(/(\d+)\s*h(?:ours?)?(?:\s+of)?/i);
+  if (hours) return parseInt(hours[1], 10) * 60;
+
+  // "24h" → 1440 min
+  const short = name.match(/\b(\d+)h\b/i);
+  if (short) return parseInt(short[1], 10) * 60;
+
   return null;
 }
 
 export function classifySessionType(name: string): SessionType {
   const n = name.toLowerCase();
-  if (/\bfree\s+practice\s*1\b|\bfp1\b|\bpractice\s*1\b|\bp1\b/i.test(n)) return "free_practice";
-  if (/\bsprint\s+qualifying\b|\bsprint\s+shootout\b|\bsq\b/i.test(n)) return "sprint_qualifying";
-  if (/\bsprint\s+race\b|\bsprint\b(?!.*qualifying)/i.test(n)) return "sprint";
-  if (/sprint/i.test(n) && /race/i.test(n)) return "sprint_race";
-  if (/\bfeature\s+race\b|\bfeature\b/i.test(n)) return "feature_race";
-  if (/\bqualifying\b|\bqual\b|\bpole\b|\bgrid\b/i.test(n)) return "qualifying";
-  if (/\bfree\s+practice\b|\bfp\b|\bpractice\b/i.test(n)) return "practice";
-  if (/\bwarm\s*up\b|\bwarmup\b/i.test(n)) return "warmup";
-  if (/\btest(ing)?\b|\bshakedown\b/i.test(n)) return "test";
+
+  // Free Practice 1 / FP1 / Practice 1 / P1
+  if (/\bfree\s+practice\s*1\b|\bfp1\b|\bpractice\s*1\b|\bp1\b/i.test(n))
+    return "free_practice";
+
+  // Sprint Qualifying / Sprint Shootout / SQ
+  if (/\bsprint\s+qualifying\b|\bsprint\s+shootout\b|\bsq\b/i.test(n))
+    return "sprint_qualifying";
+
+  // Sprint Race (explicit two-word pattern)
+  if (/\bsprint\s+race\b/i.test(n))
+    return "sprint_race";
+
+  // Sprint (standalone — not part of qualifying or race)
+  if (/\bsprint\b(?!.*qualifying)(?!.*\brace\b)/i.test(n))
+    return "sprint";
+
+  // Both "sprint" and "race" present but non-adjacent
+  if (/sprint/i.test(n) && /race/i.test(n))
+    return "sprint_race";
+
+  // Feature Race
+  if (/\bfeature\s+race\b|\bfeature\b/i.test(n))
+    return "feature_race";
+
+  // Hyperpole (WEC qualifying shootout) — classify as qualifying
+  if (/\bhyperpole\b/i.test(n))
+    return "qualifying";
+
+  // Qualifying / Qual / Pole / Grid
+  if (/\bqualifying\b|\bqual\b|\bpole\b|\bgrid\b/i.test(n))
+    return "qualifying";
+
+  // Free Practice / FP / Practice
+  if (/\bfree\s+practice\b|\bfp\b|\bpractice\b/i.test(n))
+    return "practice";
+
+  // Warm-up / Warmup
+  if (/\bwarm\s*up\b|\bwarmup\b/i.test(n))
+    return "warmup";
+
+  // Test / Shakedown
+  if (/\btest(ing)?\b|\bshakedown\b/i.test(n))
+    return "test";
+
+  // ---- RACE PATTERNS ----
+
+  // Endurance races: "6 Hours of São Paulo", "24 Hours of Le Mans", "8h"
+  if (/\b\d+\s*h(?:ours?)?(?:\s+of)?\b/i.test(n))
+    return "race";
+
+  // Distance-based races: "Qatar 1812 KM"
+  if (/\b\d+\s*km\b/i.test(n))
+    return "race";
+
+  // Le Mans races: "Motul Petit Le Mans", "Lone Star Le Mans"
+  if (/\b(?:le\s+)?mans\b/i.test(n))
+    return "race";
+
+  // Rally events (WRC)
+  if (/\brally\b/i.test(n))
+    return "race";
+
+  // Non-English "Grand Prix": Gran Premio, Grande Prémio, Große Preis, Grote Prijs
+  if (/\bgran[dt]?e?\s*pr[éeè]mio\b|\bgro[ßße]+\s+preis\b|\bgrote\s+prijs\b/i.test(n))
+    return "race";
+
+  // English "Grand Prix" / "GP" / "ePrix"
   if (/\brace\b|\bgrand\s+prix\b(?!.*qualifying)|\bgp\b(?!.*qualifying)|\beprix\b|\be-prix\b|\b201\b|\b200\b/i.test(n))
     return "race";
+
+  // Distance-numbered races (NASCAR: "Quaker State 400", "Cook Out Southern 500")
+  // Matches 3-digit numbers 150-999 at the end of the string
+  if (/\b(?:[1-4]\d{2}|5[0-9]{2}|[6-9]\d{2})\s*$/.test(n))
+    return "race";
+
   return "other";
 }
 
@@ -131,13 +209,17 @@ export function estimateDurationMin(
   sessionType: SessionType,
   name: string,
 ): { durationMin: number; isEstimatedEnd: boolean } {
-  const hoursFromName = parseHoursFromName(name);
-  if (hoursFromName && (sessionType === "race" || sessionType === "other")) {
-    return { durationMin: hoursFromName, isEstimatedEnd: true };
+  // For races that mention hours (e.g. "6 Hours of São Paulo"), use the named duration
+  const durationFromName = parseDurationFromName(name);
+  if (durationFromName && (sessionType === "race" || sessionType === "other")) {
+    return { durationMin: durationFromName, isEstimatedEnd: true };
   }
+
+  // Look up duration from series table
   const table = DURATION_TABLE_MIN[series];
   const d = table?.[sessionType];
   if (d && d > 0) return { durationMin: d, isEstimatedEnd: true };
+
   return { durationMin: FALLBACK_MIN, isEstimatedEnd: true };
 }
 
