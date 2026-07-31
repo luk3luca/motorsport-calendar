@@ -126,8 +126,9 @@ function parseDurationFromName(name: string): number | null {
 export function classifySessionType(name: string): SessionType {
   const n = name.toLowerCase();
 
-  // Free Practice 1 / FP1 / Practice 1 / P1
-  if (/\bfree\s+practice\s*1\b|\bfp1\b|\bpractice\s*1\b|\bp1\b/i.test(n))
+  // Free Practice 1 / FP1 / Practice 1 / P1 / Free Practice Nr. 1
+  // Also Free Practice 2 / FP2 / Practice 2 / Free Practice Nr. 2
+  if (/\bfree\s+practice\s*(?:nr\.?\s*)?[12]\b|\bfp[12]\b|\bpractice\s*(?:nr\.?\s*)?[12]\b|\bp[12]\b/i.test(n))
     return "free_practice";
 
   // Sprint Qualifying / Sprint Shootout / SQ

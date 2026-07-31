@@ -1,6 +1,7 @@
 import type { Session, SeriesId, SessionType } from "@/types";
 import { classifySessionType, estimateDurationMin } from "@/lib/sources/durations";
 import { LEAGUES, LEAGUE_BY_SERIES } from "@/lib/sources/leagues";
+import { venueTimezone, localToUtc, utcDiffMinutes } from "@/lib/sources/venue-tz";
 
 const API_BASE = "https://www.thesportsdb.com/api/v1/json";
 const FREE_API_KEY = "123";
@@ -188,7 +189,27 @@ export function normalizeTsdEvent(e: TsdEvent): Session | null {
   const series = leagueIdToSeries[Number(e.idLeague)];
   if (!series) return null;
   if (!e.strTimestamp) return null;
-  const startUtc = e.strTimestamp.endsWith("Z") ? e.strTimestamp : `${e.strTimestamp}Z`;
+
+  /* ------------------------------------------------------------------ */
+  /*  Resolve start UTC                                                   */
+  /*  Prefer local track time + venue IANA timezone (DST-aware).          */
+  /*  Fall back to TheSportsDB strTimestamp as before.                    */
+  /* ------------------------------------------------------------------ */
+  let startUtc = e.strTimestamp.endsWith("Z") ? e.strTimestamp : `${e.strTimestamp}Z`;
+
+  const tz = venueTimezone(e.strVenue);
+  if (tz && e.strTimeLocal) {
+    const dateStr = e.dateEvent ?? e.strTimestamp.slice(0, 10);
+    const computed = localToUtc(dateStr, e.strTimeLocal, tz);
+    if (computed) {
+      // Sanity check: if the declared timestamp differs wildly from the
+      // local-time-derived one, prefer the local-derived value.
+      if (utcDiffMinutes(startUtc, computed) >= 60) {
+        startUtc = computed;
+      }
+    }
+  }
+
   const sessionType: SessionType = classifySessionType(e.strEvent);
   const { durationMin, isEstimatedEnd } = estimateDurationMin(series, sessionType, e.strEvent);
   const startMs = Date.parse(startUtc);

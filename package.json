@@ -9,7 +9,8 @@
     "lint": "eslint",
     "fetch-calendar": "tsx scripts/fetch-calendar.ts",
     "fetch-fia": "tsx scripts/fetch-fia-supplement.ts",
-    "scrape-motogp": "tsx scripts/scrape-motogp.ts"
+    "scrape-motogp": "tsx scripts/scrape-motogp-all.ts",
+    "merge-motogp": "tsx scripts/merge-motogp.ts"
   },
   "dependencies": {
     "dayjs": "^1.11.21",

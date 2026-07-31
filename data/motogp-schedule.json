@@ -1,4 +1,1571 @@
 {
-  "generatedAt": "2026-07-09T22:42:43.881Z",
-  "events": []
+  "generatedAt": "2026-07-09T23:35:20.697Z",
+  "events": [
+    {
+      "url": "https://www.motogp.com/en/calendar/2026/event/germany/259be6f4-c23c-4dc2-bc42-7664842f6409",
+      "name": "GERMANY",
+      "dateRange": "10 Jul - 12 Jul",
+      "track": "Sachsenring",
+      "days": [
+        {
+          "day": "FRIDAY",
+          "sessions": [
+            {
+              "time": "09:00-09:35",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "09:50-10:30",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "10:45-11:30",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "13:15-13:50",
+              "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "14:05-14:45",
+              "category": "Moto2",
+              "name": "Practice"
+            },
+            {
+              "time": "15:00-16:00",
+              "category": "MotoGP",
+              "name": "Practice"
+            }
+          ]
+        },
+        {
+          "day": "SATURDAY",
+          "sessions": [
+            {
+              "time": "08:40-09:10",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "09:25-09:55",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:10-10:40",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:50-11:05",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "11:15-11:30",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "12:45-13:00",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "13:10-13:25",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "13:40-13:55",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "14:05-14:20",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "15:00",
+              "category": "MotoGP",
+              "name": "Tissot Sprint"
+            }
+          ]
+        },
+        {
+          "day": "SUNDAY",
+          "sessions": [
+            {
+              "time": "09:40-09:50",
+              "category": "MotoGP",
+              "name": "Warm Up"
+            },
+            {
+              "time": "10:00-10:40",
+              "category": "MotoGP",
+              "name": "Rider Parade"
+            },
+            {
+              "time": "11:00",
+              "category": "Moto3",
+              "name": "Race"
+            },
+            {
+              "time": "12:15",
+              "category": "Moto2",
+              "name": "Race"
+            },
+            {
+              "time": "14:00",
+              "category": "MotoGP",
+              "name": "Grand Prix"
+            },
+            {
+              "time": "15:20-15:50",
+              "category": "MotoGP",
+              "name": "After the Flag"
+            },
+            {
+              "time": "15:50-16:30",
+              "category": "MotoGP",
+              "name": "Sunday Press Conference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.motogp.com/en/calendar/2026/event/great-britain/41aa319a-8ec5-49d6-aa99-4e2059c88098",
+      "name": "GREAT BRITAIN",
+      "dateRange": "7 Aug - 9 Aug",
+      "track": "Silverstone Circuit",
+      "days": [
+        {
+          "day": "FRIDAY",
+          "sessions": [
+            {
+              "time": "10:00-10:35",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "10:50-11:30",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "11:45-12:30",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "14:15-14:50",
+              "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "14:40-15:00",
+              "category": "Baggers",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "15:05-15:45",
+              "category": "Moto2",
+              "name": "Practice"
+            },
+            {
+              "time": "16:00-17:00",
+              "category": "MotoGP",
+              "name": "Practice"
+            },
+            {
+              "time": "19:05-19:25",
+              "category": "Baggers",
+              "name": "Free Practice Nr. 2"
+            }
+          ]
+        },
+        {
+          "day": "SATURDAY",
+          "sessions": [
+            {
+              "time": "09:40-10:10",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:25-10:55",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "11:10-11:40",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "11:50-12:05",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "12:15-12:30",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "13:45-14:00",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "14:10-14:30",
+              "category": "Baggers",
+              "name": "Qualifying Practice"
+            },
+            {
+              "time": "14:10-14:25",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "14:40-14:55",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "15:05-15:20",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "16:00",
+              "category": "MotoGP",
+              "name": "Tissot Sprint"
+            },
+            {
+              "time": "18:10",
+              "category": "Baggers",
+              "name": "Race Nr. 1"
+            }
+          ]
+        },
+        {
+          "day": "SUNDAY",
+          "sessions": [
+            {
+              "time": "09:40-09:50",
+              "category": "MotoGP",
+              "name": "Warm Up"
+            },
+            {
+              "time": "11:15",
+              "category": "Moto2",
+              "name": "Race"
+            },
+            {
+              "time": "13:00",
+              "category": "MotoGP",
+              "name": "Grand Prix"
+            },
+            {
+              "time": "14:30",
+              "category": "Moto3",
+              "name": "Race"
+            },
+            {
+              "time": "17:00",
+              "category": "Baggers",
+              "name": "Race Nr. 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.motogp.com/en/calendar/2026/event/spain/86abdbde-5e3d-45b1-a1f0-f74044a90eb3",
+      "name": "ARAGON",
+      "dateRange": "28 Aug - 30 Aug",
+      "track": "MotorLand Aragón",
+      "days": [
+        {
+          "day": "FRIDAY",
+          "sessions": [
+            {
+              "time": "09:00-09:35",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "09:50-10:30",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "10:45-11:30",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "12:05-12:25",
+              "category": "Baggers",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "13:15-13:50",
+              "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "14:05-14:45",
+              "category": "Moto2",
+              "name": "Practice"
+            },
+            {
+              "time": "15:00-16:00",
+              "category": "MotoGP",
+              "name": "Practice"
+            },
+            {
+              "time": "16:25-16:45",
+              "category": "Baggers",
+              "name": "Free Practice Nr. 2"
+            }
+          ]
+        },
+        {
+          "day": "SATURDAY",
+          "sessions": [
+            {
+              "time": "08:40-09:10",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "09:25-09:55",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:10-10:40",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:50-11:05",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "11:15-11:30",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "12:10-12:30",
+              "category": "Baggers",
+              "name": "Qualifying Practice"
+            },
+            {
+              "time": "12:45-13:00",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "13:10-13:25",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "13:40-13:55",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "14:05-14:20",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "15:00",
+              "category": "MotoGP",
+              "name": "Tissot Sprint"
+            },
+            {
+              "time": "16:10",
+              "category": "Baggers",
+              "name": "Race Nr. 1"
+            }
+          ]
+        },
+        {
+          "day": "SUNDAY",
+          "sessions": [
+            {
+              "time": "08:55",
+              "category": "Baggers",
+              "name": "Race Nr. 2"
+            },
+            {
+              "time": "09:40-09:50",
+              "category": "MotoGP",
+              "name": "Warm Up"
+            },
+            {
+              "time": "11:00",
+              "category": "Moto3",
+              "name": "Race"
+            },
+            {
+              "time": "12:15",
+              "category": "Moto2",
+              "name": "Race"
+            },
+            {
+              "time": "14:00",
+              "category": "MotoGP",
+              "name": "Grand Prix"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.motogp.com/en/calendar/2026/event/san-marino/537f71f7-25ea-4cb2-a259-70b0da576cc6",
+      "name": "SAN MARINO",
+      "dateRange": "11 Sep - 13 Sep",
+      "track": "Misano World Circuit Marco Simoncelli",
+      "days": [
+        {
+          "day": "FRIDAY",
+          "sessions": [
+            {
+              "time": "09:00-09:35",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "09:50-10:30",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "10:45-11:30",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "13:15-13:50",
+              "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "14:05-14:45",
+              "category": "Moto2",
+              "name": "Practice"
+            },
+            {
+              "time": "15:00-16:00",
+              "category": "MotoGP",
+              "name": "Practice"
+            }
+          ]
+        },
+        {
+          "day": "SATURDAY",
+          "sessions": [
+            {
+              "time": "08:40-09:10",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "09:25-09:55",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:10-10:40",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:50-11:05",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "11:15-11:30",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "12:45-13:00",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "13:10-13:25",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "13:40-13:55",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "14:05-14:20",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "15:00",
+              "category": "MotoGP",
+              "name": "Tissot Sprint"
+            }
+          ]
+        },
+        {
+          "day": "SUNDAY",
+          "sessions": [
+            {
+              "time": "09:40-09:50",
+              "category": "MotoGP",
+              "name": "Warm Up"
+            },
+            {
+              "time": "11:00",
+              "category": "Moto3",
+              "name": "Race"
+            },
+            {
+              "time": "12:15",
+              "category": "Moto2",
+              "name": "Race"
+            },
+            {
+              "time": "14:00",
+              "category": "MotoGP",
+              "name": "Grand Prix"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.motogp.com/en/calendar/2026/event/austria/1d659e29-247a-402c-ba1e-33fa14670cbe",
+      "name": "AUSTRIA",
+      "dateRange": "18 Sep - 20 Sep",
+      "track": "Red Bull Ring - Spielberg",
+      "days": [
+        {
+          "day": "FRIDAY",
+          "sessions": [
+            {
+              "time": "09:00-09:35",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "09:50-10:30",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "10:45-11:30",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "12:40-13:00",
+              "category": "Baggers",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "13:15-13:50",
+              "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "14:05-14:45",
+              "category": "Moto2",
+              "name": "Practice"
+            },
+            {
+              "time": "15:00-16:00",
+              "category": "MotoGP",
+              "name": "Practice"
+            },
+            {
+              "time": "17:05-17:25",
+              "category": "Baggers",
+              "name": "Free Practice Nr. 2"
+            }
+          ]
+        },
+        {
+          "day": "SATURDAY",
+          "sessions": [
+            {
+              "time": "08:40-09:10",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "09:25-09:55",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:10-10:40",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:50-11:05",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "11:15-11:30",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "12:10-12:30",
+              "category": "Baggers",
+              "name": "Qualifying Practice"
+            },
+            {
+              "time": "12:45-13:00",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "13:10-13:25",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "13:40-13:55",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "14:05-14:20",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "15:00",
+              "category": "MotoGP",
+              "name": "Tissot Sprint"
+            },
+            {
+              "time": "16:10",
+              "category": "Baggers",
+              "name": "Race Nr. 1"
+            }
+          ]
+        },
+        {
+          "day": "SUNDAY",
+          "sessions": [
+            {
+              "time": "08:55",
+              "category": "Baggers",
+              "name": "Race Nr. 2"
+            },
+            {
+              "time": "09:40-09:50",
+              "category": "MotoGP",
+              "name": "Warm Up"
+            },
+            {
+              "time": "11:00",
+              "category": "Moto3",
+              "name": "Race"
+            },
+            {
+              "time": "12:15",
+              "category": "Moto2",
+              "name": "Race"
+            },
+            {
+              "time": "14:00",
+              "category": "MotoGP",
+              "name": "Grand Prix"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.motogp.com/en/calendar/2026/event/japan/a87453f0-3ed0-4469-993a-1486af92d879",
+      "name": "JAPAN",
+      "dateRange": "1 Oct - 4 Oct",
+      "track": "Mobility Resort Motegi",
+      "days": [
+        {
+          "day": "FRIDAY",
+          "sessions": [
+            {
+              "time": "09:00-09:35",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "09:50-10:30",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "10:45-11:30",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "13:15-13:50",
+              "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "14:05-14:45",
+              "category": "Moto2",
+              "name": "Practice"
+            },
+            {
+              "time": "15:00-16:00",
+              "category": "MotoGP",
+              "name": "Practice"
+            }
+          ]
+        },
+        {
+          "day": "SATURDAY",
+          "sessions": [
+            {
+              "time": "08:40-09:10",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "09:25-09:55",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:10-10:40",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:50-11:05",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "11:15-11:30",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "12:45-13:00",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "13:10-13:25",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "13:40-13:55",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "14:05-14:20",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "15:00",
+              "category": "MotoGP",
+              "name": "Tissot Sprint"
+            }
+          ]
+        },
+        {
+          "day": "SUNDAY",
+          "sessions": [
+            {
+              "time": "09:40-09:50",
+              "category": "MotoGP",
+              "name": "Warm Up"
+            },
+            {
+              "time": "11:00",
+              "category": "Moto3",
+              "name": "Race"
+            },
+            {
+              "time": "12:15",
+              "category": "Moto2",
+              "name": "Race"
+            },
+            {
+              "time": "14:00",
+              "category": "MotoGP",
+              "name": "Grand Prix"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.motogp.com/en/calendar/2026/event/indonesia/877c27e8-70e0-4847-bacf-2290d7cc903c",
+      "name": "INDONESIA",
+      "dateRange": "9 Oct - 11 Oct",
+      "track": "Pertamina Mandalika International Circuit",
+      "days": [
+        {
+          "day": "FRIDAY",
+          "sessions": [
+            {
+              "time": "09:00-09:35",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "09:50-10:30",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "10:45-11:30",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "13:15-13:50",
+              "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "14:05-14:45",
+              "category": "Moto2",
+              "name": "Practice"
+            },
+            {
+              "time": "15:00-16:00",
+              "category": "MotoGP",
+              "name": "Practice"
+            }
+          ]
+        },
+        {
+          "day": "SATURDAY",
+          "sessions": [
+            {
+              "time": "08:40-09:10",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "09:25-09:55",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:10-10:40",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:50-11:05",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "11:15-11:30",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "12:45-13:00",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "13:10-13:25",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "13:40-13:55",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "14:05-14:20",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "15:00",
+              "category": "MotoGP",
+              "name": "Tissot Sprint"
+            }
+          ]
+        },
+        {
+          "day": "SUNDAY",
+          "sessions": [
+            {
+              "time": "10:40-10:50",
+              "category": "MotoGP",
+              "name": "Warm Up"
+            },
+            {
+              "time": "11:00",
+              "category": "Moto3",
+              "name": "Race"
+            },
+            {
+              "time": "12:15",
+              "category": "Moto2",
+              "name": "Race"
+            },
+            {
+              "time": "14:00",
+              "category": "MotoGP",
+              "name": "Grand Prix"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.motogp.com/en/calendar/2026/event/australia/66961f05-2454-4455-9d65-f99c49d25b17",
+      "name": "AUSTRALIA",
+      "dateRange": "22 Oct - 25 Oct",
+      "track": "Phillip Island",
+      "days": [
+        {
+          "day": "FRIDAY",
+          "sessions": [
+            {
+              "time": "09:00-09:35",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "09:50-10:30",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "10:45-11:30",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "13:15-13:50",
+              "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "14:05-14:45",
+              "category": "Moto2",
+              "name": "Practice"
+            },
+            {
+              "time": "15:00-16:00",
+              "category": "MotoGP",
+              "name": "Practice"
+            }
+          ]
+        },
+        {
+          "day": "SATURDAY",
+          "sessions": [
+            {
+              "time": "08:40-09:10",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "09:25-09:55",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:10-10:40",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:50-11:05",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "11:15-11:30",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "12:45-13:00",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "13:10-13:25",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "13:40-13:55",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "14:05-14:20",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "15:00",
+              "category": "MotoGP",
+              "name": "Tissot Sprint"
+            }
+          ]
+        },
+        {
+          "day": "SUNDAY",
+          "sessions": [
+            {
+              "time": "08:40-08:50",
+              "category": "MotoGP",
+              "name": "Warm Up"
+            },
+            {
+              "time": "10:00",
+              "category": "Moto3",
+              "name": "Race"
+            },
+            {
+              "time": "12:15",
+              "category": "Moto2",
+              "name": "Race"
+            },
+            {
+              "time": "14:00",
+              "category": "MotoGP",
+              "name": "Grand Prix"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.motogp.com/en/calendar/2026/event/malaysia/d1aedfce-d7c8-4d4a-9532-99c82547baad",
+      "name": "MALAYSIA",
+      "dateRange": "30 Oct - 1 Nov",
+      "track": "Petronas Sepang International Circuit",
+      "days": [
+        {
+          "day": "FRIDAY",
+          "sessions": [
+            {
+              "time": "09:00-09:35",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "09:50-10:30",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "10:45-11:30",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "13:15-13:50",
+              "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "14:05-14:45",
+              "category": "Moto2",
+              "name": "Practice"
+            },
+            {
+              "time": "15:00-16:00",
+              "category": "MotoGP",
+              "name": "Practice"
+            }
+          ]
+        },
+        {
+          "day": "SATURDAY",
+          "sessions": [
+            {
+              "time": "08:40-09:10",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "09:25-09:55",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:10-10:40",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:50-11:05",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "11:15-11:30",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "12:45-13:00",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "13:10-13:25",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "13:40-13:55",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "14:05-14:20",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "15:00",
+              "category": "MotoGP",
+              "name": "Tissot Sprint"
+            }
+          ]
+        },
+        {
+          "day": "SUNDAY",
+          "sessions": [
+            {
+              "time": "10:40-10:50",
+              "category": "MotoGP",
+              "name": "Warm Up"
+            },
+            {
+              "time": "11:00",
+              "category": "Moto3",
+              "name": "Race"
+            },
+            {
+              "time": "13:15",
+              "category": "Moto2",
+              "name": "Race"
+            },
+            {
+              "time": "15:00",
+              "category": "MotoGP",
+              "name": "Grand Prix"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.motogp.com/en/calendar/2026/event/qatar/3f3d3f5e-851c-42d2-887a-8ce8b41fa908",
+      "name": "QATAR",
+      "dateRange": "6 Nov - 8 Nov",
+      "track": "Lusail International Circuit",
+      "days": [
+        {
+          "day": "FRIDAY",
+          "sessions": [
+            {
+              "time": "14:00-14:35",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "14:50-15:30",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "15:45-16:30",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "18:15-18:50",
+              "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "19:05-19:45",
+              "category": "Moto2",
+              "name": "Practice"
+            },
+            {
+              "time": "20:00-21:00",
+              "category": "MotoGP",
+              "name": "Practice"
+            }
+          ]
+        },
+        {
+          "day": "SATURDAY",
+          "sessions": [
+            {
+              "time": "13:30-14:00",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "14:15-14:45",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "15:00-15:30",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "15:40-15:55",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "16:05-16:20",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "17:45-18:00",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "18:10-18:25",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "18:40-18:55",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "19:05-19:20",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "20:00",
+              "category": "MotoGP",
+              "name": "Tissot Sprint"
+            }
+          ]
+        },
+        {
+          "day": "SUNDAY",
+          "sessions": [
+            {
+              "time": "15:40-15:50",
+              "category": "MotoGP",
+              "name": "Warm Up"
+            },
+            {
+              "time": "17:00",
+              "category": "Moto3",
+              "name": "Race"
+            },
+            {
+              "time": "18:15",
+              "category": "Moto2",
+              "name": "Race"
+            },
+            {
+              "time": "20:00",
+              "category": "MotoGP",
+              "name": "Grand Prix"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.motogp.com/en/calendar/2026/event/portugal/c7f7626b-807f-4a6f-813e-7ad2c68302a3",
+      "name": "PORTUGAL",
+      "dateRange": "20 Nov - 22 Nov",
+      "track": "Autódromo Internacional do Algarve",
+      "days": [
+        {
+          "day": "FRIDAY",
+          "sessions": [
+            {
+              "time": "09:00-09:35",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "09:50-10:30",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "10:45-11:30",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "13:15-13:50",
+              "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "14:05-14:45",
+              "category": "Moto2",
+              "name": "Practice"
+            },
+            {
+              "time": "15:00-16:00",
+              "category": "MotoGP",
+              "name": "Practice"
+            }
+          ]
+        },
+        {
+          "day": "SATURDAY",
+          "sessions": [
+            {
+              "time": "08:40-09:10",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "09:25-09:55",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:10-10:40",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:50-11:05",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "11:15-11:30",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "12:45-13:00",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "13:10-13:25",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "13:40-13:55",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "14:05-14:20",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "15:00",
+              "category": "MotoGP",
+              "name": "Tissot Sprint"
+            }
+          ]
+        },
+        {
+          "day": "SUNDAY",
+          "sessions": [
+            {
+              "time": "09:40-09:50",
+              "category": "MotoGP",
+              "name": "Warm Up"
+            },
+            {
+              "time": "11:15",
+              "category": "Moto2",
+              "name": "Race"
+            },
+            {
+              "time": "13:00",
+              "category": "MotoGP",
+              "name": "Grand Prix"
+            },
+            {
+              "time": "14:30",
+              "category": "Moto3",
+              "name": "Race"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.motogp.com/en/calendar/2026/event/valencia/6ad2859f-51c4-459e-9714-338814e7537f",
+      "name": "VALENCIA",
+      "dateRange": "27 Nov - 29 Nov",
+      "track": "Circuit Ricardo Tormo",
+      "days": [
+        {
+          "day": "FRIDAY",
+          "sessions": [
+            {
+              "time": "09:00-09:35",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "09:50-10:30",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "10:45-11:30",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "13:15-13:50",
+              "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "14:05-14:45",
+              "category": "Moto2",
+              "name": "Practice"
+            },
+            {
+              "time": "15:00-16:00",
+              "category": "MotoGP",
+              "name": "Practice"
+            }
+          ]
+        },
+        {
+          "day": "SATURDAY",
+          "sessions": [
+            {
+              "time": "08:40-09:10",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "09:25-09:55",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:10-10:40",
+              "category": "MotoGP",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:50-11:05",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "11:15-11:30",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "12:45-13:00",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "13:10-13:25",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "13:40-13:55",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 1"
+            },
+            {
+              "time": "14:05-14:20",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "15:00",
+              "category": "MotoGP",
+              "name": "Tissot Sprint"
+            }
+          ]
+        },
+        {
+          "day": "SUNDAY",
+          "sessions": [
+            {
+              "time": "09:40-09:50",
+              "category": "MotoGP",
+              "name": "Warm Up"
+            },
+            {
+              "time": "11:00",
+              "category": "Moto3",
+              "name": "Race"
+            },
+            {
+              "time": "12:15",
+              "category": "Moto2",
+              "name": "Race"
+            },
+            {
+              "time": "14:00",
+              "category": "MotoGP",
+              "name": "Grand Prix"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
