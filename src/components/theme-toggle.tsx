@@ -9,16 +9,22 @@ export default function ThemeToggle() {
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setMounted(true), []);
   if (!mounted) {
-    return <span className="inline-block min-w-[55px] text-center text-xs opacity-50">theme</span>;
+    return (
+      <span
+        aria-hidden
+        className="inline-block h-7 min-w-[68px] rounded-md border border-[var(--border)] bg-[var(--panel)]"
+      />
+    );
   }
   const isDark = theme === "dark";
   return (
     <button
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="min-w-[55px] rounded border border-black/15 dark:border-white/20 px-2 py-1 text-xs"
+      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      className="h-7 min-w-[68px] rounded-md border border-[var(--border)] bg-[var(--panel)] px-2 font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--muted)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
     >
-      {isDark ? "Dark" : "Light"}
+      {isDark ? "☾ Dark" : "☀ Light"}
     </button>
   );
 }

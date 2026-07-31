@@ -41,20 +41,53 @@ export default function DayView({
   const startIso = dayStartIso(dayIso, offsetMin);
   const totalPx = hourInfos[23].top + hourInfos[23].height;
 
-  return (
-    <div className="flex flex-col">
-      <div className="mb-2 text-sm font-semibold">{formatDateLabel(dayIso, offsetMin)}</div>
+  if (daySessions.length === 0) {
+    return (
       <div
-        className="relative grid grid-cols-[42px_1fr]"
-        style={{ height: totalPx }}
+        className="rounded-lg border border-dashed border-[var(--border)] bg-[var(--panel)] p-10 text-center"
         onClick={onClearSelection}
       >
-        <TimeAxis hourInfos={hourInfos} />
-        <div className="relative border-l border-black/10 dark:border-white/10">
-          {daySessions.map((s) => {
-            const li = layout.get(s.id);
-            if (!li) return null;
-            return (
+        <div className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+          No sessions on this day
+        </div>
+        <p className="mt-2 text-sm text-[var(--muted)]">
+          Move to another date or enable more series in the sidebar.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-col">
+      <div className="mb-3 flex items-baseline gap-3">
+        <span className="font-mono text-base font-bold tracking-tight tabular-nums">
+          {formatDateLabel(dayIso, offsetMin)}
+        </span>
+        <span className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
+          {daySessions.length} session{daySessions.length === 1 ? "" : "s"}
+        </span>
+      </div>
+      <div className="overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--panel)]">
+        <div
+          className="relative grid grid-cols-[48px_1fr]"
+          style={{ height: totalPx }}
+          onClick={onClearSelection}
+        >
+          <div className="border-r border-[var(--border)] bg-[var(--panel-2)]/40">
+            <TimeAxis hourInfos={hourInfos} />
+          </div>
+          <div className="relative">
+            {hourInfos.map((info) => (
+              <div
+                key={info.hour}
+                className="pointer-events-none absolute inset-x-0 h-px bg-[var(--border)]/60"
+                style={{ top: info.top }}
+              />
+            ))}
+            {daySessions.map((s) => {
+              const li = layout.get(s.id);
+              if (!li) return null;
+              return (
                 <SessionBlock
                   key={s.id}
                   session={s}
@@ -65,8 +98,9 @@ export default function DayView({
                   isolatedId={isolatedId}
                   onSelect={onSelectSession}
                 />
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

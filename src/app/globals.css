@@ -3,23 +3,91 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f1f2f5;
+  --foreground: #16181f;
+  --panel: #ffffff;
+  --panel-2: #e9ebf0;
+  --border: rgba(13, 17, 23, 0.12);
+  --muted: #6b7280;
+  --accent: #d97706;
+  --accent-contrast: #ffffff;
+  --track: rgba(13, 17, 23, 0.06);
+  color-scheme: light;
+}
+
+/* Series accent for text: resolved on the element that carries --sc/--sc-dark
+   inline (session blocks, series rows) — NOT on :root, where var(--sc) would
+   fall back to gray. */
+.session-block,
+.series-row {
+  --sc-text: var(--sc, #3f3f46);
+}
+
+.dark {
+  --background: #0b0e13;
+  --foreground: #e8ecf3;
+  --panel: #11151d;
+  --panel-2: #171c26;
+  --border: rgba(255, 255, 255, 0.09);
+  --muted: #8b95a7;
+  --accent: #ffb800;
+  --accent-contrast: #141414;
+  --track: rgba(255, 255, 255, 0.07);
+  color-scheme: dark;
+}
+
+.dark .session-block,
+.dark .series-row {
+  --sc-text: var(--sc-dark, #9aa3b2);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--muted) 45%, transparent) transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--muted) 45%, transparent);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Small checkered flag motif used in the brand mark */
+.checker-strip {
+  background-image: repeating-conic-gradient(var(--foreground) 0% 25%, transparent 0% 50%);
+  background-size: 8px 8px;
+}
+
+/* Session blocks get a series-colored ring on hover (inline boxShadow wins otherwise) */
+.session-block:hover {
+  box-shadow:
+    inset 0 0 0 1px var(--sc-text),
+    0 0 0 1px color-mix(in srgb, var(--sc-text) 35%, transparent) !important;
 }
