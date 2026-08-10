@@ -9,9 +9,7 @@ export type SeriesId =
   | "formula_e"
   | "indycar"
   | "wec"
-  | "wrc"
   | "nascar"
-  | "sbk"
   | "dtm"
   | "imsa";
 

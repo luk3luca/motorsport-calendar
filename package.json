@@ -10,7 +10,11 @@
     "fetch-calendar": "tsx scripts/fetch-calendar.ts",
     "fetch-fia": "tsx scripts/fetch-fia-supplement.ts",
     "scrape-motogp": "tsx scripts/scrape-motogp-all.ts",
-    "merge-motogp": "tsx scripts/merge-motogp.ts"
+    "merge-motogp": "tsx scripts/merge-motogp.ts",
+    "scrape-f1academy": "tsx scripts/scrape-f1academy.ts",
+    "scrape-indycar": "tsx scripts/scrape-indycar.ts",
+    "scrape-dtm": "tsx scripts/scrape-dtm.ts",
+    "merge-extra-series": "tsx scripts/merge-extra-series.ts"
   },
   "dependencies": {
     "dayjs": "^1.11.21",

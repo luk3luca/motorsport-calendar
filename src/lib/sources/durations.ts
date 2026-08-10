@@ -71,20 +71,10 @@ const DURATION_TABLE_MIN: Record<SeriesId, Partial<Record<SessionType, number>>>
     qualifying: 45,
     race: 0,
   },
-  wrc: {
-    race: 0,
-  },
   nascar: {
     practice: 50,
     qualifying: 30,
     race: 210,
-  },
-  sbk: {
-    practice: 45,
-    free_practice: 45,
-    qualifying: 15,
-    race: 35,
-    warmup: 20,
   },
   dtm: {
     practice: 45,
@@ -155,8 +145,8 @@ export function classifySessionType(name: string): SessionType {
   if (/\bhyperpole\b/i.test(n))
     return "qualifying";
 
-  // Qualifying / Qual / Pole / Grid
-  if (/\bqualifying\b|\bqual\b|\bpole\b|\bgrid\b/i.test(n))
+  // Qualifying / Qual / Pole / Grid (but NOT "Reverse Grid Race" — that's a race)
+  if (/\bqualifying\b|\bqual\b|\bpole\b|\bgrid\b(?!\s*race)/i.test(n))
     return "qualifying";
 
   // Free Practice / FP / Practice

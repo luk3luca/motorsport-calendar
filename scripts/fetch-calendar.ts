@@ -18,7 +18,12 @@ const CACHE_DIR = join(DATA_DIR, ".fetch-cache");
 
 const THROTTLE_MS = 2100;
 const RETRY_WAIT_MS = 60_000;
-const WINDOW_END = "2026-12-31";
+// Window end configurable (default: end of season). Test: WINDOW_END=2026-08-31
+const WINDOW_END = process.env.WINDOW_END ?? "2026-12-31";
+// Output file configurable (default: main calendar). Test: OUTPUT_PATH=calendar-test.json
+const OUTPUT_PATH = process.env.OUTPUT_PATH ?? "calendar-2026.json";
+// Series that have been removed from the site (no longer fetched)
+const EXCLUDED_SERIES: SeriesId[] = [];
 
 function todayIso(): string {
   return new Date().toISOString().slice(0, 10);
@@ -122,7 +127,9 @@ async function main(): Promise<void> {
   /*  1. Fetch TheSportsDB for all leagues EXCEPT those we get from FIA */
   /* ------------------------------------------------------------------ */
   const fiaSeries = getFiaSeries(); // ["f2", "f3"]
-  const tsdLeagues = LEAGUES.filter((l) => !fiaSeries.includes(l.series));
+  const tsdLeagues = LEAGUES.filter(
+    (l) => !fiaSeries.includes(l.series) && !EXCLUDED_SERIES.includes(l.series),
+  );
 
   const allEvents: TsdEvent[] = [];
   for (const league of tsdLeagues) {
@@ -181,7 +188,7 @@ async function main(): Promise<void> {
     sessions,
   };
 
-  const outPath = join(DATA_DIR, "calendar-2026.json");
+  const outPath = join(DATA_DIR, OUTPUT_PATH);
   writeFileSync(outPath, JSON.stringify(payload, null, 2));
   process.stdout.write(`\nWrote ${outPath} (${sessions.length} sessions across ${seriesIncluded.length} series)\n`);
 

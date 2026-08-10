@@ -29,8 +29,8 @@ const GROUPS: SeriesGroup[] = [
   { name: "Formula", ids: ["f1", "f2", "f3", "f1_academy"] },
   { name: "MotoGP", ids: ["motogp", "moto2", "moto3"] },
   { name: "Open Wheel", ids: ["formula_e", "indycar"] },
-  { name: "GT & Touring", ids: ["wec", "imsa", "dtm", "sbk"] },
-  { name: "Rally & Stock", ids: ["wrc", "nascar"] },
+  { name: "GT & Touring", ids: ["wec", "imsa", "dtm"] },
+  { name: "Stock & Rally", ids: ["nascar"] },
 ];
 
 export default function SeriesSidebar({

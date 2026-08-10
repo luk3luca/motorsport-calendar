@@ -4,16 +4,24 @@
 
 | Series | Source | Coverage |
 |--------|--------|----------|
-| F1, MotoGP, etc. | TheSportsDB (free API, key "123") | All sessions |
+| F1, Formula E, NASCAR, IMSA, WEC | TheSportsDB (free API, key "123") | All sessions (self-updates as rounds approach) |
 | **F2**, **F3** | **FIA official websites** (`fiaformula2.com/Calendar`, `fiaformula3.com/Calendar`) | Practice, Qualifying, Sprint, Feature — complete with real times |
-| F1 Academy | TheSportsDB (incomplete — may need alternative source) | Partial |
+| **F1 Academy** | **Scraper** (`scripts/scrape-f1academy.ts`) | Next.js JSON embed on f1academy.com — ISO times WITH tz offset (no manual conversion) |
 | **MotoGP, Moto2, Moto3** | **Playwright scraper** (`scripts/scrape-motogp-all.ts`) | 12 events × ~20-25 sessions = 258 total, all practice/qualifying/sprint/race times in track local time |
+| **IndyCar** | **Scraper** (`scripts/scrape-indycar.ts`) | Server-rendered HTML on indycar.com — session times in ET |
+| **DTM** | **Playwright scraper** (`scripts/scrape-dtm.ts`) | Client-side rendered — timetable on dtm.com event pages, only DTM sessions kept |
+
+**Removed series (not on the site): SBK, WRC.**
 
 ## Fetch Commands
 
-- `npm run fetch-calendar` — full fetch from TheSportsDB (slow: ~80 min for 13 leagues × 180 days)
+- `npm run fetch-calendar` — full fetch from TheSportsDB (slow: ~80 min for 13 leagues × 180 days); supports `WINDOW_END=YYYY-MM-DD` and `OUTPUT_PATH=...` env vars
 - `npm run fetch-fia` — quick supplement: replaces F2/F3 with FIA data, keeps rest
 - `npm run scrape-motogp` — scrapes MotoGP/Moto2/Moto3 session times from motogp.com via Playwright
+- `npm run scrape-f1academy` — scrapes F1 Academy sessions (6 race IDs)
+- `npm run scrape-indycar` — scrapes IndyCar sessions (6 future rounds)
+- `npm run scrape-dtm` — scrapes DTM sessions (3 future rounds; TIMETABLE appears ~2 weeks before each weekend)
+- `npm run merge-extra-series` — merges F1A/IndyCar/DTM scraped data into calendar-2026.json (replaces TheSportsDB sessions for those series; dedupes Milwaukee double-header; filters non-race sessions)
 
 ## FIA Source (f2/f3)
 

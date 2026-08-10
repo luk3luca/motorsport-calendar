@@ -1,0 +1,175 @@
+{
+  "events": [
+    {
+      "raceId": 22,
+      "round": 1,
+      "name": "Shanghai",
+      "track": "Shanghai",
+      "country": "China",
+      "countryCode": "CN",
+      "dateRange": "2026-03-13 / 2026-03-15",
+      "sessions": [
+        {
+          "name": "Free Practice",
+          "sessionType": "PRACTICE",
+          "startIso": "2026-03-13T09:10:00+08:00",
+          "endIso": "2026-03-13T09:50:00+08:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Qualifying",
+          "sessionType": "QUALIFYING",
+          "startIso": "2026-03-13T14:10:00+08:00",
+          "endIso": "2026-03-13T14:40:00+08:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Reverse Grid Race",
+          "sessionType": "RESULT",
+          "startIso": "2026-03-14T13:45:00+08:00",
+          "endIso": "2026-03-14T14:20:00+08:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Feature Race",
+          "sessionType": "RESULT",
+          "startIso": "2026-03-15T10:40:00+08:00",
+          "endIso": "2026-03-15T11:15:00+08:00",
+          "unconfirmed": false
+        }
+      ]
+    },
+    {
+      "raceId": 24,
+      "round": 2,
+      "name": "Montreal",
+      "track": "Montreal",
+      "country": "Canada",
+      "countryCode": "CA",
+      "dateRange": "2026-05-22 / 2026-05-24",
+      "sessions": [
+        {
+          "name": "Free Practice",
+          "sessionType": "PRACTICE",
+          "startIso": "2026-05-22T09:00:00-04:00",
+          "endIso": "2026-05-22T09:40:00-04:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Qualifying 1",
+          "sessionType": "QUALIFYING",
+          "startIso": "2026-05-22T18:18:00-04:00",
+          "endIso": "2026-05-22T18:48:00-04:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Qualifying 2",
+          "sessionType": "QUALIFYING",
+          "startIso": "2026-05-22T18:18:00-04:00",
+          "endIso": "2026-05-22T18:48:00-04:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Opening Race",
+          "sessionType": "RESULT",
+          "startIso": "2026-05-23T09:45:00-04:00",
+          "endIso": "2026-05-23T10:15:00-04:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Reverse Grid Race",
+          "sessionType": "RESULT",
+          "startIso": "2026-05-23T18:05:00-04:00",
+          "endIso": "2026-05-23T18:35:00-04:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Feature Race",
+          "sessionType": "RESULT",
+          "startIso": "2026-05-24T10:45:00-04:00",
+          "endIso": "2026-05-24T11:15:00-04:00",
+          "unconfirmed": false
+        }
+      ]
+    },
+    {
+      "raceId": 25,
+      "round": 3,
+      "name": "Silverstone",
+      "track": "Silverstone",
+      "country": "Great Britain",
+      "countryCode": "GB",
+      "dateRange": "2026-07-03 / 2026-07-05",
+      "sessions": [
+        {
+          "name": "Free Practice",
+          "sessionType": "PRACTICE",
+          "startIso": "2026-07-03T07:45:00+01:00",
+          "endIso": "2026-07-03T08:25:00+01:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Qualifying",
+          "sessionType": "QUALIFYING",
+          "startIso": "2026-07-03T18:00:00+01:00",
+          "endIso": "2026-07-03T18:30:00+01:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Reverse Grid Race",
+          "sessionType": "RESULT",
+          "startIso": "2026-07-04T18:05:00+01:00",
+          "endIso": "2026-07-04T18:35:00+01:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Feature Race",
+          "sessionType": "RESULT",
+          "startIso": "2026-07-05T10:00:00+01:00",
+          "endIso": "2026-07-05T10:30:00+01:00",
+          "unconfirmed": false
+        }
+      ]
+    },
+    {
+      "raceId": 26,
+      "round": 4,
+      "name": "Zandvoort",
+      "track": "Zandvoort",
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "dateRange": "2026-08-21 / 2026-08-23",
+      "sessions": [
+        {
+          "name": "Free Practice",
+          "sessionType": "PRACTICE",
+          "startIso": "2026-08-21T14:00:00+02:00",
+          "endIso": "2026-08-21T14:40:00+02:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Qualifying",
+          "sessionType": "QUALIFYING",
+          "startIso": "2026-08-22T09:20:00+02:00",
+          "endIso": "2026-08-22T09:50:00+02:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Reverse Grid Race",
+          "sessionType": "RESULT",
+          "startIso": "2026-08-22T14:35:00+02:00",
+          "endIso": "2026-08-22T15:05:00+02:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Feature Race",
+          "sessionType": "RESULT",
+          "startIso": "2026-08-23T10:40:00+02:00",
+          "endIso": "2026-08-23T11:10:00+02:00",
+          "unconfirmed": false
+        }
+      ]
+    }
+  ],
+  "generatedAt": "2026-08-08T21:58:25.207Z"
+}

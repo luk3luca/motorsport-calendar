@@ -11,9 +11,7 @@ export const SERIES: SeriesConfig[] = [
   { id: "formula_e", label: "Formula E", shortLabel: "FE", color: "#06B6D4", colorDark: "#67E8F9", defaultOn: false },
   { id: "indycar", label: "IndyCar", shortLabel: "IND", color: "#FFD400", colorDark: "#FDE047", defaultOn: false },
   { id: "wec", label: "WEC", shortLabel: "WEC", color: "#EF4444", colorDark: "#F87171", defaultOn: false },
-  { id: "wrc", label: "WRC", shortLabel: "WRC", color: "#A855F7", colorDark: "#C084FC", defaultOn: false },
   { id: "nascar", label: "NASCAR", shortLabel: "NSC", color: "#6366F1", colorDark: "#818CF8", defaultOn: false },
-  { id: "sbk", label: "SBK", shortLabel: "SBK", color: "#B45309", colorDark: "#D97706", defaultOn: false },
   { id: "dtm", label: "DTM", shortLabel: "DTM", color: "#6B7280", colorDark: "#9CA3AF", defaultOn: false },
   { id: "imsa", label: "IMSA", shortLabel: "IMS", color: "#94A3B8", colorDark: "#CBD5E1", defaultOn: false },
 ];

@@ -1,0 +1,188 @@
+{
+  "events": [
+    {
+      "slug": "Portland",
+      "name": "OnlyBulls Grand Prix of Portland",
+      "track": "Portland International Raceway",
+      "dateRange": "",
+      "sessions": [
+        {
+          "name": "Practice 1",
+          "startIso": "2026-08-07T21:30:00.000Z",
+          "endIso": "2026-08-07T21:30:00.000Z"
+        },
+        {
+          "name": "Practice 2",
+          "startIso": "2026-08-08T17:00:00.000Z",
+          "endIso": "2026-08-08T17:00:00.000Z"
+        },
+        {
+          "name": "Qualifying",
+          "startIso": "2026-08-08T23:00:00.000Z",
+          "endIso": "2026-08-08T23:00:00.000Z"
+        },
+        {
+          "name": "Warmup",
+          "startIso": "2026-08-09T17:00:00.000Z",
+          "endIso": "2026-08-09T17:00:00.000Z"
+        },
+        {
+          "name": "Race",
+          "startIso": "2026-08-09T20:00:00.000Z",
+          "endIso": "2026-08-09T20:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "Markham",
+      "name": "Ontario Honda Dealers Indy at Markham",
+      "track": "Streets of Markham",
+      "dateRange": "",
+      "sessions": [
+        {
+          "name": "Practice 1",
+          "startIso": "2026-08-14T19:00:00.000Z",
+          "endIso": "2026-08-14T19:00:00.000Z"
+        },
+        {
+          "name": "Practice 2",
+          "startIso": "2026-08-15T14:00:00.000Z",
+          "endIso": "2026-08-15T14:00:00.000Z"
+        },
+        {
+          "name": "Qualifying",
+          "startIso": "2026-08-15T18:25:00.000Z",
+          "endIso": "2026-08-15T18:25:00.000Z"
+        },
+        {
+          "name": "Warmup",
+          "startIso": "2026-08-16T12:30:00.000Z",
+          "endIso": "2026-08-16T12:30:00.000Z"
+        },
+        {
+          "name": "Race",
+          "startIso": "2026-08-16T16:00:00.000Z",
+          "endIso": "2026-08-16T16:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "Washington-DC",
+      "name": "Freedom 250 Grand Prix of Washington, D.C.",
+      "track": "Streets of Washington",
+      "dateRange": "",
+      "sessions": [
+        {
+          "name": "Practice 1",
+          "startIso": "2026-08-22T13:00:00.000Z",
+          "endIso": "2026-08-22T13:00:00.000Z"
+        },
+        {
+          "name": "Practice 2",
+          "startIso": "2026-08-22T17:00:00.000Z",
+          "endIso": "2026-08-22T17:00:00.000Z"
+        },
+        {
+          "name": "Qualifying",
+          "startIso": "2026-08-22T21:00:00.000Z",
+          "endIso": "2026-08-22T21:00:00.000Z"
+        },
+        {
+          "name": "Warmup",
+          "startIso": "2026-08-23T13:00:00.000Z",
+          "endIso": "2026-08-23T13:00:00.000Z"
+        },
+        {
+          "name": "Pre-Race Show",
+          "startIso": "2026-08-23T15:30:00.000Z",
+          "endIso": "2026-08-23T15:30:00.000Z"
+        },
+        {
+          "name": "Race",
+          "startIso": "2026-08-23T17:00:00.000Z",
+          "endIso": "2026-08-23T17:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "Milwaukee-Race1",
+      "name": "Snap-on Makers and Fixers 250",
+      "track": "The Milwaukee Mile",
+      "dateRange": "",
+      "sessions": [
+        {
+          "name": "Practice",
+          "startIso": "2026-08-28T22:00:00.000Z",
+          "endIso": "2026-08-28T22:00:00.000Z"
+        },
+        {
+          "name": "Qualifying",
+          "startIso": "2026-08-29T15:00:00.000Z",
+          "endIso": "2026-08-29T15:00:00.000Z"
+        },
+        {
+          "name": "Race 1",
+          "startIso": "2026-08-29T18:30:00.000Z",
+          "endIso": "2026-08-29T18:30:00.000Z"
+        },
+        {
+          "name": "Race 2",
+          "startIso": "2026-08-30T17:00:00.000Z",
+          "endIso": "2026-08-30T17:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "Milwaukee-Race2",
+      "name": "Snap-on Milwaukee Mile 250",
+      "track": "The Milwaukee Mile",
+      "dateRange": "",
+      "sessions": [
+        {
+          "name": "Qualifying",
+          "startIso": "2026-08-29T15:00:00.000Z",
+          "endIso": "2026-08-29T15:00:00.000Z"
+        },
+        {
+          "name": "Race 2",
+          "startIso": "2026-08-30T17:00:00.000Z",
+          "endIso": "2026-08-30T17:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "Laguna-Seca",
+      "name": "INDYCAR Grand Prix of Monterey",
+      "track": "WeatherTech Raceway Laguna Seca",
+      "dateRange": "",
+      "sessions": [
+        {
+          "name": "Practice 1",
+          "startIso": "2026-09-04T21:00:00.000Z",
+          "endIso": "2026-09-04T21:00:00.000Z"
+        },
+        {
+          "name": "Practice 2",
+          "startIso": "2026-09-05T17:00:00.000Z",
+          "endIso": "2026-09-05T17:00:00.000Z"
+        },
+        {
+          "name": "Qualifying",
+          "startIso": "2026-09-05T20:30:00.000Z",
+          "endIso": "2026-09-05T20:30:00.000Z"
+        },
+        {
+          "name": "Final Practice",
+          "startIso": "2026-09-06T00:00:00.000Z",
+          "endIso": "2026-09-06T00:00:00.000Z"
+        },
+        {
+          "name": "Race",
+          "startIso": "2026-09-06T18:30:00.000Z",
+          "endIso": "2026-09-06T18:30:00.000Z"
+        }
+      ]
+    }
+  ],
+  "generatedAt": "2026-08-08T22:03:30.179Z"
+}

@@ -1,0 +1,48 @@
+{
+  "events": [
+    {
+      "slug": "nuerburgring-2026",
+      "name": "06 Nürburgring",
+      "track": "Nürburgring",
+      "dateRange": "",
+      "sessions": [
+        {
+          "name": "Free Practice 1",
+          "startIso": "2026-08-14T09:30:00.000Z",
+          "endIso": "2026-08-14T10:25:00.000Z"
+        },
+        {
+          "name": "Free Practice 2",
+          "startIso": "2026-08-14T14:00:00.000Z",
+          "endIso": "2026-08-14T14:45:00.000Z"
+        },
+        {
+          "name": "Track-Safari",
+          "startIso": "2026-08-14T14:55:00.000Z",
+          "endIso": "2026-08-14T15:10:00.000Z"
+        },
+        {
+          "name": "Qualifying 1",
+          "startIso": "2026-08-15T07:55:00.000Z",
+          "endIso": "2026-08-15T08:15:00.000Z"
+        },
+        {
+          "name": "Race 1",
+          "startIso": "2026-08-15T11:30:00.000Z",
+          "endIso": "2026-08-15T12:30:00.000Z"
+        },
+        {
+          "name": "Qualifying 2",
+          "startIso": "2026-08-16T07:10:00.000Z",
+          "endIso": "2026-08-16T07:30:00.000Z"
+        },
+        {
+          "name": "Race 2",
+          "startIso": "2026-08-16T11:30:00.000Z",
+          "endIso": "2026-08-16T12:30:00.000Z"
+        }
+      ]
+    }
+  ],
+  "generatedAt": "2026-08-08T22:05:21.151Z"
+}

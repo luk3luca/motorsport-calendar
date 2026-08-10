@@ -17,9 +17,7 @@ export const LEAGUES: LeagueMapping[] = [
   { series: "formula_e", leagueId: 4371, label: "Formula E" },
   { series: "indycar", leagueId: 4373, label: "IndyCar Series" },
   { series: "wec", leagueId: 4413, label: "WEC" },
-  { series: "wrc", leagueId: 4409, label: "WRC" },
   { series: "nascar", leagueId: 4393, label: "NASCAR Cup Series" },
-  { series: "sbk", leagueId: 4454, label: "SBK" },
   { series: "dtm", leagueId: 4438, label: "DTM" },
   { series: "imsa", leagueId: 4488, label: "IMSA SportsCar Championship" },
 ];
