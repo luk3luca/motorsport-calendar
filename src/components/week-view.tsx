@@ -18,6 +18,7 @@ import TimeAxis from "@/components/time-axis";
 export default function WeekView({
   weekStartIso,
   offsetMin,
+  tzKey,
   sessions,
   isolatedId,
   onSelectSession,
@@ -25,6 +26,8 @@ export default function WeekView({
 }: {
   weekStartIso: string;
   offsetMin: number;
+  /** Changes whenever the active timezone mode changes (offset ⇄ local). */
+  tzKey?: string;
   sessions: Session[];
   isolatedId: string | null;
   onSelectSession: (series: SeriesId, eventKey: string) => void;
@@ -50,7 +53,10 @@ export default function WeekView({
     }
     const weekHasEvents = computeWeekHourHasEvents(dayList, offsetMin, sessions);
     return { days: dayList, hourInfos: buildHourInfos(weekHasEvents) };
-  }, [weekStartIso, sessions, offsetMin]);
+    // tzKey: the module-level _localTz is invisible to React — recompute when
+    // the timezone MODE changes even if offsetMin stays the same.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [weekStartIso, sessions, offsetMin, tzKey]);
 
   if (days.length === 0) {
     // Even when only one day has sessions, keep the classic Fri/Sat/Sun

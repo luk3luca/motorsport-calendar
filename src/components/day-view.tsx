@@ -16,6 +16,7 @@ import SessionBlock from "@/components/session-block";
 export default function DayView({
   dayIso,
   offsetMin,
+  tzKey,
   sessions,
   isolatedId,
   onSelectSession,
@@ -23,6 +24,8 @@ export default function DayView({
 }: {
   dayIso: string;
   offsetMin: number;
+  /** Changes whenever the active timezone mode changes (offset ⇄ local). */
+  tzKey?: string;
   sessions: Session[];
   isolatedId: string | null;
   onSelectSession: (series: SeriesId, eventKey: string) => void;
@@ -35,7 +38,10 @@ export default function DayView({
     const hourHasEvents = computeDayHourHasEvents(dayIso, offsetMin, sessions);
     const hourInfos = buildHourInfos(hourHasEvents);
     return { daySessions, hourInfos };
-  }, [sessions, dayIso, offsetMin]);
+    // tzKey: the module-level _localTz is invisible to React — recompute when
+    // the timezone MODE changes even if offsetMin stays the same.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sessions, dayIso, offsetMin, tzKey]);
 
   const layout = useMemo(() => computeLayout(daySessions), [daySessions]);
   const startIso = dayStartIso(dayIso, offsetMin);

@@ -9,6 +9,7 @@ import {
   weekStartIso,
   todayIso,
   setLocalTz,
+  getLocalTz,
   dayStartIso,
   dayEndIso,
 } from "@/lib/timezone";
@@ -74,6 +75,10 @@ export default function CalendarShell() {
     window.localStorage.setItem(LOCAL_KEY, next ? "true" : "false");
     setLocalActive(next);
   };
+
+  // Identity of the active timezone mode: changes on every local⇄offset
+  // switch (and on detected-tz load), so views recompute their hour grids.
+  const tzKey = `${localActive ? getLocalTz() ?? "" : String(offsetMin)}|${offsetMin}`;
 
   const filteredSessions = useMemo(() => {
     const selectedSet = new Set(selected);
@@ -213,6 +218,7 @@ export default function CalendarShell() {
             <DayView
               dayIso={cursor}
               offsetMin={offsetMin}
+              tzKey={tzKey}
               sessions={filteredSessions}
               isolatedId={isolatedId}
               onSelectSession={(s) => setIsolatedId(s)}
@@ -222,6 +228,7 @@ export default function CalendarShell() {
             <WeekView
               weekStartIso={weekStartIso(cursor)}
               offsetMin={offsetMin}
+              tzKey={tzKey}
               sessions={filteredSessions}
               isolatedId={isolatedId}
               onSelectSession={(s) => setIsolatedId(s)}
