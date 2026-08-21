@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T11:11:57.628Z",
+  "generatedAt": "2026-08-21T15:31:09.752Z",
   "windowStart": "2026-06-29T00:00:00.000Z",
   "windowEnd": "2026-12-31T23:59:59.999Z",
   "seriesIncluded": [
@@ -3879,26 +3879,6 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "2409917",
-      "series": "nascar",
-      "leagueName": "NASCAR Cup Series",
-      "name": "Mobil 1 301",
-      "sessionType": "race",
-      "eventKey": "mobil_1_301",
-      "round": 25,
-      "season": "2026",
-      "startUtc": "2026-08-23T10:00:00Z",
-      "endUtc": "2026-08-23T13:30:00.000Z",
-      "durationMin": 210,
-      "venue": "New Hampshire Motor Speedway",
-      "country": "United States",
-      "countryFlagEmoji": "🇺🇸",
-      "city": "Loudon, New Hampshire",
-      "mapUrl": "https://r2.thesportsdb.com/images/media/event/map/wp75ns1758555820.jpg",
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
       "id": "f1_academy-2026-zandvoort-17",
       "series": "f1_academy",
       "leagueName": "F1 Academy",
@@ -3995,6 +3975,26 @@
       "countryFlagEmoji": "🇺🇸",
       "city": null,
       "mapUrl": null,
+      "isEstimatedStart": false,
+      "isEstimatedEnd": true
+    },
+    {
+      "id": "2409917",
+      "series": "nascar",
+      "leagueName": "NASCAR Cup Series",
+      "name": "Mobil 1 301",
+      "sessionType": "race",
+      "eventKey": "mobil_1_301",
+      "round": 25,
+      "season": "2026",
+      "startUtc": "2026-08-23T19:00:00.000Z",
+      "endUtc": "2026-08-23T22:30:00.000Z",
+      "durationMin": 210,
+      "venue": "New Hampshire Motor Speedway",
+      "country": "United States",
+      "countryFlagEmoji": "🇺🇸",
+      "city": "Loudon, New Hampshire",
+      "mapUrl": "https://r2.thesportsdb.com/images/media/event/map/wp75ns1758555820.jpg",
       "isEstimatedStart": false,
       "isEstimatedEnd": true
     },
