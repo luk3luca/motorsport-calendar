@@ -97,7 +97,10 @@ export default function WeekView({
           </div>
           <div
             className="relative grid"
-            style={{ height: 240, gridTemplateColumns: "48px repeat(3, minmax(0, 1fr))" }}
+            style={{
+              height: placeholderHours[23].top + placeholderHours[23].height,
+              gridTemplateColumns: "48px repeat(3, minmax(0, 1fr))",
+            }}
           >
             <div className="border-r border-[var(--border)] bg-[var(--panel-2)]/40">
               <TimeAxis hourInfos={placeholderHours} />
