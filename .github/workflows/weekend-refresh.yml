@@ -1,0 +1,84 @@
+name: Weekend refresh
+
+# Runs Friday morning (Europe/Rome) before the race weekend: re-checks ONLY
+# the upcoming weekend's sessions on TheSportsDB for late program changes
+# (weather, TV slots) and redeploys. Does not touch anything outside the window.
+
+on:
+  schedule:
+    - cron: "30 4 * * 5" # Friday 04:30 UTC = 06:30 CEST (05:30 CET)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  weekend-refresh-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Compute weekend window
+        id: meta
+        run: |
+          OWNER="${GITHUB_REPOSITORY_OWNER}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          if [ "${REPO}" = "${OWNER}.github.io" ]; then
+            echo "base_path=" >> "$GITHUB_OUTPUT"
+          else
+            echo "base_path=/${REPO}" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Fast: ~11 leagues × 4 days × 2s ≈ 2 minutes.
+      # Writes data/tsd-window.json; does NOT touch calendar-2026.json.
+      - name: Fetch TheSportsDB for the weekend
+        env:
+          OUTPUT_PATH: tsd-window.json
+        run: |
+          WE=$(date -d "+3 days" +%F)
+          WINDOW_END="$WE" npx tsx scripts/fetch-calendar.ts
+
+      - name: Merge weekend window into main calendar
+        run: npx tsx scripts/merge-tsd-window.ts
+
+      - name: Commit updated data (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar-2026.json
+          if git diff --cached --quiet; then
+            echo "Weekend data unchanged."
+            exit 0
+          fi
+          git commit -m "[bot] weekend refresh $(date -u +%F)"
+          # The fetch may overlap manual pushes to main: rebase first.
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin HEAD:"${GITHUB_REF_NAME}"
+
+      - name: Build static site
+        env:
+          DEPLOY_BASE_PATH: ${{ steps.meta.outputs.base_path }}
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+      - uses: actions/deploy-pages@v4

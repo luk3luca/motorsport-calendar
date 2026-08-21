@@ -44,3 +44,4 @@ next-env.d.ts
 data/.fetch-cache/
 data/calendar-refresh.json
 data/calendar-test.json
+data/tsd-window.json

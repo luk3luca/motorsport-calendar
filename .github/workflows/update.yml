@@ -75,7 +75,9 @@ jobs:
             echo "No data changes this week."
           else
             git commit -m "[bot] weekly data update $(date -u +%F)"
-            git push
+            # The long fetch may overlap manual pushes to main: rebase first.
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin HEAD:"${GITHUB_REF_NAME}"
           fi
 
       - name: Build static site
