@@ -139,7 +139,7 @@ export default function SeriesSidebar({
                     aria-hidden
                   />
                   <span
-                    className={`w-8 shrink-0 font-mono text-[11px] font-bold tracking-wide ${
+                    className={`w-11 shrink-0 font-mono text-[11px] font-bold tracking-wide ${
                       checked ? "" : "text-[var(--muted)]"
                     }`}
                     style={checked ? { color: "var(--sc-text)" } : undefined}

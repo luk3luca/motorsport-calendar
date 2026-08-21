@@ -1,0 +1,91 @@
+name: Weekly data update + deploy
+
+on:
+  schedule:
+    # Monday 04:00 UTC = 06:00 CEST / 05:00 CET
+    - cron: "0 4 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Compute dates and base path
+        id: meta
+        run: |
+          WE=$(date -d "+8 weeks" +%F)
+          echo "window_end=$WE" >> "$GITHUB_OUTPUT"
+          OWNER="${GITHUB_REPOSITORY_OWNER}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          if [ "${REPO}" = "${OWNER}.github.io" ]; then
+            echo "base_path=" >> "$GITHUB_OUTPUT"
+          else
+            echo "base_path=/${REPO}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install Playwright chromium
+        run: npx playwright install --with-deps chromium
+
+      # Regenerates calendar-2026.json from TheSportsDB (+FIA fallback inside)
+      - name: Fetch TheSportsDB (bounded window)
+        env:
+          WINDOW_END: ${{ steps.meta.outputs.window_end }}
+        run: npx tsx scripts/fetch-calendar.ts
+
+      # Scrapers: if one fails, keep going with the last good raw data
+      - name: Scrape dedicated sources
+        run: |
+          npx tsx scripts/scrape-motogp-all.ts || echo "::warning::motogp scrape failed, keeping previous data"
+          npx tsx scripts/scrape-f1academy.ts || echo "::warning::f1academy scrape failed, keeping previous data"
+          npx tsx scripts/scrape-indycar.ts || echo "::warning::indycar scrape failed, keeping previous data"
+          npx tsx scripts/scrape-dtm.ts || echo "::warning::dtm scrape failed, keeping previous data"
+
+      - name: Merge scraped data into calendar
+        run: |
+          npx tsx scripts/merge-motogp.ts
+          npx tsx scripts/merge-extra-series.ts
+
+      - name: Commit updated data (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No data changes this week."
+          else
+            git commit -m "[bot] weekly data update $(date -u +%F)"
+            git push
+          fi
+
+      - name: Build static site
+        env:
+          DEPLOY_BASE_PATH: ${{ steps.meta.outputs.base_path }}
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+      - uses: actions/deploy-pages@v4

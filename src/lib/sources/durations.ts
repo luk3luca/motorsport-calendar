@@ -29,6 +29,7 @@ const DURATION_TABLE_MIN: Record<SeriesId, Partial<Record<SessionType, number>>>
     practice: 40,
     qualifying: 30,
     race: 30,
+    feature_race: 35,
   },
   motogp: {
     practice: 60,
@@ -226,4 +227,21 @@ export const SESSION_TYPE_LABEL: Record<SessionType, string> = {
   warmup: "Warm-up",
   test: "Test",
   other: "Session",
+};
+
+// Compact identifiers for density-adaptive blocks (micro mode): fit next to the
+// start time in a single line (e.g. "QUALI 09:00"), full names live in
+// SESSION_TYPE_LABEL for compact/full modes.
+export const SESSION_TYPE_SHORT: Record<SessionType, string> = {
+  free_practice: "FP",
+  practice: "PRACT",
+  qualifying: "QUALI",
+  sprint_qualifying: "SQ",
+  sprint: "SPRINT",
+  sprint_race: "SPRINT",
+  feature_race: "FEATURE",
+  race: "RACE",
+  warmup: "WARM-UP",
+  test: "TEST",
+  other: "SESSION",
 };

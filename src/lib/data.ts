@@ -1,7 +1,20 @@
 import type { CalendarData, Session } from "@/types";
 import { classifySessionType, estimateDurationMin } from "@/lib/sources/durations";
+import {
+  DEFAULT_OFFSET_MIN,
+  dayStartIso,
+  dayEndIso,
+  weekStartIso as toWeekStart,
+} from "@/lib/timezone";
 
 import calendarData from "../../data/calendar-2026.json";
+
+// Enriched sessions are deterministic (derived from the static JSON import),
+// so compute them once instead of deep-cloning on every getter call.
+const ENRICHED_SESSIONS: Session[] = (() => {
+  const data = calendarData as CalendarData;
+  return data.sessions.map(applyDurationOverride);
+})();
 
 function applyDurationOverride(s: Session): Session {
   if (!s.isEstimatedEnd) return s;
@@ -20,36 +33,38 @@ function applyDurationOverride(s: Session): Session {
 
 export function getCalendar(): CalendarData {
   const data = JSON.parse(JSON.stringify(calendarData)) as CalendarData;
-  data.sessions = data.sessions.map(applyDurationOverride);
+  data.sessions = ENRICHED_SESSIONS.map((s) => ({ ...s }));
   return data;
 }
 
 export function getAllSessions(): Session[] {
-  return getCalendar().sessions;
+  return ENRICHED_SESSIONS;
 }
 
 export function getSessionsInWindow(startIso: string, endIso: string): Session[] {
-  return getCalendar().sessions.filter(
+  return getAllSessions().filter(
     (s) => s.startUtc <= endIso && s.endUtc >= startIso,
   );
 }
 
 export function getSessionsOnDay(dayIso: string): Session[] {
-  return getCalendar().sessions.filter((s) => {
-    const sStart = s.startUtc.slice(0, 10);
-    const sEnd = s.endUtc.slice(0, 10);
-    return sStart <= dayIso && sEnd >= dayIso;
-  });
+  return getSessionsInWindow(dayStartIso(dayIso, DEFAULT_OFFSET_MIN), dayEndIso(dayIso, DEFAULT_OFFSET_MIN));
 }
 
-export function getSessionsForWeek(weekStartIso: string): Session[] {
-  const start = new Date(`${weekStartIso}T00:00:00.000Z`);
-  const end = new Date(start);
-  end.setUTCDate(end.getUTCDate() + 7);
-  return getSessionsInWindow(
-    start.toISOString(),
-    new Date(end.getTime() - 1).toISOString(),
-  ).filter((s) => s.startUtc < end.toISOString());
+export function getSessionsForWeek(weekStart: string): Session[] {
+  // Window must be computed in viewer time so that sessions near the week
+  // edges land on the same week the rendering helpers assign them to.
+  const days: string[] = [];
+  const base = toWeekStart(weekStart);
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(Date.parse(`${base}T00:00:00Z`) + i * 86_400_000)
+      .toISOString()
+      .slice(0, 10);
+    days.push(d);
+  }
+  const start = dayStartIso(days[0], DEFAULT_OFFSET_MIN);
+  const end = dayEndIso(days[6], DEFAULT_OFFSET_MIN);
+  return getSessionsInWindow(start, end);
 }
 
 export function getWeekends(): { eventKey: string; firstStart: string; label: string }[] {

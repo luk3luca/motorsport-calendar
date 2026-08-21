@@ -149,11 +149,19 @@ const VENUE_TZ: Record<string, string> = {
 /**
  * Find the IANA timezone for a venue name using partial matching
  * (case-insensitive substring match against the keys).
+ *
+ * Keys are tried LONGEST-FIRST so specific venues win over generic
+ * substrings (e.g. "Road America" → America/Chicago must be checked
+ * before the generic "Road" → America/New_York fallback).
  */
+const VENUE_TZ_SORTED = Object.entries(VENUE_TZ).sort(
+  ([a], [b]) => b.length - a.length,
+);
+
 export function venueTimezone(venue: string | null | undefined): string | null {
   if (!venue) return null;
   const v = venue.toLowerCase();
-  for (const [key, tz] of Object.entries(VENUE_TZ)) {
+  for (const [key, tz] of VENUE_TZ_SORTED) {
     if (v.includes(key.toLowerCase())) return tz;
   }
   return null;

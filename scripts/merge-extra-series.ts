@@ -118,11 +118,20 @@ function buildSession(
   idx: number,
 ): Session {
   const sessionType = classifySessionType(s.name) as SessionType;
-  const { durationMin } = estimateDurationMin(series, sessionType, s.name);
 
+  // If the source gave us a real end time, the duration is exact — no need
+  // for the estimate table.
+  const hasRealEnd = Boolean(s.endIso) && s.endIso !== s.startIso;
   let endUtc = s.endIso;
-  // If the scraper only produced a start time, estimate the end
-  if (!endUtc || endUtc === s.startIso) {
+  let durationMin: number;
+  if (hasRealEnd) {
+    endUtc = s.endIso;
+    durationMin = Math.max(
+      1,
+      Math.round((Date.parse(s.endIso) - Date.parse(s.startIso)) / 60_000),
+    );
+  } else {
+    ({ durationMin } = estimateDurationMin(series, sessionType, s.name));
     endUtc = new Date(Date.parse(s.startIso) + durationMin * 60_000).toISOString();
   }
 
@@ -144,7 +153,7 @@ function buildSession(
     city: null,
     mapUrl: null,
     isEstimatedStart: false,
-    isEstimatedEnd: endUtc !== s.endIso,
+    isEstimatedEnd: !hasRealEnd,
   };
 }
 

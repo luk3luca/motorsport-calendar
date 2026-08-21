@@ -2,7 +2,7 @@
 
 import type { CSSProperties } from "react";
 import { SERIES_BY_ID } from "@/lib/series";
-import { SESSION_TYPE_LABEL } from "@/lib/sources/durations";
+import { SESSION_TYPE_LABEL, SESSION_TYPE_SHORT } from "@/lib/sources/durations";
 import { formatTime, getSessionPosition } from "@/lib/timezone";
 import type { HourInfo } from "@/lib/timezone";
 import type { LayoutInfo } from "@/lib/layout";
@@ -36,7 +36,11 @@ export default function SessionBlock({
   const leftPct = layout.column * widthPct;
 
   const startLabel = session.isEstimatedStart ? "TBC" : formatTime(session.startUtc, offsetMin);
-  const endLabel = session.isEstimatedEnd ? "?" : formatTime(session.endUtc, offsetMin);
+  // End time is estimated (derived from typical duration) for almost every
+  // session → show it as "~HH:mm" instead of a bare "?".
+  const endLabel = session.isEstimatedEnd
+    ? `~${formatTime(session.endUtc, offsetMin)}`
+    : formatTime(session.endUtc, offsetMin);
 
   const isIsolated = isolatedId !== null;
   const isOther = isIsolated && isolatedId !== session.series;
@@ -111,28 +115,54 @@ export default function SessionBlock({
             {session.name}
           </div>
         )}
-        <div className="flex items-baseline gap-1 font-mono tabular-nums">
-          <span
-            className={`shrink-0 font-bold leading-none ${
-              micro ? "text-[11px]" : "text-[13px] md:text-sm"
-            }`}
-            style={{ color: isOther ? "var(--muted)" : "var(--foreground)" }}
-          >
-            {startLabel}
-          </span>
-          <span
-            className="shrink-0 text-[9px] leading-none"
-            style={{ color: "var(--muted)" }}
-          >
-            →
-          </span>
-          <span
-            className="min-w-0 truncate text-[10px] leading-none"
-            style={{ color: "var(--muted)" }}
-          >
-            {endLabel}
-          </span>
-        </div>
+        {micro ? (
+          <div className="flex items-center gap-1">
+            <span
+              className="shrink-0 rounded-[3px] border px-1 py-px text-[8px] font-bold uppercase leading-[11px] tracking-wider"
+              style={{
+                color: dim,
+                borderColor: isOther
+                  ? "var(--border)"
+                  : "color-mix(in srgb, var(--sc-text) 45%, transparent)",
+              }}
+            >
+              {series.shortLabel}
+            </span>
+            <span
+              className="truncate text-[9px] font-bold uppercase leading-[12px] tracking-[0.08em]"
+              style={{ color: dim }}
+            >
+              {SESSION_TYPE_SHORT[session.sessionType]}
+            </span>
+            <span
+              className="ml-auto shrink-0 font-mono text-[11px] font-bold leading-none tabular-nums"
+              style={{ color: isOther ? "var(--muted)" : "var(--foreground)" }}
+            >
+              {startLabel}
+            </span>
+          </div>
+        ) : (
+          <div className="flex items-baseline gap-1 font-mono tabular-nums">
+            <span
+              className="shrink-0 font-bold leading-none text-[13px] md:text-sm"
+              style={{ color: isOther ? "var(--muted)" : "var(--foreground)" }}
+            >
+              {startLabel}
+            </span>
+            <span
+              className="shrink-0 text-[9px] leading-none"
+              style={{ color: "var(--muted)" }}
+            >
+              →
+            </span>
+            <span
+              className="min-w-0 truncate text-[10px] leading-none"
+              style={{ color: "var(--muted)" }}
+            >
+              {endLabel}
+            </span>
+          </div>
+        )}
         {!compact && (
           <div
             className="truncate text-[10px] leading-tight"

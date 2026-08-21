@@ -262,8 +262,10 @@ export function daysWithSessionsInWeek(
   const days: { iso: string; start: number; end: number }[] = [];
   for (let i = 0; i < 7; i++) {
     const iso = base.add(i, "day").format("YYYY-MM-DD");
-    const startMs = Date.parse(`${iso}T00:00:00Z`) - offsetMin * 60_000;
-    const endMs = startMs + 24 * 60 * 60 * 1000 - 1;
+    // Day boundaries must match dayStartIso/dayEndIso so that local-tz mode
+    // and fixed-offset mode agree on which day column a session belongs to.
+    const startMs = Date.parse(dayStartIso(iso, offsetMin));
+    const endMs = Date.parse(dayEndIso(iso, offsetMin));
     days.push({ iso, start: startMs, end: endMs });
   }
   const present = new Set<string>();
