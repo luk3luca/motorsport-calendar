@@ -4,7 +4,12 @@ on:
   schedule:
     # Monday 04:00 UTC = 06:00 CEST / 05:00 CET
     - cron: "0 4 * * 1"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      deploy_only:
+        description: "Deploy only — skip data updates, build from committed JSON"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -20,9 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
-      - uses: actions/checkout@v4
+      # v5+ targets Node24 (Node20 runner deprecation, June 2026)
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -44,16 +50,19 @@ jobs:
           fi
 
       - name: Install Playwright chromium
+        if: ${{ inputs.deploy_only != true }}
         run: npx playwright install --with-deps chromium
 
-      # Regenerates calendar-2026.json from TheSportsDB (+FIA fallback inside)
+      # Regenerates calendar-2026.json from TheSportsDB (+FIA inside)
       - name: Fetch TheSportsDB (bounded window)
+        if: ${{ inputs.deploy_only != true }}
         env:
           WINDOW_END: ${{ steps.meta.outputs.window_end }}
         run: npx tsx scripts/fetch-calendar.ts
 
       # Scrapers: if one fails, keep going with the last good raw data
       - name: Scrape dedicated sources
+        if: ${{ inputs.deploy_only != true }}
         run: |
           npx tsx scripts/scrape-motogp-all.ts || echo "::warning::motogp scrape failed, keeping previous data"
           npx tsx scripts/scrape-f1academy.ts || echo "::warning::f1academy scrape failed, keeping previous data"
@@ -61,12 +70,14 @@ jobs:
           npx tsx scripts/scrape-dtm.ts || echo "::warning::dtm scrape failed, keeping previous data"
 
       - name: Merge scraped data into calendar
+        if: ${{ inputs.deploy_only != true }}
         run: |
           npx tsx scripts/fetch-fia-supplement.ts || echo "::warning::fia supplement failed"
           npx tsx scripts/merge-motogp.ts
           npx tsx scripts/merge-extra-series.ts
 
       - name: Commit updated data (if changed)
+        if: ${{ inputs.deploy_only != true }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
