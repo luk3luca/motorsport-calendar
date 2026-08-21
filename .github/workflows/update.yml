@@ -53,14 +53,17 @@ jobs:
         if: ${{ inputs.deploy_only != true }}
         run: npx playwright install --with-deps chromium
 
-      # Regenerates calendar-2026.json from TheSportsDB (+FIA inside)
+      # Fetch TheSportsDB (+FIA f2/f3 embedded) into a SEPARATE file.
+      # Never writes calendar-2026.json directly → history is never lost.
       - name: Fetch TheSportsDB (bounded window)
         if: ${{ inputs.deploy_only != true }}
         env:
           WINDOW_END: ${{ steps.meta.outputs.window_end }}
+          OUTPUT_PATH: tsd-week.json
         run: npx tsx scripts/fetch-calendar.ts
 
-      # Scrapers: if one fails, keep going with the last good raw data
+      # Scrapers: if one fails, keep going with the last good raw data.
+      # Each writes its own raw file; merge steps apply them to the main JSON.
       - name: Scrape dedicated sources
         if: ${{ inputs.deploy_only != true }}
         run: |
@@ -69,10 +72,15 @@ jobs:
           npx tsx scripts/scrape-indycar.ts || echo "::warning::indycar scrape failed, keeping previous data"
           npx tsx scripts/scrape-dtm.ts || echo "::warning::dtm scrape failed, keeping previous data"
 
-      - name: Merge scraped data into calendar
+      # All merges are surgical: they replace only their own series and
+      # leave everything else (history included) untouched.
+      - name: Merge TSD window + FIA series into calendar
+        if: ${{ inputs.deploy_only != true }}
+        run: npx tsx scripts/merge-tsd-window.ts --window-file data/tsd-week.json
+
+      - name: Merge scraped series into calendar
         if: ${{ inputs.deploy_only != true }}
         run: |
-          npx tsx scripts/fetch-fia-supplement.ts || echo "::warning::fia supplement failed"
           npx tsx scripts/merge-motogp.ts
           npx tsx scripts/merge-extra-series.ts
 
