@@ -133,10 +133,7 @@ export default function CalendarShell() {
       >
         <SeriesSidebar
           {...sidebarProps}
-          onChange={(next) => {
-            setSelected(next);
-            setDrawerOpen(false);
-          }}
+          onChange={setSelected}
           onClose={() => setDrawerOpen(false)}
         />
       </aside>

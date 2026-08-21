@@ -53,17 +53,66 @@ export default function WeekView({
   }, [weekStartIso, sessions, offsetMin]);
 
   if (days.length === 0) {
+    // Even when only one day has sessions, keep the classic Fri/Sat/Sun
+    // weekend shape: three placeholder columns centered on the day(s) present.
+    const baseMs = new Date(`${weekStartIso}T00:00:00Z`).getTime();
+    const candidates = [4, 5, 6].map((i) =>
+      new Date(baseMs + i * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
+    );
+    const placeholderDays = candidates.map((iso) => ({
+      iso,
+      label: formatDateLabel(iso, offsetMin),
+      empty: true as const,
+    }));
+    const placeholderHours = buildHourInfos(
+      Object.fromEntries(Array.from({ length: 24 }, (_, i) => [i, false])),
+    );
     return (
-      <div
-        className="rounded-lg border border-dashed border-[var(--border)] bg-[var(--panel)] p-10 text-center"
-        onClick={onClearSelection}
-      >
-        <div className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
-          No sessions this week
+      <div className="flex flex-col" onClick={onClearSelection}>
+        <div className="overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--panel)]">
+          <div
+            className="grid border-b border-[var(--border)] bg-[var(--panel-2)]/60"
+            style={{ gridTemplateColumns: "48px repeat(3, minmax(0, 1fr))" }}
+          >
+            <div className="border-r border-[var(--border)]" />
+            {placeholderDays.map((d) => {
+              const { wd, dn, mo } = (() => {
+                const [wd, dn, mo] = formatDateLabel(d.iso, offsetMin).split(" ");
+                return { wd, dn: dn.padStart(2, "0"), mo };
+              })();
+              return (
+                <div key={d.iso} className="flex flex-col items-center gap-1 px-1 py-2 opacity-45">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
+                    {wd}
+                  </span>
+                  <span className="font-mono text-lg font-bold leading-none tabular-nums text-[var(--muted)]">
+                    {dn}
+                  </span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
+                    {mo}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+          <div
+            className="relative grid"
+            style={{ height: 240, gridTemplateColumns: "48px repeat(3, minmax(0, 1fr))" }}
+          >
+            <div className="border-r border-[var(--border)] bg-[var(--panel-2)]/40">
+              <TimeAxis hourInfos={placeholderHours} />
+            </div>
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="relative border-l border-[var(--border)]">
+                <div className="pointer-events-none absolute inset-0 grid place-items-center">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] opacity-60">
+                    No sessions
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <p className="mt-2 text-sm text-[var(--muted)]">
-          Try a different week or enable more series in the sidebar.
-        </p>
       </div>
     );
   }
@@ -86,9 +135,13 @@ export default function WeekView({
           style={{ gridTemplateColumns: gridTemplate }}
         >
           <div className="border-r border-[var(--border)]" />
-          {days.map((d) => {
+          {days.map((d, i) => {
             const { wd, dn, mo } = headerParts(d.iso);
             const isToday = d.iso === today;
+            // Highlight the month label when it differs from the previous
+            // column's month (month boundary inside the week) — otherwise
+            // keep it muted but still readable.
+            const monthChanged = i > 0 && mo !== headerParts(days[i - 1].iso).mo;
             return (
               <div key={d.iso} className="flex flex-col items-center gap-1 px-1 py-2">
                 <span
@@ -105,7 +158,13 @@ export default function WeekView({
                 >
                   {dn}
                 </span>
-                <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
+                <span
+                  className={`text-[10px] font-bold uppercase tracking-[0.14em] ${
+                    isToday || monthChanged
+                      ? "text-[var(--foreground)]"
+                      : "text-[var(--muted)]"
+                  }`}
+                >
                   {mo}
                 </span>
               </div>
