@@ -62,6 +62,7 @@ jobs:
 
       - name: Merge scraped data into calendar
         run: |
+          npx tsx scripts/fetch-fia-supplement.ts || echo "::warning::fia supplement failed"
           npx tsx scripts/merge-motogp.ts
           npx tsx scripts/merge-extra-series.ts
 
