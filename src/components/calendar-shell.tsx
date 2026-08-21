@@ -30,7 +30,9 @@ export default function CalendarShell() {
   const [view, setView] = useState<"day" | "week">("week");
   const [cursor, setCursor] = useState<string>("2026-07-03");
   const [isolatedId, setIsolatedId] = useState<string | null>(null);
-  const [localActive, setLocalActive] = useState<boolean>(false);
+  // Default ON: first visit uses the browser's timezone. If the user picks a
+  // fixed offset instead, the choice is stored and respected on later visits.
+  const [localActive, setLocalActive] = useState<boolean>(true);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
@@ -43,7 +45,9 @@ export default function CalendarShell() {
       }
     }
     const storedLocal = window.localStorage.getItem(LOCAL_KEY);
-    if (storedLocal === "true") {
+    // Local timezone is the default; only an explicit "false" (user picked a
+    // fixed offset) keeps it off.
+    if (storedLocal !== "false") {
       const detected = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
       setLocalTz(detected);
       setLocalActive(true);

@@ -268,8 +268,13 @@ export function daysWithSessionsInWeek(
     const endMs = Date.parse(dayEndIso(iso, offsetMin));
     days.push({ iso, start: startMs, end: endMs });
   }
+  // A session belongs to the week where it STARTS: a race finishing after
+  // midnight shows its tail in this week's spill column, but must NOT
+  // reappear in the following week's first column.
+  const weekStartMs = days[0]?.start ?? 0;
+  const inWeek = sessions.filter((s) => Date.parse(s.startUtc) >= weekStartMs);
   const present = new Set<string>();
-  for (const s of sessions) {
+  for (const s of inWeek) {
     const sStart = Date.parse(s.startUtc);
     const sEnd = Date.parse(s.endUtc);
     for (const d of days) {
@@ -284,7 +289,7 @@ export function daysWithSessionsInWeek(
   // include the following day so the user can see the tail end.
   const lastDay = days[days.length - 1];
   if (lastDay) {
-    const spills = sessions.some(
+    const spills = inWeek.some(
       (s) =>
         Date.parse(s.startUtc) <= lastDay.end &&
         Date.parse(s.endUtc) > lastDay.end,
