@@ -85,8 +85,13 @@ body {
   background-size: 8px 8px;
 }
 
-/* Session blocks get a series-colored ring on hover (inline boxShadow wins otherwise) */
+/* Session blocks: rounded hit area + series-colored ring on hover
+   (inline boxShadow wins otherwise). Radius matches the variant bodies. */
+.session-block {
+  border-radius: 6px;
+}
 .session-block:hover {
+  border-radius: 6px;
   box-shadow:
     inset 0 0 0 1px var(--sc-text),
     0 0 0 1px color-mix(in srgb, var(--sc-text) 35%, transparent) !important;

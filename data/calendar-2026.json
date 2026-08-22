@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T15:31:09.752Z",
+  "generatedAt": "2026-08-22T09:46:41.686Z",
   "windowStart": "2026-06-29T00:00:00.000Z",
   "windowEnd": "2026-12-31T23:59:59.999Z",
   "seriesIncluded": [
@@ -10,12 +10,12 @@
     "imsa",
     "f2",
     "f3",
-    "motogp",
-    "moto2",
-    "moto3",
     "f1_academy",
     "indycar",
-    "dtm"
+    "dtm",
+    "motogp",
+    "moto2",
+    "moto3"
   ],
   "sessions": [
     {
@@ -1762,32 +1762,12 @@
       "id": "motogp_2026_germany_s9",
       "series": "motogp",
       "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_germany",
       "round": null,
       "season": "2026",
       "startUtc": "2026-07-11T08:50:00.000Z",
-      "endUtc": "2026-07-11T09:05:00.000Z",
-      "durationMin": 40,
-      "venue": "Sachsenring",
-      "country": "Germany",
-      "countryFlagEmoji": "🇩🇪",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "motogp_2026_germany_s10",
-      "series": "motogp",
-      "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_germany",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-07-11T09:15:00.000Z",
       "endUtc": "2026-07-11T09:30:00.000Z",
       "durationMin": 40,
       "venue": "Sachsenring",
@@ -1799,35 +1779,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_germany_s11",
+      "id": "moto3_2026_germany_s10",
       "series": "moto3",
       "leagueName": "Moto3",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_germany",
       "round": null,
       "season": "2026",
       "startUtc": "2026-07-11T10:45:00.000Z",
-      "endUtc": "2026-07-11T11:00:00.000Z",
-      "durationMin": 40,
-      "venue": "Sachsenring",
-      "country": "Germany",
-      "countryFlagEmoji": "🇩🇪",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto3_2026_germany_s12",
-      "series": "moto3",
-      "leagueName": "Moto3",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_germany",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-07-11T11:10:00.000Z",
       "endUtc": "2026-07-11T11:25:00.000Z",
       "durationMin": 40,
       "venue": "Sachsenring",
@@ -1839,35 +1799,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_germany_s13",
+      "id": "moto2_2026_germany_s11",
       "series": "moto2",
       "leagueName": "Moto2",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_germany",
       "round": null,
       "season": "2026",
       "startUtc": "2026-07-11T11:40:00.000Z",
-      "endUtc": "2026-07-11T11:55:00.000Z",
-      "durationMin": 40,
-      "venue": "Sachsenring",
-      "country": "Germany",
-      "countryFlagEmoji": "🇩🇪",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto2_2026_germany_s14",
-      "series": "moto2",
-      "leagueName": "Moto2",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_germany",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-07-11T12:05:00.000Z",
       "endUtc": "2026-07-11T12:20:00.000Z",
       "durationMin": 40,
       "venue": "Sachsenring",
@@ -1879,7 +1819,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_germany_s15",
+      "id": "motogp_2026_germany_s12",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Tissot Sprint",
@@ -1959,7 +1899,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_germany_s16",
+      "id": "motogp_2026_germany_s13",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Warm Up",
@@ -1979,7 +1919,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_germany_s17",
+      "id": "moto3_2026_germany_s14",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Race",
@@ -1999,7 +1939,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_germany_s18",
+      "id": "moto2_2026_germany_s15",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Race",
@@ -2019,7 +1959,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_germany_s19",
+      "id": "motogp_2026_germany_s16",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Grand Prix",
@@ -2799,7 +2739,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_great_britain_s20",
+      "id": "moto3_2026_great_britain_s17",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 1",
@@ -2819,7 +2759,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_great_britain_s21",
+      "id": "moto2_2026_great_britain_s18",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 1",
@@ -2839,7 +2779,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_great_britain_s22",
+      "id": "motogp_2026_great_britain_s19",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 1",
@@ -2859,7 +2799,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_great_britain_s23",
+      "id": "moto3_2026_great_britain_s20",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Practice",
@@ -2879,7 +2819,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_great_britain_s24",
+      "id": "moto2_2026_great_britain_s21",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Practice",
@@ -2899,7 +2839,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_great_britain_s25",
+      "id": "motogp_2026_great_britain_s22",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Practice",
@@ -2939,7 +2879,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_great_britain_s26",
+      "id": "moto3_2026_great_britain_s23",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 2",
@@ -2959,7 +2899,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_great_britain_s27",
+      "id": "moto2_2026_great_britain_s24",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 2",
@@ -2979,7 +2919,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_great_britain_s28",
+      "id": "motogp_2026_great_britain_s25",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 2",
@@ -2999,35 +2939,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_great_britain_s29",
+      "id": "motogp_2026_great_britain_s26",
       "series": "motogp",
       "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_great_britain",
       "round": null,
       "season": "2026",
       "startUtc": "2026-08-08T10:50:00.000Z",
-      "endUtc": "2026-08-08T11:05:00.000Z",
-      "durationMin": 40,
-      "venue": "Silverstone Circuit",
-      "country": "Great Britain",
-      "countryFlagEmoji": "🇬🇧",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "motogp_2026_great_britain_s30",
-      "series": "motogp",
-      "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_great_britain",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-08-08T11:15:00.000Z",
       "endUtc": "2026-08-08T11:30:00.000Z",
       "durationMin": 40,
       "venue": "Silverstone Circuit",
@@ -3039,35 +2959,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_great_britain_s31",
+      "id": "moto3_2026_great_britain_s27",
       "series": "moto3",
       "leagueName": "Moto3",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_great_britain",
       "round": null,
       "season": "2026",
       "startUtc": "2026-08-08T12:45:00.000Z",
-      "endUtc": "2026-08-08T13:00:00.000Z",
-      "durationMin": 40,
-      "venue": "Silverstone Circuit",
-      "country": "Great Britain",
-      "countryFlagEmoji": "🇬🇧",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto3_2026_great_britain_s32",
-      "series": "moto3",
-      "leagueName": "Moto3",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_great_britain",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-08-08T13:10:00.000Z",
       "endUtc": "2026-08-08T13:25:00.000Z",
       "durationMin": 40,
       "venue": "Silverstone Circuit",
@@ -3079,35 +2979,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_great_britain_s33",
+      "id": "moto2_2026_great_britain_s28",
       "series": "moto2",
       "leagueName": "Moto2",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_great_britain",
       "round": null,
       "season": "2026",
       "startUtc": "2026-08-08T13:40:00.000Z",
-      "endUtc": "2026-08-08T13:55:00.000Z",
-      "durationMin": 40,
-      "venue": "Silverstone Circuit",
-      "country": "Great Britain",
-      "countryFlagEmoji": "🇬🇧",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto2_2026_great_britain_s34",
-      "series": "moto2",
-      "leagueName": "Moto2",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_great_britain",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-08-08T14:05:00.000Z",
       "endUtc": "2026-08-08T14:20:00.000Z",
       "durationMin": 40,
       "venue": "Silverstone Circuit",
@@ -3119,7 +2999,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_great_britain_s35",
+      "id": "motogp_2026_great_britain_s29",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Tissot Sprint",
@@ -3179,7 +3059,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_great_britain_s36",
+      "id": "motogp_2026_great_britain_s30",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Warm Up",
@@ -3199,7 +3079,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_great_britain_s37",
+      "id": "moto2_2026_great_britain_s31",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Race",
@@ -3239,7 +3119,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_great_britain_s38",
+      "id": "motogp_2026_great_britain_s32",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Grand Prix",
@@ -3259,7 +3139,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_great_britain_s39",
+      "id": "moto3_2026_great_britain_s33",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Race",
@@ -3999,7 +3879,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_aragon_s40",
+      "id": "moto3_2026_aragon_s34",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 1",
@@ -4019,7 +3899,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_aragon_s41",
+      "id": "moto2_2026_aragon_s35",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 1",
@@ -4039,7 +3919,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_aragon_s42",
+      "id": "motogp_2026_aragon_s36",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 1",
@@ -4059,7 +3939,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_aragon_s43",
+      "id": "moto3_2026_aragon_s37",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Practice",
@@ -4079,7 +3959,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_aragon_s44",
+      "id": "moto2_2026_aragon_s38",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Practice",
@@ -4099,7 +3979,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_aragon_s45",
+      "id": "motogp_2026_aragon_s39",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Practice",
@@ -4139,7 +4019,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_aragon_s46",
+      "id": "moto3_2026_aragon_s40",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 2",
@@ -4159,7 +4039,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_aragon_s47",
+      "id": "moto2_2026_aragon_s41",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 2",
@@ -4179,7 +4059,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_aragon_s48",
+      "id": "motogp_2026_aragon_s42",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 2",
@@ -4199,35 +4079,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_aragon_s49",
+      "id": "motogp_2026_aragon_s43",
       "series": "motogp",
       "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_aragon",
       "round": null,
       "season": "2026",
       "startUtc": "2026-08-29T08:50:00.000Z",
-      "endUtc": "2026-08-29T09:05:00.000Z",
-      "durationMin": 40,
-      "venue": "MotorLand Aragón",
-      "country": "Spain",
-      "countryFlagEmoji": "🇪🇸",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "motogp_2026_aragon_s50",
-      "series": "motogp",
-      "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_aragon",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-08-29T09:15:00.000Z",
       "endUtc": "2026-08-29T09:30:00.000Z",
       "durationMin": 40,
       "venue": "MotorLand Aragón",
@@ -4239,35 +4099,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_aragon_s51",
+      "id": "moto3_2026_aragon_s44",
       "series": "moto3",
       "leagueName": "Moto3",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_aragon",
       "round": null,
       "season": "2026",
       "startUtc": "2026-08-29T10:45:00.000Z",
-      "endUtc": "2026-08-29T11:00:00.000Z",
-      "durationMin": 40,
-      "venue": "MotorLand Aragón",
-      "country": "Spain",
-      "countryFlagEmoji": "🇪🇸",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto3_2026_aragon_s52",
-      "series": "moto3",
-      "leagueName": "Moto3",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_aragon",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-08-29T11:10:00.000Z",
       "endUtc": "2026-08-29T11:25:00.000Z",
       "durationMin": 40,
       "venue": "MotorLand Aragón",
@@ -4279,35 +4119,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_aragon_s53",
+      "id": "moto2_2026_aragon_s45",
       "series": "moto2",
       "leagueName": "Moto2",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_aragon",
       "round": null,
       "season": "2026",
       "startUtc": "2026-08-29T11:40:00.000Z",
-      "endUtc": "2026-08-29T11:55:00.000Z",
-      "durationMin": 40,
-      "venue": "MotorLand Aragón",
-      "country": "Spain",
-      "countryFlagEmoji": "🇪🇸",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto2_2026_aragon_s54",
-      "series": "moto2",
-      "leagueName": "Moto2",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_aragon",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-08-29T12:05:00.000Z",
       "endUtc": "2026-08-29T12:20:00.000Z",
       "durationMin": 40,
       "venue": "MotorLand Aragón",
@@ -4319,7 +4139,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_aragon_s55",
+      "id": "motogp_2026_aragon_s46",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Tissot Sprint",
@@ -4399,7 +4219,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_aragon_s56",
+      "id": "motogp_2026_aragon_s47",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Warm Up",
@@ -4419,7 +4239,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_aragon_s57",
+      "id": "moto3_2026_aragon_s48",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Race",
@@ -4439,7 +4259,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_aragon_s58",
+      "id": "moto2_2026_aragon_s49",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Race",
@@ -4459,7 +4279,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_aragon_s59",
+      "id": "motogp_2026_aragon_s50",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Grand Prix",
@@ -5039,7 +4859,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_san_marino_s60",
+      "id": "moto3_2026_san_marino_s51",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 1",
@@ -5059,7 +4879,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_san_marino_s61",
+      "id": "moto2_2026_san_marino_s52",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 1",
@@ -5079,7 +4899,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_san_marino_s62",
+      "id": "motogp_2026_san_marino_s53",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 1",
@@ -5139,7 +4959,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_san_marino_s63",
+      "id": "moto3_2026_san_marino_s54",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Practice",
@@ -5179,7 +4999,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_san_marino_s64",
+      "id": "moto2_2026_san_marino_s55",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Practice",
@@ -5199,7 +5019,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_san_marino_s65",
+      "id": "motogp_2026_san_marino_s56",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Practice",
@@ -5259,7 +5079,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_san_marino_s66",
+      "id": "moto3_2026_san_marino_s57",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 2",
@@ -5279,7 +5099,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_san_marino_s67",
+      "id": "moto2_2026_san_marino_s58",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 2",
@@ -5299,7 +5119,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_san_marino_s68",
+      "id": "motogp_2026_san_marino_s59",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 2",
@@ -5339,35 +5159,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_san_marino_s69",
+      "id": "motogp_2026_san_marino_s60",
       "series": "motogp",
       "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_san_marino",
       "round": null,
       "season": "2026",
       "startUtc": "2026-09-12T08:50:00.000Z",
-      "endUtc": "2026-09-12T09:05:00.000Z",
-      "durationMin": 40,
-      "venue": "Misano World Circuit Marco Simoncelli",
-      "country": "San Marino",
-      "countryFlagEmoji": "🇸🇲",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "motogp_2026_san_marino_s70",
-      "series": "motogp",
-      "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_san_marino",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-09-12T09:15:00.000Z",
       "endUtc": "2026-09-12T09:30:00.000Z",
       "durationMin": 40,
       "venue": "Misano World Circuit Marco Simoncelli",
@@ -5399,35 +5199,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_san_marino_s71",
+      "id": "moto3_2026_san_marino_s61",
       "series": "moto3",
       "leagueName": "Moto3",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_san_marino",
       "round": null,
       "season": "2026",
       "startUtc": "2026-09-12T10:45:00.000Z",
-      "endUtc": "2026-09-12T11:00:00.000Z",
-      "durationMin": 40,
-      "venue": "Misano World Circuit Marco Simoncelli",
-      "country": "San Marino",
-      "countryFlagEmoji": "🇸🇲",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto3_2026_san_marino_s72",
-      "series": "moto3",
-      "leagueName": "Moto3",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_san_marino",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-09-12T11:10:00.000Z",
       "endUtc": "2026-09-12T11:25:00.000Z",
       "durationMin": 40,
       "venue": "Misano World Circuit Marco Simoncelli",
@@ -5439,35 +5219,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_san_marino_s73",
+      "id": "moto2_2026_san_marino_s62",
       "series": "moto2",
       "leagueName": "Moto2",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_san_marino",
       "round": null,
       "season": "2026",
       "startUtc": "2026-09-12T11:40:00.000Z",
-      "endUtc": "2026-09-12T11:55:00.000Z",
-      "durationMin": 40,
-      "venue": "Misano World Circuit Marco Simoncelli",
-      "country": "San Marino",
-      "countryFlagEmoji": "🇸🇲",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto2_2026_san_marino_s74",
-      "series": "moto2",
-      "leagueName": "Moto2",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_san_marino",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-09-12T12:05:00.000Z",
       "endUtc": "2026-09-12T12:20:00.000Z",
       "durationMin": 40,
       "venue": "Misano World Circuit Marco Simoncelli",
@@ -5479,7 +5239,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_san_marino_s75",
+      "id": "motogp_2026_san_marino_s63",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Tissot Sprint",
@@ -5559,7 +5319,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_san_marino_s76",
+      "id": "motogp_2026_san_marino_s64",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Warm Up",
@@ -5599,7 +5359,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_san_marino_s77",
+      "id": "moto3_2026_san_marino_s65",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Race",
@@ -5639,7 +5399,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_san_marino_s78",
+      "id": "moto2_2026_san_marino_s66",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Race",
@@ -5659,7 +5419,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_san_marino_s79",
+      "id": "motogp_2026_san_marino_s67",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Grand Prix",
@@ -5699,7 +5459,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_austria_s80",
+      "id": "moto3_2026_austria_s68",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 1",
@@ -5719,7 +5479,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_austria_s81",
+      "id": "moto2_2026_austria_s69",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 1",
@@ -5739,7 +5499,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_austria_s82",
+      "id": "motogp_2026_austria_s70",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 1",
@@ -5759,7 +5519,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_austria_s83",
+      "id": "moto3_2026_austria_s71",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Practice",
@@ -5779,7 +5539,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_austria_s84",
+      "id": "moto2_2026_austria_s72",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Practice",
@@ -5799,7 +5559,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_austria_s85",
+      "id": "motogp_2026_austria_s73",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Practice",
@@ -5819,7 +5579,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_austria_s86",
+      "id": "moto3_2026_austria_s74",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 2",
@@ -5839,7 +5599,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_austria_s87",
+      "id": "moto2_2026_austria_s75",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 2",
@@ -5859,7 +5619,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_austria_s88",
+      "id": "motogp_2026_austria_s76",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 2",
@@ -5879,35 +5639,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_austria_s89",
+      "id": "motogp_2026_austria_s77",
       "series": "motogp",
       "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_austria",
       "round": null,
       "season": "2026",
       "startUtc": "2026-09-19T08:50:00.000Z",
-      "endUtc": "2026-09-19T09:05:00.000Z",
-      "durationMin": 40,
-      "venue": "Red Bull Ring - Spielberg",
-      "country": "Austria",
-      "countryFlagEmoji": "🇦🇹",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "motogp_2026_austria_s90",
-      "series": "motogp",
-      "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_austria",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-09-19T09:15:00.000Z",
       "endUtc": "2026-09-19T09:30:00.000Z",
       "durationMin": 40,
       "venue": "Red Bull Ring - Spielberg",
@@ -5919,35 +5659,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_austria_s91",
+      "id": "moto3_2026_austria_s78",
       "series": "moto3",
       "leagueName": "Moto3",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_austria",
       "round": null,
       "season": "2026",
       "startUtc": "2026-09-19T10:45:00.000Z",
-      "endUtc": "2026-09-19T11:00:00.000Z",
-      "durationMin": 40,
-      "venue": "Red Bull Ring - Spielberg",
-      "country": "Austria",
-      "countryFlagEmoji": "🇦🇹",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto3_2026_austria_s92",
-      "series": "moto3",
-      "leagueName": "Moto3",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_austria",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-09-19T11:10:00.000Z",
       "endUtc": "2026-09-19T11:25:00.000Z",
       "durationMin": 40,
       "venue": "Red Bull Ring - Spielberg",
@@ -5959,35 +5679,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_austria_s93",
+      "id": "moto2_2026_austria_s79",
       "series": "moto2",
       "leagueName": "Moto2",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_austria",
       "round": null,
       "season": "2026",
       "startUtc": "2026-09-19T11:40:00.000Z",
-      "endUtc": "2026-09-19T11:55:00.000Z",
-      "durationMin": 40,
-      "venue": "Red Bull Ring - Spielberg",
-      "country": "Austria",
-      "countryFlagEmoji": "🇦🇹",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto2_2026_austria_s94",
-      "series": "moto2",
-      "leagueName": "Moto2",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_austria",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-09-19T12:05:00.000Z",
       "endUtc": "2026-09-19T12:20:00.000Z",
       "durationMin": 40,
       "venue": "Red Bull Ring - Spielberg",
@@ -5999,7 +5699,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_austria_s95",
+      "id": "motogp_2026_austria_s80",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Tissot Sprint",
@@ -6039,7 +5739,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_austria_s96",
+      "id": "motogp_2026_austria_s81",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Warm Up",
@@ -6059,7 +5759,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_austria_s97",
+      "id": "moto3_2026_austria_s82",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Race",
@@ -6079,7 +5779,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_austria_s98",
+      "id": "moto2_2026_austria_s83",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Race",
@@ -6099,7 +5799,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_austria_s99",
+      "id": "motogp_2026_austria_s84",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Grand Prix",
@@ -6459,7 +6159,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_japan_s100",
+      "id": "moto3_2026_japan_s85",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 1",
@@ -6479,7 +6179,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_japan_s101",
+      "id": "moto2_2026_japan_s86",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 1",
@@ -6499,7 +6199,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_japan_s102",
+      "id": "motogp_2026_japan_s87",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 1",
@@ -6519,7 +6219,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_japan_s103",
+      "id": "moto3_2026_japan_s88",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Practice",
@@ -6539,7 +6239,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_japan_s104",
+      "id": "moto2_2026_japan_s89",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Practice",
@@ -6559,7 +6259,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_japan_s105",
+      "id": "motogp_2026_japan_s90",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Practice",
@@ -6579,7 +6279,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_japan_s106",
+      "id": "moto3_2026_japan_s91",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 2",
@@ -6599,7 +6299,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_japan_s107",
+      "id": "moto2_2026_japan_s92",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 2",
@@ -6619,7 +6319,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_japan_s108",
+      "id": "motogp_2026_japan_s93",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 2",
@@ -6639,35 +6339,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_japan_s109",
+      "id": "motogp_2026_japan_s94",
       "series": "motogp",
       "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_japan",
       "round": null,
       "season": "2026",
       "startUtc": "2026-10-02T01:50:00.000Z",
-      "endUtc": "2026-10-02T02:05:00.000Z",
-      "durationMin": 40,
-      "venue": "Mobility Resort Motegi",
-      "country": "Japan",
-      "countryFlagEmoji": "🇯🇵",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "motogp_2026_japan_s110",
-      "series": "motogp",
-      "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_japan",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-10-02T02:15:00.000Z",
       "endUtc": "2026-10-02T02:30:00.000Z",
       "durationMin": 40,
       "venue": "Mobility Resort Motegi",
@@ -6679,35 +6359,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_japan_s111",
+      "id": "moto3_2026_japan_s95",
       "series": "moto3",
       "leagueName": "Moto3",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_japan",
       "round": null,
       "season": "2026",
       "startUtc": "2026-10-02T03:45:00.000Z",
-      "endUtc": "2026-10-02T04:00:00.000Z",
-      "durationMin": 40,
-      "venue": "Mobility Resort Motegi",
-      "country": "Japan",
-      "countryFlagEmoji": "🇯🇵",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto3_2026_japan_s112",
-      "series": "moto3",
-      "leagueName": "Moto3",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_japan",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-10-02T04:10:00.000Z",
       "endUtc": "2026-10-02T04:25:00.000Z",
       "durationMin": 40,
       "venue": "Mobility Resort Motegi",
@@ -6719,35 +6379,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_japan_s113",
+      "id": "moto2_2026_japan_s96",
       "series": "moto2",
       "leagueName": "Moto2",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_japan",
       "round": null,
       "season": "2026",
       "startUtc": "2026-10-02T04:40:00.000Z",
-      "endUtc": "2026-10-02T04:55:00.000Z",
-      "durationMin": 40,
-      "venue": "Mobility Resort Motegi",
-      "country": "Japan",
-      "countryFlagEmoji": "🇯🇵",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto2_2026_japan_s114",
-      "series": "moto2",
-      "leagueName": "Moto2",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_japan",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-10-02T05:05:00.000Z",
       "endUtc": "2026-10-02T05:20:00.000Z",
       "durationMin": 40,
       "venue": "Mobility Resort Motegi",
@@ -6759,7 +6399,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_japan_s115",
+      "id": "motogp_2026_japan_s97",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Tissot Sprint",
@@ -6779,7 +6419,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_japan_s116",
+      "id": "motogp_2026_japan_s98",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Warm Up",
@@ -6799,7 +6439,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_japan_s117",
+      "id": "moto3_2026_japan_s99",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Race",
@@ -6819,7 +6459,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_japan_s118",
+      "id": "moto2_2026_japan_s100",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Race",
@@ -6839,7 +6479,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_japan_s119",
+      "id": "motogp_2026_japan_s101",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Grand Prix",
@@ -6899,7 +6539,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_indonesia_s120",
+      "id": "moto3_2026_indonesia_s102",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 1",
@@ -6919,7 +6559,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_indonesia_s121",
+      "id": "moto2_2026_indonesia_s103",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 1",
@@ -6939,7 +6579,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_indonesia_s122",
+      "id": "motogp_2026_indonesia_s104",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 1",
@@ -6959,7 +6599,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_indonesia_s123",
+      "id": "moto3_2026_indonesia_s105",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Practice",
@@ -6979,7 +6619,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_indonesia_s124",
+      "id": "moto2_2026_indonesia_s106",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Practice",
@@ -6999,7 +6639,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_indonesia_s125",
+      "id": "motogp_2026_indonesia_s107",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Practice",
@@ -7059,7 +6699,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_indonesia_s126",
+      "id": "moto3_2026_indonesia_s108",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 2",
@@ -7079,7 +6719,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_indonesia_s127",
+      "id": "moto2_2026_indonesia_s109",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 2",
@@ -7099,7 +6739,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_indonesia_s128",
+      "id": "motogp_2026_indonesia_s110",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 2",
@@ -7119,35 +6759,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_indonesia_s129",
+      "id": "motogp_2026_indonesia_s111",
       "series": "motogp",
       "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_indonesia",
       "round": null,
       "season": "2026",
       "startUtc": "2026-10-10T02:50:00.000Z",
-      "endUtc": "2026-10-10T03:05:00.000Z",
-      "durationMin": 40,
-      "venue": "Pertamina Mandalika International Circuit",
-      "country": "Indonesia",
-      "countryFlagEmoji": "🇮🇩",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "motogp_2026_indonesia_s130",
-      "series": "motogp",
-      "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_indonesia",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-10-10T03:15:00.000Z",
       "endUtc": "2026-10-10T03:30:00.000Z",
       "durationMin": 40,
       "venue": "Pertamina Mandalika International Circuit",
@@ -7159,35 +6779,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_indonesia_s131",
+      "id": "moto3_2026_indonesia_s112",
       "series": "moto3",
       "leagueName": "Moto3",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_indonesia",
       "round": null,
       "season": "2026",
       "startUtc": "2026-10-10T04:45:00.000Z",
-      "endUtc": "2026-10-10T05:00:00.000Z",
-      "durationMin": 40,
-      "venue": "Pertamina Mandalika International Circuit",
-      "country": "Indonesia",
-      "countryFlagEmoji": "🇮🇩",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto3_2026_indonesia_s132",
-      "series": "moto3",
-      "leagueName": "Moto3",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_indonesia",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-10-10T05:10:00.000Z",
       "endUtc": "2026-10-10T05:25:00.000Z",
       "durationMin": 40,
       "venue": "Pertamina Mandalika International Circuit",
@@ -7199,35 +6799,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_indonesia_s133",
+      "id": "moto2_2026_indonesia_s113",
       "series": "moto2",
       "leagueName": "Moto2",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_indonesia",
       "round": null,
       "season": "2026",
       "startUtc": "2026-10-10T05:40:00.000Z",
-      "endUtc": "2026-10-10T05:55:00.000Z",
-      "durationMin": 40,
-      "venue": "Pertamina Mandalika International Circuit",
-      "country": "Indonesia",
-      "countryFlagEmoji": "🇮🇩",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto2_2026_indonesia_s134",
-      "series": "moto2",
-      "leagueName": "Moto2",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_indonesia",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-10-10T06:05:00.000Z",
       "endUtc": "2026-10-10T06:20:00.000Z",
       "durationMin": 40,
       "venue": "Pertamina Mandalika International Circuit",
@@ -7239,7 +6819,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_indonesia_s135",
+      "id": "motogp_2026_indonesia_s114",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Tissot Sprint",
@@ -7299,7 +6879,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_indonesia_s136",
+      "id": "motogp_2026_indonesia_s115",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Warm Up",
@@ -7319,7 +6899,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_indonesia_s137",
+      "id": "moto3_2026_indonesia_s116",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Race",
@@ -7339,7 +6919,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_indonesia_s138",
+      "id": "moto2_2026_indonesia_s117",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Race",
@@ -7359,7 +6939,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_indonesia_s139",
+      "id": "motogp_2026_indonesia_s118",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Grand Prix",
@@ -7439,7 +7019,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_australia_s140",
+      "id": "moto3_2026_australia_s119",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 1",
@@ -7459,7 +7039,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_australia_s141",
+      "id": "moto2_2026_australia_s120",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 1",
@@ -7479,7 +7059,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_australia_s142",
+      "id": "motogp_2026_australia_s121",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 1",
@@ -7539,7 +7119,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_australia_s143",
+      "id": "moto3_2026_australia_s122",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Practice",
@@ -7559,7 +7139,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_australia_s144",
+      "id": "moto2_2026_australia_s123",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Practice",
@@ -7579,7 +7159,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_australia_s145",
+      "id": "motogp_2026_australia_s124",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Practice",
@@ -7599,7 +7179,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_australia_s146",
+      "id": "moto3_2026_australia_s125",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 2",
@@ -7619,7 +7199,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_australia_s147",
+      "id": "moto2_2026_australia_s126",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 2",
@@ -7639,7 +7219,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_australia_s148",
+      "id": "motogp_2026_australia_s127",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 2",
@@ -7659,16 +7239,16 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_australia_s149",
+      "id": "motogp_2026_australia_s128",
       "series": "motogp",
       "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_australia",
       "round": null,
       "season": "2026",
       "startUtc": "2026-10-22T23:50:00.000Z",
-      "endUtc": "2026-10-23T00:05:00.000Z",
+      "endUtc": "2026-10-23T00:30:00.000Z",
       "durationMin": 40,
       "venue": "Phillip Island",
       "country": "Australia",
@@ -7739,55 +7319,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_australia_s150",
-      "series": "motogp",
-      "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_australia",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-10-23T00:15:00.000Z",
-      "endUtc": "2026-10-23T00:30:00.000Z",
-      "durationMin": 40,
-      "venue": "Phillip Island",
-      "country": "Australia",
-      "countryFlagEmoji": "🇦🇺",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto3_2026_australia_s151",
+      "id": "moto3_2026_australia_s129",
       "series": "moto3",
       "leagueName": "Moto3",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_australia",
       "round": null,
       "season": "2026",
       "startUtc": "2026-10-23T01:45:00.000Z",
-      "endUtc": "2026-10-23T02:00:00.000Z",
-      "durationMin": 40,
-      "venue": "Phillip Island",
-      "country": "Australia",
-      "countryFlagEmoji": "🇦🇺",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto3_2026_australia_s152",
-      "series": "moto3",
-      "leagueName": "Moto3",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_australia",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-10-23T02:10:00.000Z",
       "endUtc": "2026-10-23T02:25:00.000Z",
       "durationMin": 40,
       "venue": "Phillip Island",
@@ -7799,35 +7339,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_australia_s153",
+      "id": "moto2_2026_australia_s130",
       "series": "moto2",
       "leagueName": "Moto2",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_australia",
       "round": null,
       "season": "2026",
       "startUtc": "2026-10-23T02:40:00.000Z",
-      "endUtc": "2026-10-23T02:55:00.000Z",
-      "durationMin": 40,
-      "venue": "Phillip Island",
-      "country": "Australia",
-      "countryFlagEmoji": "🇦🇺",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto2_2026_australia_s154",
-      "series": "moto2",
-      "leagueName": "Moto2",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_australia",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-10-23T03:05:00.000Z",
       "endUtc": "2026-10-23T03:20:00.000Z",
       "durationMin": 40,
       "venue": "Phillip Island",
@@ -7839,7 +7359,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_australia_s155",
+      "id": "motogp_2026_australia_s131",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Tissot Sprint",
@@ -7899,7 +7419,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_australia_s156",
+      "id": "motogp_2026_australia_s132",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Warm Up",
@@ -7919,7 +7439,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_australia_s157",
+      "id": "moto3_2026_australia_s133",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Race",
@@ -7959,7 +7479,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_australia_s158",
+      "id": "moto2_2026_australia_s134",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Race",
@@ -7979,7 +7499,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_australia_s159",
+      "id": "motogp_2026_australia_s135",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Grand Prix",
@@ -8079,7 +7599,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_malaysia_s160",
+      "id": "moto3_2026_malaysia_s136",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 1",
@@ -8099,7 +7619,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_malaysia_s161",
+      "id": "moto2_2026_malaysia_s137",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 1",
@@ -8119,7 +7639,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_malaysia_s162",
+      "id": "motogp_2026_malaysia_s138",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 1",
@@ -8139,7 +7659,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_malaysia_s163",
+      "id": "moto3_2026_malaysia_s139",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Practice",
@@ -8159,7 +7679,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_malaysia_s164",
+      "id": "moto2_2026_malaysia_s140",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Practice",
@@ -8179,7 +7699,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_malaysia_s165",
+      "id": "motogp_2026_malaysia_s141",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Practice",
@@ -8239,7 +7759,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_malaysia_s166",
+      "id": "moto3_2026_malaysia_s142",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 2",
@@ -8259,7 +7779,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_malaysia_s167",
+      "id": "moto2_2026_malaysia_s143",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 2",
@@ -8279,7 +7799,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_malaysia_s168",
+      "id": "motogp_2026_malaysia_s144",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 2",
@@ -8299,35 +7819,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_malaysia_s169",
+      "id": "motogp_2026_malaysia_s145",
       "series": "motogp",
       "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_malaysia",
       "round": null,
       "season": "2026",
       "startUtc": "2026-10-31T02:50:00.000Z",
-      "endUtc": "2026-10-31T03:05:00.000Z",
-      "durationMin": 40,
-      "venue": "Petronas Sepang International Circuit",
-      "country": "Malaysia",
-      "countryFlagEmoji": "🇲🇾",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "motogp_2026_malaysia_s170",
-      "series": "motogp",
-      "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_malaysia",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-10-31T03:15:00.000Z",
       "endUtc": "2026-10-31T03:30:00.000Z",
       "durationMin": 40,
       "venue": "Petronas Sepang International Circuit",
@@ -8339,35 +7839,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_malaysia_s171",
+      "id": "moto3_2026_malaysia_s146",
       "series": "moto3",
       "leagueName": "Moto3",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_malaysia",
       "round": null,
       "season": "2026",
       "startUtc": "2026-10-31T04:45:00.000Z",
-      "endUtc": "2026-10-31T05:00:00.000Z",
-      "durationMin": 40,
-      "venue": "Petronas Sepang International Circuit",
-      "country": "Malaysia",
-      "countryFlagEmoji": "🇲🇾",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto3_2026_malaysia_s172",
-      "series": "moto3",
-      "leagueName": "Moto3",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_malaysia",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-10-31T05:10:00.000Z",
       "endUtc": "2026-10-31T05:25:00.000Z",
       "durationMin": 40,
       "venue": "Petronas Sepang International Circuit",
@@ -8379,35 +7859,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_malaysia_s173",
+      "id": "moto2_2026_malaysia_s147",
       "series": "moto2",
       "leagueName": "Moto2",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_malaysia",
       "round": null,
       "season": "2026",
       "startUtc": "2026-10-31T05:40:00.000Z",
-      "endUtc": "2026-10-31T05:55:00.000Z",
-      "durationMin": 40,
-      "venue": "Petronas Sepang International Circuit",
-      "country": "Malaysia",
-      "countryFlagEmoji": "🇲🇾",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto2_2026_malaysia_s174",
-      "series": "moto2",
-      "leagueName": "Moto2",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_malaysia",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-10-31T06:05:00.000Z",
       "endUtc": "2026-10-31T06:20:00.000Z",
       "durationMin": 40,
       "venue": "Petronas Sepang International Circuit",
@@ -8419,7 +7879,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_malaysia_s175",
+      "id": "motogp_2026_malaysia_s148",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Tissot Sprint",
@@ -8479,7 +7939,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_malaysia_s176",
+      "id": "motogp_2026_malaysia_s149",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Warm Up",
@@ -8499,7 +7959,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_malaysia_s177",
+      "id": "moto3_2026_malaysia_s150",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Race",
@@ -8519,7 +7979,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_malaysia_s178",
+      "id": "moto2_2026_malaysia_s151",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Race",
@@ -8539,7 +7999,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_malaysia_s179",
+      "id": "motogp_2026_malaysia_s152",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Grand Prix",
@@ -8699,7 +8159,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_qatar_s180",
+      "id": "moto3_2026_qatar_s153",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 1",
@@ -8719,7 +8179,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_qatar_s181",
+      "id": "moto2_2026_qatar_s154",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 1",
@@ -8739,7 +8199,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_qatar_s182",
+      "id": "motogp_2026_qatar_s155",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 1",
@@ -8759,7 +8219,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_qatar_s183",
+      "id": "moto3_2026_qatar_s156",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Practice",
@@ -8799,7 +8259,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_qatar_s184",
+      "id": "moto2_2026_qatar_s157",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Practice",
@@ -8819,7 +8279,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_qatar_s185",
+      "id": "motogp_2026_qatar_s158",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Practice",
@@ -8879,7 +8339,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_qatar_s186",
+      "id": "moto3_2026_qatar_s159",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 2",
@@ -8899,7 +8359,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_qatar_s187",
+      "id": "moto2_2026_qatar_s160",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 2",
@@ -8919,7 +8379,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_qatar_s188",
+      "id": "motogp_2026_qatar_s161",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 2",
@@ -8939,35 +8399,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_qatar_s189",
+      "id": "motogp_2026_qatar_s162",
       "series": "motogp",
       "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_qatar",
       "round": null,
       "season": "2026",
       "startUtc": "2026-11-07T12:40:00.000Z",
-      "endUtc": "2026-11-07T12:55:00.000Z",
-      "durationMin": 40,
-      "venue": "Lusail International Circuit",
-      "country": "Qatar",
-      "countryFlagEmoji": "🇶🇦",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "motogp_2026_qatar_s190",
-      "series": "motogp",
-      "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_qatar",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-11-07T13:05:00.000Z",
       "endUtc": "2026-11-07T13:20:00.000Z",
       "durationMin": 40,
       "venue": "Lusail International Circuit",
@@ -8999,35 +8439,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_qatar_s191",
+      "id": "moto3_2026_qatar_s163",
       "series": "moto3",
       "leagueName": "Moto3",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_qatar",
       "round": null,
       "season": "2026",
       "startUtc": "2026-11-07T14:45:00.000Z",
-      "endUtc": "2026-11-07T15:00:00.000Z",
-      "durationMin": 40,
-      "venue": "Lusail International Circuit",
-      "country": "Qatar",
-      "countryFlagEmoji": "🇶🇦",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto3_2026_qatar_s192",
-      "series": "moto3",
-      "leagueName": "Moto3",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_qatar",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-11-07T15:10:00.000Z",
       "endUtc": "2026-11-07T15:25:00.000Z",
       "durationMin": 40,
       "venue": "Lusail International Circuit",
@@ -9039,35 +8459,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_qatar_s193",
+      "id": "moto2_2026_qatar_s164",
       "series": "moto2",
       "leagueName": "Moto2",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_qatar",
       "round": null,
       "season": "2026",
       "startUtc": "2026-11-07T15:40:00.000Z",
-      "endUtc": "2026-11-07T15:55:00.000Z",
-      "durationMin": 40,
-      "venue": "Lusail International Circuit",
-      "country": "Qatar",
-      "countryFlagEmoji": "🇶🇦",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto2_2026_qatar_s194",
-      "series": "moto2",
-      "leagueName": "Moto2",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_qatar",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-11-07T16:05:00.000Z",
       "endUtc": "2026-11-07T16:20:00.000Z",
       "durationMin": 40,
       "venue": "Lusail International Circuit",
@@ -9079,7 +8479,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_qatar_s195",
+      "id": "motogp_2026_qatar_s165",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Tissot Sprint",
@@ -9139,7 +8539,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_qatar_s196",
+      "id": "motogp_2026_qatar_s166",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Warm Up",
@@ -9159,7 +8559,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_qatar_s197",
+      "id": "moto3_2026_qatar_s167",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Race",
@@ -9179,7 +8579,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_qatar_s198",
+      "id": "moto2_2026_qatar_s168",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Race",
@@ -9199,7 +8599,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_qatar_s199",
+      "id": "motogp_2026_qatar_s169",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Grand Prix",
@@ -9279,7 +8679,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_portugal_s200",
+      "id": "moto3_2026_portugal_s170",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 1",
@@ -9299,7 +8699,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_portugal_s201",
+      "id": "moto2_2026_portugal_s171",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 1",
@@ -9319,7 +8719,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_portugal_s202",
+      "id": "motogp_2026_portugal_s172",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 1",
@@ -9339,7 +8739,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_portugal_s203",
+      "id": "moto3_2026_portugal_s173",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Practice",
@@ -9359,7 +8759,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_portugal_s204",
+      "id": "moto2_2026_portugal_s174",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Practice",
@@ -9379,7 +8779,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_portugal_s205",
+      "id": "motogp_2026_portugal_s175",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Practice",
@@ -9439,7 +8839,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_portugal_s206",
+      "id": "moto3_2026_portugal_s176",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 2",
@@ -9459,7 +8859,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_portugal_s207",
+      "id": "moto2_2026_portugal_s177",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 2",
@@ -9479,7 +8879,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_portugal_s208",
+      "id": "motogp_2026_portugal_s178",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 2",
@@ -9499,35 +8899,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_portugal_s209",
+      "id": "motogp_2026_portugal_s179",
       "series": "motogp",
       "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_portugal",
       "round": null,
       "season": "2026",
       "startUtc": "2026-11-21T10:50:00.000Z",
-      "endUtc": "2026-11-21T11:05:00.000Z",
-      "durationMin": 40,
-      "venue": "Autódromo Internacional do Algarve",
-      "country": "Portugal",
-      "countryFlagEmoji": "🇵🇹",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "motogp_2026_portugal_s210",
-      "series": "motogp",
-      "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_portugal",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-11-21T11:15:00.000Z",
       "endUtc": "2026-11-21T11:30:00.000Z",
       "durationMin": 40,
       "venue": "Autódromo Internacional do Algarve",
@@ -9539,35 +8919,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_portugal_s211",
+      "id": "moto3_2026_portugal_s180",
       "series": "moto3",
       "leagueName": "Moto3",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_portugal",
       "round": null,
       "season": "2026",
       "startUtc": "2026-11-21T12:45:00.000Z",
-      "endUtc": "2026-11-21T13:00:00.000Z",
-      "durationMin": 40,
-      "venue": "Autódromo Internacional do Algarve",
-      "country": "Portugal",
-      "countryFlagEmoji": "🇵🇹",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto3_2026_portugal_s212",
-      "series": "moto3",
-      "leagueName": "Moto3",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_portugal",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-11-21T13:10:00.000Z",
       "endUtc": "2026-11-21T13:25:00.000Z",
       "durationMin": 40,
       "venue": "Autódromo Internacional do Algarve",
@@ -9579,35 +8939,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_portugal_s213",
+      "id": "moto2_2026_portugal_s181",
       "series": "moto2",
       "leagueName": "Moto2",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_portugal",
       "round": null,
       "season": "2026",
       "startUtc": "2026-11-21T13:40:00.000Z",
-      "endUtc": "2026-11-21T13:55:00.000Z",
-      "durationMin": 40,
-      "venue": "Autódromo Internacional do Algarve",
-      "country": "Portugal",
-      "countryFlagEmoji": "🇵🇹",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto2_2026_portugal_s214",
-      "series": "moto2",
-      "leagueName": "Moto2",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_portugal",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-11-21T14:05:00.000Z",
       "endUtc": "2026-11-21T14:20:00.000Z",
       "durationMin": 40,
       "venue": "Autódromo Internacional do Algarve",
@@ -9619,7 +8959,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_portugal_s215",
+      "id": "motogp_2026_portugal_s182",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Tissot Sprint",
@@ -9659,7 +8999,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_portugal_s216",
+      "id": "motogp_2026_portugal_s183",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Warm Up",
@@ -9679,7 +9019,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_portugal_s217",
+      "id": "moto2_2026_portugal_s184",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Race",
@@ -9699,7 +9039,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_portugal_s218",
+      "id": "motogp_2026_portugal_s185",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Grand Prix",
@@ -9719,7 +9059,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_portugal_s219",
+      "id": "moto3_2026_portugal_s186",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Race",
@@ -9739,7 +9079,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_valencia_s220",
+      "id": "moto3_2026_valencia_s187",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 1",
@@ -9759,7 +9099,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_valencia_s221",
+      "id": "moto2_2026_valencia_s188",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 1",
@@ -9799,7 +9139,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_valencia_s222",
+      "id": "motogp_2026_valencia_s189",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 1",
@@ -9819,7 +9159,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_valencia_s223",
+      "id": "moto3_2026_valencia_s190",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Practice",
@@ -9859,7 +9199,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_valencia_s224",
+      "id": "moto2_2026_valencia_s191",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Practice",
@@ -9899,7 +9239,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_valencia_s225",
+      "id": "motogp_2026_valencia_s192",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Practice",
@@ -9959,7 +9299,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_valencia_s226",
+      "id": "moto3_2026_valencia_s193",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Free Practice Nr. 2",
@@ -9979,7 +9319,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_valencia_s227",
+      "id": "moto2_2026_valencia_s194",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Free Practice Nr. 2",
@@ -9999,7 +9339,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_valencia_s228",
+      "id": "motogp_2026_valencia_s195",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Free Practice Nr. 2",
@@ -10019,35 +9359,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_valencia_s229",
+      "id": "motogp_2026_valencia_s196",
       "series": "motogp",
       "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_valencia",
       "round": null,
       "season": "2026",
       "startUtc": "2026-11-28T09:50:00.000Z",
-      "endUtc": "2026-11-28T10:05:00.000Z",
-      "durationMin": 40,
-      "venue": "Circuit Ricardo Tormo",
-      "country": "Spain",
-      "countryFlagEmoji": "🇪🇸",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "motogp_2026_valencia_s230",
-      "series": "motogp",
-      "leagueName": "MotoGP",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_valencia",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-11-28T10:15:00.000Z",
       "endUtc": "2026-11-28T10:30:00.000Z",
       "durationMin": 40,
       "venue": "Circuit Ricardo Tormo",
@@ -10059,35 +9379,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_valencia_s231",
+      "id": "moto3_2026_valencia_s197",
       "series": "moto3",
       "leagueName": "Moto3",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_valencia",
       "round": null,
       "season": "2026",
       "startUtc": "2026-11-28T11:45:00.000Z",
-      "endUtc": "2026-11-28T12:00:00.000Z",
-      "durationMin": 40,
-      "venue": "Circuit Ricardo Tormo",
-      "country": "Spain",
-      "countryFlagEmoji": "🇪🇸",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto3_2026_valencia_s232",
-      "series": "moto3",
-      "leagueName": "Moto3",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_valencia",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-11-28T12:10:00.000Z",
       "endUtc": "2026-11-28T12:25:00.000Z",
       "durationMin": 40,
       "venue": "Circuit Ricardo Tormo",
@@ -10099,35 +9399,15 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_valencia_s233",
+      "id": "moto2_2026_valencia_s198",
       "series": "moto2",
       "leagueName": "Moto2",
-      "name": "Qualifying Nr. 1",
+      "name": "Qualifying",
       "sessionType": "qualifying",
       "eventKey": "2026_motogp_valencia",
       "round": null,
       "season": "2026",
       "startUtc": "2026-11-28T12:40:00.000Z",
-      "endUtc": "2026-11-28T12:55:00.000Z",
-      "durationMin": 40,
-      "venue": "Circuit Ricardo Tormo",
-      "country": "Spain",
-      "countryFlagEmoji": "🇪🇸",
-      "city": null,
-      "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "moto2_2026_valencia_s234",
-      "series": "moto2",
-      "leagueName": "Moto2",
-      "name": "Qualifying Nr. 2",
-      "sessionType": "qualifying",
-      "eventKey": "2026_motogp_valencia",
-      "round": null,
-      "season": "2026",
-      "startUtc": "2026-11-28T13:05:00.000Z",
       "endUtc": "2026-11-28T13:20:00.000Z",
       "durationMin": 40,
       "venue": "Circuit Ricardo Tormo",
@@ -10139,7 +9419,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_valencia_s235",
+      "id": "motogp_2026_valencia_s199",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Tissot Sprint",
@@ -10219,7 +9499,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_valencia_s236",
+      "id": "motogp_2026_valencia_s200",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Warm Up",
@@ -10239,7 +9519,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto3_2026_valencia_s237",
+      "id": "moto3_2026_valencia_s201",
       "series": "moto3",
       "leagueName": "Moto3",
       "name": "Race",
@@ -10259,7 +9539,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "moto2_2026_valencia_s238",
+      "id": "moto2_2026_valencia_s202",
       "series": "moto2",
       "leagueName": "Moto2",
       "name": "Race",
@@ -10279,7 +9559,7 @@
       "isEstimatedEnd": true
     },
     {
-      "id": "motogp_2026_valencia_s239",
+      "id": "motogp_2026_valencia_s203",
       "series": "motogp",
       "leagueName": "MotoGP",
       "name": "Grand Prix",

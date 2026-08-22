@@ -144,6 +144,16 @@ function BlockBody(p: BodyProps) {
 
 /* --- shared fragments ------------------------------------------------- */
 
+/** Black/white text that contrasts on a series hex color (YIQ luminance). */
+function contrastText(hex: string | undefined): string {
+  if (!hex || hex.length < 7) return "#fff";
+  const h = hex.replace("#", "");
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return (r * 299 + g * 587 + b * 114) / 1000 >= 150 ? "#141414" : "#ffffff";
+}
+
 function TypeBadge({ label, color }: { label: string; color?: string }) {
   return (
     <span
@@ -372,19 +382,24 @@ function ToplineBody(p: BodyProps) {
 /* --- solid (solid header band + light body) ---------------------------- */
 
 function SolidBody(p: BodyProps) {
+  const headerInk = contrastText(SERIES_BY_ID[p.session.series]?.color);
   return (
     <div
       className="flex h-full flex-col overflow-hidden rounded-md"
       style={{
-        background: "var(--panel)",
-        boxShadow: "inset 0 0 0 1px var(--border)",
+        background: p.isOther
+          ? "var(--panel)"
+          : "color-mix(in srgb, var(--sc) 7%, var(--panel))",
+        boxShadow: `inset 0 0 0 1px color-mix(in srgb, ${
+          p.isOther ? "var(--border)" : "var(--sc-text)"
+        } 45%, transparent)`,
       }}
     >
       <div
         className="flex shrink-0 items-center justify-between gap-1 px-1.5 py-[2px]"
         style={{
           background: p.isOther ? "var(--muted)" : "var(--sc)",
-          color: "#fff",
+          color: headerInk,
         }}
       >
         <span className="truncate text-[9px] font-bold uppercase leading-[12px] tracking-wider">
@@ -392,24 +407,32 @@ function SolidBody(p: BodyProps) {
         </span>
         <span className="shrink-0 font-mono text-[9px] font-bold leading-none">{p.seriesLabel}</span>
       </div>
-      <div className="flex min-h-0 flex-1 flex-col justify-center gap-[2px] px-1.5 py-[2px]">
-        <div className="truncate text-[11px] font-semibold leading-tight text-[var(--foreground)]">
-          {p.session.name}
-        </div>
-        {p.micro ? (
+      {p.micro ? (
+        // Micro: badge serie + tipo + orario sulla STESSA riga → niente tagli
+        // anche quando l'header solid occupa metà del blocco.
+        <div className="flex min-h-0 flex-1 items-center gap-1 px-1.5">
           <span
-            className="shrink-0 font-mono text-[11px] font-bold leading-none tabular-nums"
+            className="shrink-0 truncate font-mono text-[11px] font-bold leading-none tabular-nums"
             style={{ color: "var(--foreground)" }}
           >
             {p.startLabel}
           </span>
-        ) : (
-          <>
-            <TimeRow start={p.startLabel} end={p.endLabel} />
-            {!p.compact && <VenueRow venue={p.session.venue} />}
-          </>
-        )}
-      </div>
+          <span
+            className="min-w-0 truncate text-[9px] font-bold uppercase leading-[12px]"
+            style={{ color: "var(--muted)" }}
+          >
+            {p.seriesLabel}
+          </span>
+        </div>
+      ) : (
+        <div className="flex min-h-0 flex-1 flex-col justify-center gap-[2px] px-1.5 py-[2px]">
+          <div className="truncate text-[11px] font-semibold leading-tight text-[var(--foreground)]">
+            {p.session.name}
+          </div>
+          <TimeRow start={p.startLabel} end={p.endLabel} />
+          {!p.compact && <VenueRow venue={p.session.venue} />}
+        </div>
+      )}
     </div>
   );
 }

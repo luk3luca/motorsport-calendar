@@ -192,6 +192,17 @@ async function main(): Promise<void> {
       d.setUTCDate(d.getUTCDate() + dayOff);
       const dayDate = d.toISOString().slice(0, 10);
 
+      // Sessions of this day/categoria prepared for emission (before merging)
+      const prepared: {
+        seriesId: SeriesId;
+        leagueName: string;
+        name: string;
+        sessionType: Session["sessionType"];
+        durationMin: number;
+        startUtc: string;
+        endUtc: string;
+      }[] = [];
+
       for (const sess of day.sessions) {
         // Filter ceremonial sessions
         if (CEREMONIAL.has(sess.name.toLowerCase())) continue;
@@ -221,20 +232,54 @@ async function main(): Promise<void> {
           endUtc = new Date(Date.parse(startUtc) + durationMin * 60_000).toISOString();
         }
 
-        const country = matchTrack(event.track, TRACK_COUNTRY) as { name: string; code: string } | null;
-
-        newSessions.push({
-          id: makeId(seriesId, YEAR, eventSlug, globalIdx++),
-          series: seriesId,
+        prepared.push({
+          seriesId,
           leagueName: CATEGORY_LEAGUE[sess.category] ?? seriesId.toUpperCase(),
           name: sess.name,
           sessionType,
+          durationMin,
+          startUtc,
+          endUtc,
+        });
+      }
+
+      // Merge consecutive qualifying rounds of the same category (Q1 + Q2)
+      // into ONE "Qualifying" block when the gap is ≤ 30 min. Moto* splits
+      // qualifying into two 15-min slots with a short break — as separate
+      // blocks they're too short to render legibly.
+      const mergedPrepared: typeof prepared = [];
+      for (const s of prepared) {
+        const prev = mergedPrepared[mergedPrepared.length - 1];
+        if (
+          prev &&
+          prev.seriesId === s.seriesId &&
+          /qualifying/i.test(prev.name) &&
+          /qualifying/i.test(s.name) &&
+          Date.parse(s.startUtc) - Date.parse(prev.endUtc) <= 30 * 60_000
+        ) {
+          prev.endUtc = s.endUtc;
+          prev.name = "Qualifying";
+          prev.sessionType = "qualifying";
+          continue;
+        }
+        mergedPrepared.push(s);
+      }
+
+      const country = matchTrack(event.track, TRACK_COUNTRY) as { name: string; code: string } | null;
+
+      for (const s of mergedPrepared) {
+        newSessions.push({
+          id: makeId(s.seriesId, YEAR, eventSlug, globalIdx++),
+          series: s.seriesId,
+          leagueName: s.leagueName,
+          name: s.name,
+          sessionType: s.sessionType,
           eventKey: `2026_motogp_${eventSlug}`,
           round: null,
           season: String(YEAR),
-          startUtc,
-          endUtc,
-          durationMin,
+          startUtc: s.startUtc,
+          endUtc: s.endUtc,
+          durationMin: s.durationMin,
           venue: event.track,
           country: country?.name ?? "",
           countryFlagEmoji: country ? flagEmoji(country.code) : "",
