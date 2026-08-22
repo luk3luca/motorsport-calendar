@@ -237,6 +237,7 @@ export default function CalendarShell() {
               tzKey={tzKey}
               sessions={filteredSessions}
               isolatedId={isolatedId}
+              blockStyle={blockStyleProp}
               onSelectSession={(s) => setIsolatedId(s)}
               onClearSelection={() => setIsolatedId(null)}
             />

@@ -9,11 +9,25 @@ import type { LayoutInfo } from "@/lib/layout";
 import type { Session, SeriesId } from "@/types";
 import type { BlockStyle } from "./block-styles";
 
-/** Deterministic per-series style assignment (stable across renders) */
-export function styleForSeries(series: string, styles: BlockStyle[]): BlockStyle {
-  let h = 0;
-  for (let i = 0; i < series.length; i++) h = (h * 31 + series.charCodeAt(i)) | 0;
-  return styles[Math.abs(h) % styles.length];
+/** Deliberate per-series style assignment for the compare mode (accent = mix). */
+const SERIES_STYLE_MAP: Record<string, BlockStyle> = {
+  f1: "solid", // F1: solid header band, Google-Calendar-like
+  f2: "tint",
+  f3: "topline",
+  f1_academy: "accent",
+  motogp: "accent",
+  moto2: "tint",
+  moto3: "topline",
+  formula_e: "accent",
+  indycar: "solid",
+  wec: "tint",
+  nascar: "topline",
+  dtm: "accent",
+  imsa: "solid",
+};
+
+export function styleForSeries(series: string): BlockStyle {
+  return SERIES_STYLE_MAP[series] ?? "accent";
 }
 
 export default function SessionBlock({
@@ -85,7 +99,7 @@ export default function SessionBlock({
       title={`${session.name}\n${series.label} ${SESSION_TYPE_LABEL[session.sessionType]}\n${startLabel}-${endLabel}\n${session.venue}`}
     >
       <BlockBody
-        style={blockStyle ?? styleForSeries(session.series, ["accent", "tint", "topline", "solid"])}
+        style={blockStyle ?? styleForSeries(session.series)}
         session={session}
         seriesLabel={series.shortLabel}
         startLabel={startLabel}
