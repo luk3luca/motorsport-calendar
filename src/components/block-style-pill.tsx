@@ -1,17 +1,22 @@
 "use client";
 
-import { BLOCK_STYLES, BLOCK_STYLE_LABEL, useBlockStyle, type BlockStyle } from "./block-styles";
+import { BLOCK_STYLES, BLOCK_STYLE_LABEL, type BlockStyle } from "./block-styles";
 
 /**
  * Floating style-switcher (bottom-right) for the block-restyle experiment.
  * Cycles through the variants globally; ?blocks=<id> also works.
+ * State lives in CalendarShell (single source of truth) and is passed down.
  */
-export default function BlockStylePill() {
-  const [style, setStyle] = useBlockStyle();
-
+export default function BlockStylePill({
+  style,
+  onSet,
+}: {
+  style: BlockStyle;
+  onSet: (v: BlockStyle) => void;
+}) {
   const cycle = () => {
     const idx = BLOCK_STYLES.indexOf(style);
-    setStyle(BLOCK_STYLES[(idx + 1) % BLOCK_STYLES.length]);
+    onSet(BLOCK_STYLES[(idx + 1) % BLOCK_STYLES.length]);
   };
 
   return (
@@ -21,7 +26,7 @@ export default function BlockStylePill() {
           <button
             key={s}
             type="button"
-            onClick={() => setStyle(s)}
+            onClick={() => onSet(s)}
             title={BLOCK_STYLE_LABEL[s]}
             className={`px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider transition-colors ${
               style === s

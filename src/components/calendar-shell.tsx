@@ -37,10 +37,9 @@ export default function CalendarShell() {
   // fixed offset instead, the choice is stored and respected on later visits.
   const [localActive, setLocalActive] = useState<boolean>(true);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [blockStyle, setBlockStyleState] = useBlockStyle();
+  const [blockStyle, setBlockStyle] = useBlockStyle();
   // undefined = per-series variant mix (compare mode); a value = global override
   const blockStyleProp = blockStyle === "accent" ? undefined : blockStyle;
-  void setBlockStyleState;
 
   useEffect(() => {
     const storedTz = window.localStorage.getItem(TZ_STORAGE_KEY);
@@ -251,7 +250,7 @@ export default function CalendarShell() {
         </footer>
       </div>
 
-      <BlockStylePill />
+      <BlockStylePill style={blockStyle} onSet={setBlockStyle} />
     </div>
   );
 }
