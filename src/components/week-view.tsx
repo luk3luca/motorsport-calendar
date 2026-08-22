@@ -21,6 +21,7 @@ export default function WeekView({
   tzKey,
   sessions,
   isolatedId,
+  blockStyle,
   onSelectSession,
   onClearSelection,
 }: {
@@ -30,6 +31,7 @@ export default function WeekView({
   tzKey?: string;
   sessions: Session[];
   isolatedId: string | null;
+  blockStyle?: import("@/components/block-styles").BlockStyle;
   onSelectSession: (series: SeriesId, eventKey: string) => void;
   onClearSelection: () => void;
 }) {
@@ -220,6 +222,7 @@ export default function WeekView({
                       hourInfos={hourInfos}
                       offsetMin={offsetMin}
                       isolatedId={isolatedId}
+                      blockStyle={blockStyle}
                       onSelect={onSelectSession}
                     />
                   );

@@ -7,6 +7,14 @@ import { formatTime, getSessionPosition } from "@/lib/timezone";
 import type { HourInfo } from "@/lib/timezone";
 import type { LayoutInfo } from "@/lib/layout";
 import type { Session, SeriesId } from "@/types";
+import type { BlockStyle } from "./block-styles";
+
+/** Deterministic per-series style assignment (stable across renders) */
+export function styleForSeries(series: string, styles: BlockStyle[]): BlockStyle {
+  let h = 0;
+  for (let i = 0; i < series.length; i++) h = (h * 31 + series.charCodeAt(i)) | 0;
+  return styles[Math.abs(h) % styles.length];
+}
 
 export default function SessionBlock({
   session,
@@ -16,6 +24,7 @@ export default function SessionBlock({
   offsetMin,
   isolatedId,
   onSelect,
+  blockStyle,
 }: {
   session: Session;
   layout: LayoutInfo;
@@ -24,6 +33,8 @@ export default function SessionBlock({
   offsetMin: number;
   isolatedId: string | null;
   onSelect: (series: SeriesId, eventKey: string) => void;
+  /** Global override; when undefined each series keeps its assigned variant. */
+  blockStyle?: BlockStyle;
 }) {
   const series = SERIES_BY_ID[session.series];
   const { top, height } = getSessionPosition(
@@ -45,9 +56,6 @@ export default function SessionBlock({
   const isIsolated = isolatedId !== null;
   const isOther = isIsolated && isolatedId !== session.series;
 
-  // Adapt content density to the available height (20px empty-hour slots vs 90px busy hours).
-  // Thresholds sized so content never clips: badge+name+time ≈ 47-49.5px, all rows ≈ 62px.
-  // micro: time row only; compact: badge + name + time (venue hidden); full: all rows.
   const micro = height < 50;
   const compact = height < 68;
 
@@ -60,118 +68,334 @@ export default function SessionBlock({
         e.stopPropagation();
         onSelect(session.series, session.eventKey);
       }}
-      className="session-block absolute overflow-hidden rounded-md px-1.5 text-left focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--accent)]"
+      className="session-block absolute overflow-hidden text-left focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--accent)]"
       style={
         {
           top,
           height,
           left: `calc(${leftPct}% + 3px)`,
           width: `calc(${widthPct}% - 6px)`,
-          background: isOther
-            ? "color-mix(in srgb, var(--muted) 25%, transparent)"
-            : `color-mix(in srgb, var(--sc-text) 13%, transparent)`,
-          borderLeft: `3px solid ${isOther ? "var(--border)" : "var(--sc-text)"}`,
           opacity: isOther ? 0.4 : 1,
           filter: isOther ? "grayscale(1)" : "none",
           cursor: "pointer",
-          boxShadow: `inset 0 0 0 1px ${
-            isOther
-              ? "color-mix(in srgb, var(--muted) 25%, transparent)"
-              : "color-mix(in srgb, var(--sc-text) 18%, transparent)"
-          }`,
           "--sc": series.color,
           "--sc-dark": series.colorDark,
         } as CSSProperties
       }
       title={`${session.name}\n${series.label} ${SESSION_TYPE_LABEL[session.sessionType]}\n${startLabel}-${endLabel}\n${session.venue}`}
     >
-      <div className="flex h-full flex-col justify-center gap-[2px]">
-        {!micro && (
-          <div className="flex items-center gap-1.5 pr-0.5">
-            <span
-              className="shrink-0 rounded-[3px] border px-1 py-px text-[9px] font-bold uppercase leading-[12px] tracking-wider"
-              style={{
-                color: dim,
-                borderColor: isOther
-                  ? "var(--border)"
-                  : "color-mix(in srgb, var(--sc-text) 45%, transparent)",
-              }}
-            >
-              {series.shortLabel}
-            </span>
-            <span
-              className="truncate text-[9px] uppercase leading-[12px] tracking-[0.08em]"
-              style={{ color: "var(--muted)" }}
-            >
-              {SESSION_TYPE_LABEL[session.sessionType]}
-            </span>
-          </div>
-        )}
-        {!micro && (
-          <div
-            className="truncate text-[11px] font-semibold leading-tight"
-            style={{ color: isOther ? "var(--muted)" : "var(--sc-text)" }}
-          >
-            {session.name}
-          </div>
-        )}
-        {micro ? (
-          <div className="flex items-center gap-1">
-            <span
-              className="shrink-0 rounded-[3px] border px-1 py-px text-[8px] font-bold uppercase leading-[11px] tracking-wider"
-              style={{
-                color: dim,
-                borderColor: isOther
-                  ? "var(--border)"
-                  : "color-mix(in srgb, var(--sc-text) 45%, transparent)",
-              }}
-            >
-              {series.shortLabel}
-            </span>
-            <span
-              className="truncate text-[9px] font-bold uppercase leading-[12px] tracking-[0.08em]"
-              style={{ color: dim }}
-            >
-              {SESSION_TYPE_SHORT[session.sessionType]}
-            </span>
-            <span
-              className="ml-auto shrink-0 font-mono text-[11px] font-bold leading-none tabular-nums"
-              style={{ color: isOther ? "var(--muted)" : "var(--foreground)" }}
-            >
-              {startLabel}
-            </span>
-          </div>
-        ) : (
-          <div className="flex items-baseline gap-1 font-mono tabular-nums">
-            <span
-              className="shrink-0 font-bold leading-none text-[13px] md:text-sm"
-              style={{ color: isOther ? "var(--muted)" : "var(--foreground)" }}
-            >
-              {startLabel}
-            </span>
-            <span
-              className="shrink-0 text-[9px] leading-none"
-              style={{ color: "var(--muted)" }}
-            >
-              →
-            </span>
-            <span
-              className="min-w-0 truncate text-[10px] leading-none"
-              style={{ color: "var(--muted)" }}
-            >
-              {endLabel}
-            </span>
-          </div>
-        )}
-        {!compact && (
-          <div
-            className="truncate text-[10px] leading-tight"
+      <BlockBody
+        style={blockStyle ?? styleForSeries(session.series, ["accent", "tint", "topline", "solid"])}
+        session={session}
+        seriesLabel={series.shortLabel}
+        startLabel={startLabel}
+        endLabel={endLabel}
+        micro={micro}
+        compact={compact}
+        isOther={isOther}
+        dim={dim}
+      />
+    </button>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Variant bodies                                                     */
+/* ------------------------------------------------------------------ */
+
+interface BodyProps {
+  style: BlockStyle;
+  session: Session;
+  seriesLabel: string;
+  startLabel: string;
+  endLabel: string;
+  micro: boolean;
+  compact: boolean;
+  isOther: boolean;
+  dim: string;
+}
+
+function BlockBody(p: BodyProps) {
+  switch (p.style) {
+    case "tint":
+      return <TintBody {...p} />;
+    case "topline":
+      return <ToplineBody {...p} />;
+    case "solid":
+      return <SolidBody {...p} />;
+    default:
+      return <AccentBody {...p} />;
+  }
+}
+
+/* --- shared fragments ------------------------------------------------- */
+
+function TypeBadge({ label, color }: { label: string; color?: string }) {
+  return (
+    <span
+      className="shrink-0 rounded-[3px] border px-1 py-px text-[8px] font-bold uppercase leading-[11px] tracking-wider"
+      style={{ color: color ?? "inherit", borderColor: "currentColor" }}
+    >
+      {label}
+    </span>
+  );
+}
+
+function TimeRow({
+  start,
+  end,
+  big,
+  alignEnd,
+  mutedColor,
+}: {
+  start: string;
+  end: string;
+  big?: boolean;
+  alignEnd?: boolean;
+  mutedColor?: string;
+}) {
+  if (alignEnd) {
+    return (
+      <div className="flex items-center gap-1 font-mono tabular-nums">
+        <span
+          className="shrink-0 font-mono text-[11px] font-bold leading-none tabular-nums"
+          style={{ color: "var(--foreground)" }}
+        >
+          {start}
+        </span>
+        <span
+          className="ml-auto truncate text-[9px] leading-none tabular-nums"
+          style={{ color: mutedColor ?? "var(--muted)" }}
+        >
+          {end}
+        </span>
+      </div>
+    );
+  }
+  return (
+    <div className="flex items-baseline gap-1 font-mono tabular-nums">
+      <span
+        className={`shrink-0 font-bold leading-none ${big ? "text-[13px] md:text-sm" : "text-[11px]"}`}
+        style={{ color: "var(--foreground)" }}
+      >
+        {start}
+      </span>
+      <span className="shrink-0 text-[9px] leading-none text-[var(--muted)]">→</span>
+      <span
+        className="min-w-0 truncate text-[10px] leading-none"
+        style={{ color: mutedColor ?? "var(--muted)" }}
+      >
+        {end}
+      </span>
+    </div>
+  );
+}
+
+function VenueRow({ venue }: { venue: string }) {
+  return (
+    <div className="truncate text-[10px] leading-tight text-[var(--muted)]">{venue}</div>
+  );
+}
+
+/* --- accent (current look) ------------------------------------------- */
+
+function AccentBody(p: BodyProps) {
+  return (
+    <div
+      className="flex h-full flex-col justify-center gap-[2px] rounded-md px-1.5"
+      style={{
+        background: p.isOther
+          ? "color-mix(in srgb, var(--muted) 25%, transparent)"
+          : "color-mix(in srgb, var(--sc-text) 13%, transparent)",
+        borderLeft: `3px solid ${p.isOther ? "var(--border)" : "var(--sc-text)"}`,
+        boxShadow: `inset 0 0 0 1px ${
+          p.isOther
+            ? "color-mix(in srgb, var(--muted) 25%, transparent)"
+            : "color-mix(in srgb, var(--sc-text) 18%, transparent)"
+        }`,
+      }}
+    >
+      {!p.micro && (
+        <div className="flex items-center gap-1.5 pr-0.5">
+          <TypeBadge label={p.seriesLabel} color={p.dim} />
+          <span
+            className="truncate text-[9px] uppercase leading-[12px] tracking-[0.08em]"
             style={{ color: "var(--muted)" }}
           >
-            {session.countryFlagEmoji} {session.venue}
-          </div>
+            {SESSION_TYPE_LABEL[p.session.sessionType]}
+          </span>
+        </div>
+      )}
+      {!p.micro && (
+        <div
+          className="truncate text-[11px] font-semibold leading-tight"
+          style={{ color: p.isOther ? "var(--muted)" : "var(--sc-text)" }}
+        >
+          {p.session.name}
+        </div>
+      )}
+      {p.micro ? (
+        <TimeRow start={p.startLabel} end="" alignEnd />
+      ) : (
+        <TimeRow start={p.startLabel} end={p.endLabel} big={!p.compact} />
+      )}
+      {!p.micro && !p.compact && <VenueRow venue={p.session.venue} />}
+      {!p.micro && p.compact && null}
+      {p.micro && (
+        <div className="flex items-center gap-1">
+          <TypeBadge label={p.seriesLabel} color={p.dim} />
+          <span
+            className="truncate text-[9px] font-bold uppercase leading-[12px] tracking-[0.08em]"
+            style={{ color: p.dim }}
+          >
+            {SESSION_TYPE_SHORT[p.session.sessionType]}
+          </span>
+          <span
+            className="ml-auto shrink-0 font-mono text-[11px] font-bold leading-none tabular-nums"
+            style={{ color: p.isOther ? "var(--muted)" : "var(--foreground)" }}
+          >
+            {p.startLabel}
+          </span>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* --- tint (full soft fill, no accent bar) ----------------------------- */
+
+function TintBody(p: BodyProps) {
+  return (
+    <div
+      className="flex h-full flex-col justify-center gap-[3px] rounded-lg px-2"
+      style={{
+        background: p.isOther
+          ? "color-mix(in srgb, var(--muted) 18%, transparent)"
+          : "color-mix(in srgb, var(--sc) 16%, transparent)",
+        borderTop: `2px solid ${p.isOther ? "transparent" : "var(--sc)"}`,
+      }}
+    >
+      {!p.micro && (
+        <div className="flex items-center justify-between gap-1.5">
+          <span
+            className="truncate text-[10px] font-bold uppercase leading-[12px] tracking-[0.08em]"
+            style={{ color: p.isOther ? "var(--muted)" : "var(--sc)" }}
+          >
+            {SESSION_TYPE_SHORT[p.session.sessionType]}
+          </span>
+          <span
+            className="shrink-0 font-mono text-[9px] font-bold uppercase"
+            style={{ color: "var(--muted)" }}
+          >
+            {p.seriesLabel}
+          </span>
+        </div>
+      )}
+      <div
+        className={`truncate font-semibold leading-tight ${p.micro ? "text-[11px]" : "text-xs"}`}
+        style={{ color: "var(--foreground)" }}
+      >
+        {p.session.name}
+      </div>
+      <TimeRow start={p.startLabel} end={p.micro ? "" : p.endLabel} alignEnd={p.micro} />
+      {!p.micro && !p.compact && <VenueRow venue={p.session.venue} />}
+      {p.micro && (
+        <span
+          className="truncate text-[9px] font-bold uppercase leading-[11px]"
+          style={{ color: "var(--muted)" }}
+        >
+          {p.seriesLabel}
+        </span>
+      )}
+    </div>
+  );
+}
+
+/* --- topline (flat card, colored top line, dark bg) ------------------- */
+
+function ToplineBody(p: BodyProps) {
+  return (
+    <div
+      className="flex h-full flex-col justify-center gap-[2px] rounded-md px-2"
+      style={{
+        background: "var(--panel)",
+        boxShadow: `inset 0 0 0 1px var(--border), inset 0 3px 0 0 ${p.isOther ? "var(--border)" : "var(--sc)"}`,
+      }}
+    >
+      {!p.micro && (
+        <div className="flex items-center gap-1.5">
+          <TypeBadge label={p.seriesLabel} color={p.isOther ? "var(--muted)" : "var(--sc)"} />
+          <span className="min-w-0 truncate text-[10px] font-semibold leading-tight text-[var(--foreground)]">
+            {p.session.name}
+          </span>
+        </div>
+      )}
+      {p.micro ? (
+        <div className="flex items-center justify-between gap-1">
+          <span
+            className="shrink-0 truncate text-[9px] font-bold uppercase leading-[12px]"
+            style={{ color: p.isOther ? "var(--muted)" : "var(--sc)" }}
+          >
+            {SESSION_TYPE_SHORT[p.session.sessionType]}
+          </span>
+          <span
+            className="ml-auto shrink-0 font-mono text-[11px] font-bold leading-none tabular-nums"
+            style={{ color: "var(--foreground)" }}
+          >
+            {p.startLabel}
+          </span>
+        </div>
+      ) : (
+        <>
+          <TimeRow start={p.startLabel} end={p.endLabel} />
+          {!p.compact && <VenueRow venue={p.session.venue} />}
+        </>
+      )}
+    </div>
+  );
+}
+
+/* --- solid (solid header band + light body) ---------------------------- */
+
+function SolidBody(p: BodyProps) {
+  return (
+    <div
+      className="flex h-full flex-col overflow-hidden rounded-md"
+      style={{
+        background: "var(--panel)",
+        boxShadow: "inset 0 0 0 1px var(--border)",
+      }}
+    >
+      <div
+        className="flex shrink-0 items-center justify-between gap-1 px-1.5 py-[2px]"
+        style={{
+          background: p.isOther ? "var(--muted)" : "var(--sc)",
+          color: "#fff",
+        }}
+      >
+        <span className="truncate text-[9px] font-bold uppercase leading-[12px] tracking-wider">
+          {SESSION_TYPE_SHORT[p.session.sessionType]}
+        </span>
+        <span className="shrink-0 font-mono text-[9px] font-bold leading-none">{p.seriesLabel}</span>
+      </div>
+      <div className="flex min-h-0 flex-1 flex-col justify-center gap-[2px] px-1.5 py-[2px]">
+        <div className="truncate text-[11px] font-semibold leading-tight text-[var(--foreground)]">
+          {p.session.name}
+        </div>
+        {p.micro ? (
+          <span
+            className="shrink-0 font-mono text-[11px] font-bold leading-none tabular-nums"
+            style={{ color: "var(--foreground)" }}
+          >
+            {p.startLabel}
+          </span>
+        ) : (
+          <>
+            <TimeRow start={p.startLabel} end={p.endLabel} />
+            {!p.compact && <VenueRow venue={p.session.venue} />}
+          </>
         )}
       </div>
-    </button>
+    </div>
   );
 }

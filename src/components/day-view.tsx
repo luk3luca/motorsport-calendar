@@ -19,6 +19,7 @@ export default function DayView({
   tzKey,
   sessions,
   isolatedId,
+  blockStyle,
   onSelectSession,
   onClearSelection,
 }: {
@@ -28,6 +29,7 @@ export default function DayView({
   tzKey?: string;
   sessions: Session[];
   isolatedId: string | null;
+  blockStyle?: import("@/components/block-styles").BlockStyle;
   onSelectSession: (series: SeriesId, eventKey: string) => void;
   onClearSelection: () => void;
 }) {
@@ -102,6 +104,7 @@ export default function DayView({
                   hourInfos={hourInfos}
                   offsetMin={offsetMin}
                   isolatedId={isolatedId}
+                  blockStyle={blockStyle}
                   onSelect={onSelectSession}
                 />
               );

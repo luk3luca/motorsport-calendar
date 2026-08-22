@@ -18,6 +18,8 @@ import SeriesSidebar from "@/components/series-sidebar";
 import ThemeToggle from "@/components/theme-toggle";
 import TimezonePicker, { TZ_STORAGE_KEY } from "@/components/timezone-picker";
 import DateNav from "@/components/date-nav";
+import BlockStylePill from "@/components/block-style-pill";
+import { useBlockStyle } from "@/components/block-styles";
 import DayView from "@/components/day-view";
 import WeekView from "@/components/week-view";
 
@@ -35,6 +37,10 @@ export default function CalendarShell() {
   // fixed offset instead, the choice is stored and respected on later visits.
   const [localActive, setLocalActive] = useState<boolean>(true);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [blockStyle, setBlockStyleState] = useBlockStyle();
+  // undefined = per-series variant mix (compare mode); a value = global override
+  const blockStyleProp = blockStyle === "accent" ? undefined : blockStyle;
+  void setBlockStyleState;
 
   useEffect(() => {
     const storedTz = window.localStorage.getItem(TZ_STORAGE_KEY);
@@ -221,6 +227,7 @@ export default function CalendarShell() {
               tzKey={tzKey}
               sessions={filteredSessions}
               isolatedId={isolatedId}
+              blockStyle={blockStyleProp}
               onSelectSession={(s) => setIsolatedId(s)}
               onClearSelection={() => setIsolatedId(null)}
             />
@@ -243,6 +250,8 @@ export default function CalendarShell() {
           </p>
         </footer>
       </div>
+
+      <BlockStylePill />
     </div>
   );
 }
