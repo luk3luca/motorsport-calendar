@@ -1,79 +1,84 @@
 # Motorsport Calendar
 
-Calendario settimanale dei principali campionati motorsport con orari convertiti automaticamente nel tuo fuso orario.
+Weekly calendar of the major motorsport championships, with session times automatically converted to your timezone.
 
-**Sito live:** https://luk3luca.github.io/motorsport-calendar/
+**Live site:** https://luk3luca.github.io/motorsport-calendar/
 
-## Serie coperte
+## Covered series
 
-| Serie | Fonte dati | Copertura |
+| Series | Data source | Coverage |
 |---|---|---|
-| Formula 1, Formula E, NASCAR (Cup), IMSA, WEC | [TheSportsDB](https://www.thesportsdb.com) | Tutte le sessioni (si aggiorna da sola man mano che i round si avvicinano) |
-| F2, F3 | Siti ufficiali FIA (`fiaformula2.com`, `fiaformula3.com`) | Practice, Qualifying, Sprint, Feature — orari completi |
-| F1 Academy | Scraper `f1academy.com` | Orari ISO con fuso incluso |
-| MotoGP, Moto2, Moto3 | Scraper Playwright su `motogp.com` | ~20-25 sessioni per round, orari locali del tracciato |
-| IndyCar | Scraper HTML server-rendered da `indycar.com` | Sessioni in ET |
-| DTM | Scraper Playwright su `dtm.com` | Timetable degli eventi (~2 settimane prima del weekend) |
+| Formula 1, Formula E, NASCAR (Cup), IMSA, WEC | [TheSportsDB](https://www.thesportsdb.com) | All sessions (self-updates as rounds approach) |
+| F2, F3 | Official FIA sites (`fiaformula2.com`, `fiaformula3.com`) | Practice, Qualifying, Sprint, Feature — complete times |
+| F1 Academy | `f1academy.com` scraper | ISO times with timezone offset included |
+| MotoGP, Moto2, Moto3 | Playwright scraper on `motogp.com` | ~20-25 sessions per round, track local time |
+| IndyCar | Server-rendered HTML scraper on `indycar.com` | Session times in ET |
+| DTM | Playwright scraper on `dtm.com` | Event timetables (~2 weeks before each weekend) |
 
-## Funzionalità
+## Features
 
-- **Vista settimana / giorno** con blocchi sessione posizionati sulla griglia oraria
-- **Fuso orario personalizzabile**: offset fisso o rilevamento automatico della zona locale
-- **Gestione DST corretta**: conversioni tramite dayjs + database IANA (nessun offset manuale)
-- **Orari stimati marcati**: start non confermati → `TBC`, fine stimata → `~HH:mm`
-- **Filtro serie** con conteggi in tempo reale sul periodo visibile
-- Tema chiaro/scuro, layout responsive con drawer mobile
+- **Week / day views** with session blocks positioned on an hourly grid
+- **Customizable timezone**: fixed UTC offset or automatic browser-local detection
+- **Correct DST handling**: conversions via dayjs + IANA database (no manual offset arithmetic)
+- **Estimated times are marked**: unconfirmed starts → `TBC`, estimated ends → `~HH:mm`
+- **Series filters** with live counts for the visible period
+- Light/dark theme, responsive layout with mobile drawer
+- Sessions belong to the week they *start* in — a race finishing after midnight shows its tail in a spill column but never reappears in the next week
 
 ## Stack
 
-- Next.js (App Router) + React 19, export statico per GitHub Pages
-- TypeScript, Tailwind CSS v4, dayjs (plugin utc/timezone)
-- Playwright per gli scraper client-side-rendered
+- Next.js (App Router) + React 19, static export for GitHub Pages
+- TypeScript, Tailwind CSS v4, dayjs (utc/timezone plugins)
+- Playwright for client-side-rendered scrapers
 
-## Sviluppo locale
+## Local development
 
 ```bash
 npm install
 npm run dev          # http://localhost:3000
-npm run build        # build statico in out/
+npm run build        # static build in out/
 ```
 
-## Pipeline dati
+## Data pipeline
 
-Il file `data/calendar-2026.json` è la singola fonte di verità importata a compile time. Viene rigenerato dalla pipeline completa:
+`data/calendar-2026.json` is the single source of truth, imported at compile time. The full refresh pipeline:
 
 ```bash
-# 1. TheSportsDB — finestra limitata (NON usare senza WINDOW_END: default = fine anno, ~80 min)
-WINDOW_END=2026-10-05 npx tsx scripts/fetch-calendar.ts
+# 1. TheSportsDB — bounded window into a SEPARATE file (never write the main JSON directly)
+WINDOW_END=2026-10-05 OUTPUT_PATH=tsd-window.json npx tsx scripts/fetch-calendar.ts
 
-# 2. Scraper dedicati
+# 2. Dedicated scrapers
 npx tsx scripts/scrape-motogp-all.ts     # → data/motogp-schedule.json
 npx tsx scripts/scrape-f1academy.ts      # → data/f1academy-schedule.json
 npx tsx scripts/scrape-indycar.ts        # → data/indycar-schedule.json
 npx tsx scripts/scrape-dtm.ts            # → data/dtm-schedule.json
 
-# 3. Merge nel calendario principale
-npx tsx scripts/merge-motogp.ts
-npx tsx scripts/merge-extra-series.ts    # F1 Academy + IndyCar + DTM
+# 3. Surgical merges into the main calendar (history is never lost)
+npx tsx scripts/merge-tsd-window.ts      # TSD overlap + FIA f2/f3 (with fallback guard)
+npx tsx scripts/merge-motogp.ts          # replaces MotoGP/Moto2/Moto3
+npx tsx scripts/merge-extra-series.ts    # replaces F1 Academy / IndyCar / DTM
 ```
 
-## Aggiornamento automatico
+> ⚠️ Do not run `fetch-calendar.ts` without `OUTPUT_PATH`: its default target is the main calendar file.
 
-Il workflow [`.github/workflows/update.yml`](.github/workflows/update.yml) gira ogni **lunedì alle 06:00 (ora italiana)**:
+## Automatic updates
 
-1. Fetch TheSportsDB con finestra di **8 settimane** da oggi (mai fino a fine anno)
-2. Esecuzione di tutti gli scraper (un eventuale fallimento non blocca il deploy: si tengono i dati precedenti)
-3. Merge nel JSON principale + commit automatico (`[bot] weekly data update`)
-4. Build statico e deploy su GitHub Pages
+Two scheduled workflows run on GitHub Actions (see [.github/workflows/](.github/workflows/)):
 
-Rilancio manuale: tab **Actions** → *Weekly data update + deploy* → **Run workflow**, oppure:
+| Workflow | When | What it does |
+|---|---|---|
+| **Weekly update** (`update.yml`) | Monday 06:00 CET | Refreshes everything: TheSportsDB (+8 weeks window), all scrapers, all surgical merges |
+| **Weekend refresh** (`weekend-refresh.yml`) | Friday 06:30 CET | Re-checks only the current weekend's sessions on TheSportsDB (late TV slot changes etc.) — ~5 min |
+
+Both are non-destructive: data merges into the existing calendar and history is preserved. If a scraper fails, the deploy continues with the last good data. Manual trigger: **Actions** tab → pick workflow → **Run workflow** (the weekly one also offers a fast *deploy only* mode that skips data updates), or:
 
 ```bash
-gh workflow run "Weekly data update + deploy"
+gh workflow run "Weekly data update + deploy" -f deploy_only=true
+gh workflow run "Weekend refresh"
 ```
 
-## Note tecniche
+## Technical notes
 
-- Le conversioni orarie passano tutte da [`src/lib/sources/venue-tz.ts`](src/lib/sources/venue-tz.ts): mapping circuito → fuso IANA con match longest-first
-- `isEstimatedStart/isEstimatedEnd` distinguono orari ufficiali da quelli derivati (durate tipiche per serie/sessione in [`src/lib/sources/durations.ts`](src/lib/sources/durations.ts))
-- Chiave TheSportsDB: la chiave pubblica gratuita `"123"` (placeholder documentato, nessun segreto nel repo)
+- All timezone conversions go through [`src/lib/sources/venue-tz.ts`](src/lib/sources/venue-tz.ts): circuit → IANA timezone mapping with longest-first partial matching
+- `isEstimatedStart/isEstimatedEnd` distinguish official times from derived ones (typical per-series/session durations in [`src/lib/sources/durations.ts`](src/lib/sources/durations.ts))
+- TheSportsDB key: the free public placeholder `"123"` (documented, no secrets in this repo)
