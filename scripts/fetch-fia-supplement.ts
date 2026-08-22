@@ -31,25 +31,30 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  // Remove F2 and F3 sessions (they'll be replaced by FIA data)
+  // Fetch FIA data FIRST, then replace only what was actually fetched.
+  // Never remove existing series up front: a failed source (site redesign,
+  // network) must keep the last good data instead of wiping the series.
   const fiaSeries = getFiaSeries();
-  const keptSessions = existing.sessions.filter((s) => !fiaSeries.includes(s.series));
-  process.stdout.write(`Kept ${keptSessions.length} sessions from other series\n`);
-
-  // Track which series are included (remove old F2/F3 refs)
-  const seriesIncluded = existing.seriesIncluded.filter((s) => !fiaSeries.includes(s));
-
-  // Fetch FIA data for F2 and F3
-  const allSessions: Session[] = [...keptSessions];
+  const allSessions: Session[] = [...existing.sessions];
+  const seriesIncluded = [...existing.seriesIncluded];
   for (const series of fiaSeries) {
     process.stdout.write(`\n=== ${series.toUpperCase()} [FIA source] ===\n`);
     try {
       const fiaSessions = await fetchFiaSeriesCalendar(series);
+      if (fiaSessions.length === 0) {
+        process.stdout.write(`  Source returned 0 sessions — keeping existing ${series} data\n`);
+        continue;
+      }
       process.stdout.write(`  Fetched ${fiaSessions.length} sessions from FIA source\n`);
-      allSessions.push(...fiaSessions);
-      seriesIncluded.push(series);
+      const filtered = allSessions.filter((s) => s.series !== series);
+      filtered.push(...fiaSessions);
+      allSessions.length = 0;
+      allSessions.push(...filtered);
+      if (!seriesIncluded.includes(series)) seriesIncluded.push(series);
     } catch (err) {
-      process.stdout.write(`  ERROR: ${(err as Error).message}\n`);
+      process.stdout.write(
+        `  ERROR: ${(err as Error).message} — keeping existing ${series} data\n`,
+      );
     }
   }
 

@@ -193,6 +193,8 @@ export async function fetchFiaSeriesCalendar(series: SeriesId): Promise<Session[
     // Build a eventKey from the circuit name, same as we do for TheSportsDB
     const eventKey = buildEventKey(race.CircuitShortName);
 
+    const raceSessions: Session[] = [];
+
     for (const fiaSession of race.Sessions) {
       const classified = classifyFiaSession(fiaSession.SessionCode, fiaSession.SessionName);
       const sessionType = classified.sessionType as Session["sessionType"];
@@ -205,7 +207,7 @@ export async function fetchFiaSeriesCalendar(series: SeriesId): Promise<Session[
 
       const durationMin = Math.round((endMs - startMs) / 60_000);
 
-      sessions.push({
+      raceSessions.push({
         id: `fia-${series}-${fiaSession.SessionId}`,
         series,
         leagueName: leagueMeta.label,
@@ -226,6 +228,31 @@ export async function fetchFiaSeriesCalendar(series: SeriesId): Promise<Session[
         isEstimatedEnd: fiaSession.Unconfirmed,
       });
     }
+
+    // Merge split qualifying groups (e.g. "Qualifying Group A" / "Group B")
+    // into ONE "Qualifying" block when they overlap or are adjacent. The FIA
+    // sites list them as separate sessions; as blocks they overlap on the
+    // grid and are too short to render legibly.
+    const merged: Session[] = [];
+    for (const s of raceSessions) {
+      const prev = merged[merged.length - 1];
+      if (
+        prev &&
+        prev.sessionType === "qualifying" &&
+        s.sessionType === "qualifying" &&
+        /qualifying/i.test(prev.name) &&
+        /qualifying/i.test(s.name) &&
+        Date.parse(s.startUtc) - Date.parse(prev.endUtc) <= 30 * 60_000
+      ) {
+        prev.endUtc = s.endUtc;
+        prev.durationMin = Math.round((Date.parse(prev.endUtc) - Date.parse(prev.startUtc)) / 60_000);
+        prev.name = prev.name.replace(/ Qualifying Group [A-Z].*$/i, " Qualifying");
+        continue;
+      }
+      merged.push(s);
+    }
+
+    sessions.push(...merged);
   }
 
   return sessions;

@@ -41,10 +41,14 @@ function overlaps(s: Session, winStart: string, winEnd: string): boolean {
 
 /**
  * TheSportsDB fallback entries for f2/f3 have no venue and generic round
- * names ("Italian Sprint Race"). Real FIA data always carries a venue.
+ * names ("Italian Sprint Race"). Real FIA data always carries a venue AND
+ * is complete (~45+ sessions per series, practice/quali/races for every
+ * round). Guards against both the placeholder pattern and a shrunken
+ * fetch (e.g. FIA site redesign breaking the extractor).
  */
 function looksLikeTsdFallback(sessions: Session[]): boolean {
   if (sessions.length === 0) return true;
+  if (sessions.length < 30) return true;
   const emptyVenue = sessions.filter((s) => !s.venue).length;
   return emptyVenue > sessions.length / 2;
 }
