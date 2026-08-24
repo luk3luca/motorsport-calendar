@@ -8,41 +8,79 @@
       "sessions": [
         {
           "name": "Free Practice 1",
-          "startIso": "2026-08-14T09:30:00.000Z",
-          "endIso": "2026-08-14T10:25:00.000Z"
+          "startIso": "2026-08-14T07:30:00.000Z",
+          "endIso": "2026-08-14T08:25:00.000Z"
         },
         {
           "name": "Free Practice 2",
-          "startIso": "2026-08-14T14:00:00.000Z",
-          "endIso": "2026-08-14T14:45:00.000Z"
+          "startIso": "2026-08-14T12:00:00.000Z",
+          "endIso": "2026-08-14T12:45:00.000Z"
         },
         {
           "name": "Track-Safari",
-          "startIso": "2026-08-14T14:55:00.000Z",
-          "endIso": "2026-08-14T15:10:00.000Z"
+          "startIso": "2026-08-14T12:55:00.000Z",
+          "endIso": "2026-08-14T13:10:00.000Z"
         },
         {
           "name": "Qualifying 1",
-          "startIso": "2026-08-15T07:55:00.000Z",
-          "endIso": "2026-08-15T08:15:00.000Z"
+          "startIso": "2026-08-15T05:55:00.000Z",
+          "endIso": "2026-08-15T06:15:00.000Z"
         },
         {
           "name": "Race 1",
-          "startIso": "2026-08-15T11:30:00.000Z",
-          "endIso": "2026-08-15T12:30:00.000Z"
+          "startIso": "2026-08-15T09:30:00.000Z",
+          "endIso": "2026-08-15T10:30:00.000Z"
         },
         {
           "name": "Qualifying 2",
-          "startIso": "2026-08-16T07:10:00.000Z",
-          "endIso": "2026-08-16T07:30:00.000Z"
+          "startIso": "2026-08-16T05:10:00.000Z",
+          "endIso": "2026-08-16T05:30:00.000Z"
         },
         {
           "name": "Race 2",
-          "startIso": "2026-08-16T11:30:00.000Z",
-          "endIso": "2026-08-16T12:30:00.000Z"
+          "startIso": "2026-08-16T09:30:00.000Z",
+          "endIso": "2026-08-16T10:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "sachsenring-2026",
+      "name": "07 Sachsenring",
+      "track": "Sachsenring",
+      "dateRange": "",
+      "sessions": [
+        {
+          "name": "Free Practice 1",
+          "startIso": "2026-09-11T07:30:00.000Z",
+          "endIso": "2026-09-11T08:25:00.000Z"
+        },
+        {
+          "name": "Free Practice 2",
+          "startIso": "2026-09-11T11:50:00.000Z",
+          "endIso": "2026-09-11T12:35:00.000Z"
+        },
+        {
+          "name": "Qualifying 1",
+          "startIso": "2026-09-12T05:55:00.000Z",
+          "endIso": "2026-09-12T06:15:00.000Z"
+        },
+        {
+          "name": "Race 1",
+          "startIso": "2026-09-12T09:30:00.000Z",
+          "endIso": "2026-09-12T10:30:00.000Z"
+        },
+        {
+          "name": "Qualiyfing 2",
+          "startIso": "2026-09-13T05:00:00.000Z",
+          "endIso": "2026-09-13T05:20:00.000Z"
+        },
+        {
+          "name": "Race 2",
+          "startIso": "2026-09-13T09:30:00.000Z",
+          "endIso": "2026-09-13T10:30:00.000Z"
         }
       ]
     }
   ],
-  "generatedAt": "2026-08-08T22:05:21.151Z"
+  "generatedAt": "2026-08-24T05:09:59.660Z"
 }

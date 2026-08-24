@@ -158,18 +158,18 @@
           "name": "Reverse Grid Race",
           "sessionType": "RESULT",
           "startIso": "2026-08-22T14:35:00+02:00",
-          "endIso": "2026-08-22T15:05:00+02:00",
+          "endIso": "2026-08-22T15:10:00+02:00",
           "unconfirmed": false
         },
         {
           "name": "Feature Race",
           "sessionType": "RESULT",
-          "startIso": "2026-08-23T10:40:00+02:00",
-          "endIso": "2026-08-23T11:10:00+02:00",
+          "startIso": "2026-08-23T10:30:00+02:00",
+          "endIso": "2026-08-23T11:05:00+02:00",
           "unconfirmed": false
         }
       ]
     }
   ],
-  "generatedAt": "2026-08-08T21:58:25.207Z"
+  "generatedAt": "2026-08-24T05:09:18.366Z"
 }

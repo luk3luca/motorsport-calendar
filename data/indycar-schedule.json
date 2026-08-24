@@ -41,18 +41,23 @@
       "sessions": [
         {
           "name": "Practice 1",
-          "startIso": "2026-08-14T19:00:00.000Z",
-          "endIso": "2026-08-14T19:00:00.000Z"
-        },
-        {
-          "name": "Practice 2",
           "startIso": "2026-08-15T14:00:00.000Z",
           "endIso": "2026-08-15T14:00:00.000Z"
         },
         {
+          "name": "Practice 2",
+          "startIso": "2026-08-15T18:30:00.000Z",
+          "endIso": "2026-08-15T18:30:00.000Z"
+        },
+        {
           "name": "Qualifying",
-          "startIso": "2026-08-15T18:25:00.000Z",
-          "endIso": "2026-08-15T18:25:00.000Z"
+          "startIso": "2026-08-15T22:30:00.000Z",
+          "endIso": "2026-08-15T22:30:00.000Z"
+        },
+        {
+          "name": "Qualifying",
+          "startIso": "2026-08-15T23:00:00.000Z",
+          "endIso": "2026-08-15T23:00:00.000Z"
         },
         {
           "name": "Warmup",
@@ -68,7 +73,7 @@
     },
     {
       "slug": "Washington-DC",
-      "name": "Freedom 250 Grand Prix of Washington, D.C.",
+      "name": "Freedom 250 Grand Prix of Washington DC",
       "track": "Streets of Washington",
       "dateRange": "",
       "sessions": [
@@ -184,5 +189,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-08-08T22:03:30.179Z"
+  "generatedAt": "2026-08-24T05:09:25.288Z"
 }
