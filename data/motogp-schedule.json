@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T05:09:09.752Z",
+  "generatedAt": "2026-08-31T11:03:33.337Z",
   "events": [
     {
       "url": "https://www.motogp.com/en/calendar/2026/event/germany/259be6f4-c23c-4dc2-bc42-7664842f6409",
@@ -562,8 +562,23 @@
               "name": "Free Practice Nr. 1"
             },
             {
+              "time": "09:00-09:35",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 1"
+            },
+            {
               "time": "09:50-10:30",
               "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "09:50-10:30",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 1"
+            },
+            {
+              "time": "10:45-11:30",
+              "category": "MotoGP",
               "name": "Free Practice Nr. 1"
             },
             {
@@ -577,8 +592,23 @@
               "name": "Free Practice Nr. 1"
             },
             {
+              "time": "12:05-12:25",
+              "category": "Baggers",
+              "name": "Free Practice Nr. 1"
+            },
+            {
               "time": "13:15-13:50",
               "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "13:15-13:50",
+              "category": "Moto3",
+              "name": "Practice"
+            },
+            {
+              "time": "14:05-14:45",
+              "category": "Moto2",
               "name": "Practice"
             },
             {
@@ -590,6 +620,16 @@
               "time": "15:00-16:00",
               "category": "MotoGP",
               "name": "Practice"
+            },
+            {
+              "time": "15:00-16:00",
+              "category": "MotoGP",
+              "name": "Practice"
+            },
+            {
+              "time": "16:25-16:45",
+              "category": "Baggers",
+              "name": "Free Practice Nr. 2"
             },
             {
               "time": "16:25-16:45",
@@ -607,8 +647,23 @@
               "name": "Free Practice Nr. 2"
             },
             {
+              "time": "08:40-09:10",
+              "category": "Moto3",
+              "name": "Free Practice Nr. 2"
+            },
+            {
               "time": "09:25-09:55",
               "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "09:25-09:55",
+              "category": "Moto2",
+              "name": "Free Practice Nr. 2"
+            },
+            {
+              "time": "10:10-10:40",
+              "category": "MotoGP",
               "name": "Free Practice Nr. 2"
             },
             {
@@ -622,9 +677,24 @@
               "name": "Qualifying Nr. 1"
             },
             {
+              "time": "10:50-11:05",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 1"
+            },
+            {
               "time": "11:15-11:30",
               "category": "MotoGP",
               "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "11:15-11:30",
+              "category": "MotoGP",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "12:10-12:30",
+              "category": "Baggers",
+              "name": "Qualifying Practice"
             },
             {
               "time": "12:10-12:30",
@@ -637,9 +707,24 @@
               "name": "Qualifying Nr. 1"
             },
             {
+              "time": "12:45-13:00",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 1"
+            },
+            {
               "time": "13:10-13:25",
               "category": "Moto3",
               "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "13:10-13:25",
+              "category": "Moto3",
+              "name": "Qualifying Nr. 2"
+            },
+            {
+              "time": "13:40-13:55",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 1"
             },
             {
               "time": "13:40-13:55",
@@ -652,9 +737,24 @@
               "name": "Qualifying Nr. 2"
             },
             {
+              "time": "14:05-14:20",
+              "category": "Moto2",
+              "name": "Qualifying Nr. 2"
+            },
+            {
               "time": "15:00",
               "category": "MotoGP",
               "name": "Tissot Sprint"
+            },
+            {
+              "time": "15:00",
+              "category": "MotoGP",
+              "name": "Tissot Sprint"
+            },
+            {
+              "time": "16:10",
+              "category": "Baggers",
+              "name": "Race Nr. 1"
             },
             {
               "time": "16:10",
@@ -667,9 +767,19 @@
           "day": "SUNDAY",
           "sessions": [
             {
-              "time": "08:55",
+              "time": "09:00",
               "category": "Baggers",
               "name": "Race Nr. 2"
+            },
+            {
+              "time": "09:00",
+              "category": "Baggers",
+              "name": "Race Nr. 2"
+            },
+            {
+              "time": "09:40-09:50",
+              "category": "MotoGP",
+              "name": "Warm Up"
             },
             {
               "time": "09:40-09:50",
@@ -682,8 +792,23 @@
               "name": "Rider Parade"
             },
             {
+              "time": "10:00-10:40",
+              "category": "MotoGP",
+              "name": "Rider Parade"
+            },
+            {
               "time": "11:00",
               "category": "Moto3",
+              "name": "Race"
+            },
+            {
+              "time": "11:00",
+              "category": "Moto3",
+              "name": "Race"
+            },
+            {
+              "time": "12:15",
+              "category": "Moto2",
               "name": "Race"
             },
             {
@@ -697,9 +822,24 @@
               "name": "Grand Prix"
             },
             {
+              "time": "14:00",
+              "category": "MotoGP",
+              "name": "Grand Prix"
+            },
+            {
               "time": "15:20-15:50",
               "category": "MotoGP",
               "name": "After the Flag"
+            },
+            {
+              "time": "15:20-15:50",
+              "category": "MotoGP",
+              "name": "After the Flag"
+            },
+            {
+              "time": "15:50-16:30",
+              "category": "MotoGP",
+              "name": "Sunday Press Conference"
             },
             {
               "time": "15:50-16:30",
