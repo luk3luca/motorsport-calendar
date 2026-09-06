@@ -18,6 +18,8 @@
     "scrape-f1academy": "tsx scripts/scrape-f1academy.ts",
     "scrape-indycar": "tsx scripts/scrape-indycar.ts",
     "scrape-dtm": "tsx scripts/scrape-dtm.ts",
+    "scrape-wec": "tsx scripts/scrape-wec.ts",
+    "merge-wec": "tsx scripts/merge-wec.ts",
     "merge-extra-series": "tsx scripts/merge-extra-series.ts"
   },
   "dependencies": {
