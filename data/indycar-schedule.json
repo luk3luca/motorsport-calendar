@@ -157,7 +157,7 @@
     },
     {
       "slug": "Laguna-Seca",
-      "name": "Mission Grand Prix of Monterey",
+      "name": "Mission Foods Grand Prix of Monterey",
       "track": "WeatherTech Raceway Laguna Seca",
       "dateRange": "",
       "sessions": [
@@ -189,5 +189,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-08-31T11:03:49.909Z"
+  "generatedAt": "2026-09-07T09:18:40.465Z"
 }

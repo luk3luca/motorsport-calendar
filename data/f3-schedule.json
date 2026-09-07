@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T11:37:19.651Z",
+  "generatedAt": "2026-09-07T09:19:22.235Z",
   "series": "f3",
   "events": [
     {
@@ -2814,44 +2814,44 @@
           "gmtOffset": "+02:00",
           "sessionType": "Practice",
           "sessionNumber": 0,
-          "state": "upcoming",
+          "state": "completed",
           "meetingSessionKey": 11623,
           "timezone": "Europe/Rome",
           "text": "Practice",
           "value": "f3/practice?meeting=1293&session=0",
-          "isAvailable": false
+          "isAvailable": true
         },
         {
           "session": "Qualifying 1",
-          "shortName": "Qualifying A",
+          "shortName": "Group A - Qualifying",
           "description": "Qualifying",
           "startTime": "2026-09-04T14:00:00",
           "endTime": "2026-09-04T14:10:00",
           "gmtOffset": "+02:00",
           "sessionType": "Qualifying",
           "sessionNumber": 1,
-          "state": "upcoming",
+          "state": "completed",
           "meetingSessionKey": 11624,
           "timezone": "Europe/Rome",
-          "text": "Qualifying A",
+          "text": "Group A - Qualifying",
           "value": "f3/qualifying?meeting=1293&session=1",
-          "isAvailable": false
+          "isAvailable": true
         },
         {
           "session": "Qualifying 2",
-          "shortName": "Qualifying B",
+          "shortName": "Group B - Qualifying",
           "description": "Qualifying",
           "startTime": "2026-09-04T14:20:00",
           "endTime": "2026-09-04T14:30:00",
           "gmtOffset": "+02:00",
           "sessionType": "Qualifying",
           "sessionNumber": 2,
-          "state": "upcoming",
+          "state": "completed",
           "meetingSessionKey": 11735,
           "timezone": "Europe/Rome",
-          "text": "Qualifying B",
+          "text": "Group B - Qualifying",
           "value": "f3/qualifying?meeting=1293&session=2",
-          "isAvailable": false
+          "isAvailable": true
         },
         {
           "session": "Race 1",
@@ -2862,12 +2862,12 @@
           "gmtOffset": "+02:00",
           "sessionType": "Race",
           "sessionNumber": 1,
-          "state": "upcoming",
+          "state": "completed",
           "meetingSessionKey": 11625,
           "timezone": "Europe/Rome",
           "text": "Sprint Race",
           "value": "f3/race?meeting=1293&session=1",
-          "isAvailable": false
+          "isAvailable": true
         },
         {
           "session": "Race 2",
@@ -2878,12 +2878,1334 @@
           "gmtOffset": "+02:00",
           "sessionType": "Race",
           "sessionNumber": 2,
-          "state": "upcoming",
+          "state": "completed",
           "meetingSessionKey": 11626,
           "timezone": "Europe/Rome",
           "text": "Feature Race",
           "value": "f3/race?meeting=1293&session=2",
-          "isAvailable": false
+          "isAvailable": true,
+          "results": [
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 25,
+              "version": "Final",
+              "gapToLeader": "0",
+              "gapToPrevious": null,
+              "lapsBehindLeader": "0",
+              "positionValue": "1",
+              "positionNumber": "1",
+              "lapsCompleted": "22",
+              "raceTime": "40:35.487",
+              "racingNumber": "29",
+              "constructorSeasonName": null,
+              "driverId": 1223,
+              "driverFirstName": "Nicola",
+              "driverLastName": "Lacorte",
+              "driverShortName": "N. Lacorte",
+              "driverReference": "NICLAR02",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 639,
+              "driverTLA": "LAC",
+              "driverKey": "1196",
+              "teamKey": "665",
+              "teamName": "DAMS Lucas Oil",
+              "displayPosition": "1",
+              "displayTeamName": "DAMS Lucas Oil",
+              "displayTime": "40:35.487",
+              "teamColourCode": "00b4ff",
+              "teamAccessibleColourCode": "005e94",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/damslucasoil/niclar02/2026damslucasoilniclar02right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/damslucasoil/niclar02/2026damslucasoilniclar02numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/damslucasoil/niclar02/2026damslucasoilniclar02numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/damslucasoil/2026damslucasoillogowhite"
+              },
+              "driverPageUrl": "/en/drivers/nicola-lacorte"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 18,
+              "version": "Final",
+              "gapToLeader": "0.723",
+              "gapToPrevious": "0.723",
+              "lapsBehindLeader": "0",
+              "positionValue": "2",
+              "positionNumber": "2",
+              "lapsCompleted": "22",
+              "raceTime": "40:36.210",
+              "racingNumber": "8",
+              "constructorSeasonName": null,
+              "driverId": 1214,
+              "driverFirstName": "Tuukka",
+              "driverLastName": "Taponen",
+              "driverShortName": "T. Taponen",
+              "driverReference": "TUUTAP01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 606,
+              "driverTLA": "TAP",
+              "driverKey": "1176",
+              "teamKey": "629",
+              "teamName": "MP Motorsport",
+              "displayPosition": "2",
+              "displayTeamName": "MP Motorsport",
+              "displayTime": "+0.723s",
+              "teamColourCode": "ff9141",
+              "teamAccessibleColourCode": "9b4000",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/mpmotorsport/tuutap01/2026mpmotorsporttuutap01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/mpmotorsport/tuutap01/2026mpmotorsporttuutap01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/mpmotorsport/tuutap01/2026mpmotorsporttuutap01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/mpmotorsport/2026mpmotorsportlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/tuukka-taponen"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 15,
+              "version": "Final",
+              "gapToLeader": "2.212",
+              "gapToPrevious": "1.489",
+              "lapsBehindLeader": "0",
+              "positionValue": "3",
+              "positionNumber": "3",
+              "lapsCompleted": "22",
+              "raceTime": "40:37.699",
+              "racingNumber": "10",
+              "constructorSeasonName": null,
+              "driverId": 1231,
+              "driverFirstName": "Taito",
+              "driverLastName": "Kato",
+              "driverShortName": "T. Kato",
+              "driverReference": "TAIKAT01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 599,
+              "driverTLA": "KAI",
+              "driverKey": "1251",
+              "teamKey": "622",
+              "teamName": "ART Grand Prix",
+              "displayPosition": "3",
+              "displayTeamName": "ART Grand Prix",
+              "displayTime": "+2.212s",
+              "teamColourCode": "af2f22",
+              "teamAccessibleColourCode": "2d0000",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/artgrandprix/taikat01/2026artgrandprixtaikat01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/artgrandprix/taikat01/2026artgrandprixtaikat01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/artgrandprix/taikat01/2026artgrandprixtaikat01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/artgrandprix/2026artgrandprixlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/taito-kato"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 12,
+              "version": "Final",
+              "gapToLeader": "4.041",
+              "gapToPrevious": "1.829",
+              "lapsBehindLeader": "0",
+              "positionValue": "4",
+              "positionNumber": "4",
+              "lapsCompleted": "22",
+              "raceTime": "40:39.528",
+              "racingNumber": "27",
+              "constructorSeasonName": null,
+              "driverId": 1240,
+              "driverFirstName": "Yevan",
+              "driverLastName": "David",
+              "driverShortName": "Y. David",
+              "driverReference": "YEVDAV01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 644,
+              "driverTLA": "DAV",
+              "driverKey": "1260",
+              "teamKey": "676",
+              "teamName": "AIX Racing",
+              "displayPosition": "4",
+              "displayTeamName": "AIX Racing",
+              "displayTime": "+4.041s",
+              "teamColourCode": "64f00f",
+              "teamAccessibleColourCode": "1f8700",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/aixracing/yevdav01/2026aixracingyevdav01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/aixracing/yevdav01/2026aixracingyevdav01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/aixracing/yevdav01/2026aixracingyevdav01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/aixracing/2026aixracinglogowhite"
+              },
+              "driverPageUrl": "/en/drivers/yevan-david"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 10,
+              "version": "Final",
+              "gapToLeader": "4.403",
+              "gapToPrevious": "0.362",
+              "lapsBehindLeader": "0",
+              "positionValue": "5",
+              "positionNumber": "5",
+              "lapsCompleted": "22",
+              "raceTime": "40:39.890",
+              "racingNumber": "12",
+              "constructorSeasonName": null,
+              "driverId": 1233,
+              "driverFirstName": "Kanato",
+              "driverLastName": "Le",
+              "driverShortName": "K. Le",
+              "driverReference": "KANLE01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 599,
+              "driverTLA": "KLE",
+              "driverKey": "1253",
+              "teamKey": "622",
+              "teamName": "ART Grand Prix",
+              "displayPosition": "5",
+              "displayTeamName": "ART Grand Prix",
+              "displayTime": "+4.403s",
+              "teamColourCode": "af2f22",
+              "teamAccessibleColourCode": "2d0000",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/artgrandprix/kanle01/2026artgrandprixkanle01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/artgrandprix/kanle01/2026artgrandprixkanle01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/artgrandprix/kanle01/2026artgrandprixkanle01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/artgrandprix/2026artgrandprixlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/kanato-le"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 8,
+              "version": "Final",
+              "gapToLeader": "6.225",
+              "gapToPrevious": "1.822",
+              "lapsBehindLeader": "0",
+              "positionValue": "6",
+              "positionNumber": "6",
+              "lapsCompleted": "22",
+              "raceTime": "40:41.712",
+              "racingNumber": "14",
+              "constructorSeasonName": null,
+              "driverId": 1234,
+              "driverFirstName": "Hiyu",
+              "driverLastName": "Yamakoshi",
+              "driverShortName": "H. Yamakoshi",
+              "driverReference": "HIYYAM01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 610,
+              "driverTLA": "YAM",
+              "driverKey": "1254",
+              "teamKey": "632",
+              "teamName": "Van Amersfoort Racing",
+              "displayPosition": "6",
+              "displayTeamName": "Van Amersfoort Racing",
+              "displayTime": "+6.225s",
+              "teamColourCode": "dc4600",
+              "teamAccessibleColourCode": "6d0400",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/vanamersfoortracing/hiyyam01/2026vanamersfoortracinghiyyam01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/vanamersfoortracing/hiyyam01/2026vanamersfoortracinghiyyam01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/vanamersfoortracing/hiyyam01/2026vanamersfoortracinghiyyam01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/vanamersfoortracing/2026vanamersfoortracinglogowhite"
+              },
+              "driverPageUrl": "/en/drivers/hiyu-yamakoshi"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 6,
+              "version": "Final",
+              "gapToLeader": "6.925",
+              "gapToPrevious": "0.7",
+              "lapsBehindLeader": "0",
+              "positionValue": "7",
+              "positionNumber": "7",
+              "lapsCompleted": "22",
+              "raceTime": "40:42.412",
+              "racingNumber": "4",
+              "constructorSeasonName": null,
+              "driverId": 1215,
+              "driverFirstName": "Noah",
+              "driverLastName": "Stromsted",
+              "driverShortName": "N. Stromsted",
+              "driverReference": "NOASTR01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 609,
+              "driverTLA": "STR",
+              "driverKey": "1181",
+              "teamKey": "631",
+              "teamName": "TRIDENT",
+              "displayPosition": "7",
+              "displayTeamName": "TRIDENT",
+              "displayTime": "+6.925s",
+              "teamColourCode": "6464ff",
+              "teamAccessibleColourCode": "2d00a6",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/trident/noastr01/2026tridentnoastr01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/trident/noastr01/2026tridentnoastr01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/trident/noastr01/2026tridentnoastr01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/trident/2026tridentlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/noah-stromsted"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 4,
+              "version": "Final",
+              "gapToLeader": "7.295",
+              "gapToPrevious": "0.37",
+              "lapsBehindLeader": "0",
+              "positionValue": "8",
+              "positionNumber": "8",
+              "lapsCompleted": "22",
+              "raceTime": "40:42.782",
+              "racingNumber": "2",
+              "constructorSeasonName": null,
+              "driverId": 1217,
+              "driverFirstName": "Ugo",
+              "driverLastName": "Ugochukwu",
+              "driverShortName": "U. Ugochukwu",
+              "driverReference": "UGOUGO01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 600,
+              "driverTLA": "UGO",
+              "driverKey": "1185",
+              "teamKey": "623",
+              "teamName": "Campos Racing",
+              "displayPosition": "8",
+              "displayTeamName": "Campos Racing",
+              "displayTime": "+7.295s",
+              "teamColourCode": "7c7c7c",
+              "teamAccessibleColourCode": "323232",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/camposracing/ugougo01/2026camposracingugougo01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/camposracing/ugougo01/2026camposracingugougo01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/camposracing/ugougo01/2026camposracingugougo01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/camposracing/2026camposracinglogowhite"
+              },
+              "driverPageUrl": "/en/drivers/ugo-ugochukwu"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 3,
+              "version": "Final",
+              "gapToLeader": "8.841",
+              "gapToPrevious": "1.546",
+              "lapsBehindLeader": "0",
+              "positionValue": "9",
+              "positionNumber": "9",
+              "lapsCompleted": "22",
+              "raceTime": "40:44.328",
+              "racingNumber": "15",
+              "constructorSeasonName": null,
+              "driverId": 1235,
+              "driverFirstName": "Enzo",
+              "driverLastName": "Deligny",
+              "driverShortName": "E. Deligny",
+              "driverReference": "ENZDIL01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 610,
+              "driverTLA": "DIL",
+              "driverKey": "1255",
+              "teamKey": "632",
+              "teamName": "Van Amersfoort Racing",
+              "displayPosition": "9",
+              "displayTeamName": "Van Amersfoort Racing",
+              "displayTime": "+8.841s",
+              "teamColourCode": "dc4600",
+              "teamAccessibleColourCode": "6d0400",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/vanamersfoortracing/enzdil01/2026vanamersfoortracingenzdil01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/vanamersfoortracing/enzdil01/2026vanamersfoortracingenzdil01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/vanamersfoortracing/enzdil01/2026vanamersfoortracingenzdil01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/vanamersfoortracing/2026vanamersfoortracinglogowhite"
+              },
+              "driverPageUrl": "/en/drivers/enzo-deligny"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 1,
+              "version": "Final",
+              "gapToLeader": "9.364",
+              "gapToPrevious": "0.523",
+              "lapsBehindLeader": "0",
+              "positionValue": "10",
+              "positionNumber": "10",
+              "lapsCompleted": "22",
+              "raceTime": "40:44.851",
+              "racingNumber": "21",
+              "constructorSeasonName": null,
+              "driverId": 1213,
+              "driverFirstName": "James",
+              "driverLastName": "Wharton",
+              "driverShortName": "J. Wharton",
+              "driverReference": "JAMWHA01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 608,
+              "driverTLA": "WHA",
+              "driverKey": "1175",
+              "teamKey": "630",
+              "teamName": "PREMA Racing",
+              "displayPosition": "10",
+              "displayTeamName": "PREMA Racing",
+              "displayTime": "+9.364s",
+              "teamColourCode": "f00000",
+              "teamAccessibleColourCode": "720000",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/premaracing/jamwha01/2026premaracingjamwha01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/premaracing/jamwha01/2026premaracingjamwha01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/premaracing/jamwha01/2026premaracingjamwha01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/premaracing/2026premaracinglogowhite"
+              },
+              "driverPageUrl": "/en/drivers/james-wharton"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "9.677",
+              "gapToPrevious": "0.313",
+              "lapsBehindLeader": "0",
+              "positionValue": "11",
+              "positionNumber": "11",
+              "lapsCompleted": "22",
+              "raceTime": "40:45.164",
+              "racingNumber": "22",
+              "constructorSeasonName": null,
+              "driverId": 1226,
+              "driverFirstName": "Jose",
+              "driverLastName": "Garfias",
+              "driverShortName": "J. Garfias",
+              "driverReference": "JOSGAR01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 608,
+              "driverTLA": "GAR",
+              "driverKey": "1200",
+              "teamKey": "630",
+              "teamName": "PREMA Racing",
+              "displayPosition": "11",
+              "displayTeamName": "PREMA Racing",
+              "displayTime": "+9.677s",
+              "teamColourCode": "f00000",
+              "teamAccessibleColourCode": "720000",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/premaracing/josgar01/2026premaracingjosgar01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/premaracing/josgar01/2026premaracingjosgar01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/premaracing/josgar01/2026premaracingjosgar01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/premaracing/2026premaracinglogowhite"
+              },
+              "driverPageUrl": "/en/drivers/jose-garfias"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "9.988",
+              "gapToPrevious": "0.311",
+              "lapsBehindLeader": "0",
+              "positionValue": "12",
+              "positionNumber": "12",
+              "lapsCompleted": "22",
+              "raceTime": "40:45.475",
+              "racingNumber": "16",
+              "constructorSeasonName": null,
+              "driverId": 1219,
+              "driverFirstName": "Bruno",
+              "driverLastName": "Del Pino",
+              "driverShortName": "B. Del Pino",
+              "driverReference": "BRUDEL01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 610,
+              "driverTLA": "DEL",
+              "driverKey": "1188",
+              "teamKey": "632",
+              "teamName": "Van Amersfoort Racing",
+              "displayPosition": "12",
+              "displayTeamName": "Van Amersfoort Racing",
+              "displayTime": "+9.988s",
+              "teamColourCode": "dc4600",
+              "teamAccessibleColourCode": "6d0400",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/vanamersfoortracing/brudel01/2026vanamersfoortracingbrudel01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/vanamersfoortracing/brudel01/2026vanamersfoortracingbrudel01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/vanamersfoortracing/brudel01/2026vanamersfoortracingbrudel01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/vanamersfoortracing/2026vanamersfoortracinglogowhite"
+              },
+              "driverPageUrl": "/en/drivers/bruno-del-pino"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "10.624",
+              "gapToPrevious": "0.636",
+              "lapsBehindLeader": "0",
+              "positionValue": "13",
+              "positionNumber": "13",
+              "lapsCompleted": "22",
+              "raceTime": "40:46.111",
+              "racingNumber": "19",
+              "constructorSeasonName": null,
+              "driverId": 1224,
+              "driverFirstName": "Christian",
+              "driverLastName": "Ho",
+              "driverShortName": "C. Ho",
+              "driverReference": "CHRHO01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 645,
+              "driverTLA": "CHO",
+              "driverKey": "1197",
+              "teamKey": "677",
+              "teamName": "Rodin Motorsport",
+              "displayPosition": "13",
+              "displayTeamName": "Rodin Motorsport",
+              "displayTime": "+10.624s",
+              "teamColourCode": "c3a752",
+              "teamAccessibleColourCode": "6f5400",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/rodinmotorsport/chrho01/2026rodinmotorsportchrho01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/rodinmotorsport/chrho01/2026rodinmotorsportchrho01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/rodinmotorsport/chrho01/2026rodinmotorsportchrho01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/rodinmotorsport/2026rodinmotorsportlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/christian-ho"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "10.956",
+              "gapToPrevious": "0.332",
+              "lapsBehindLeader": "0",
+              "positionValue": "14",
+              "positionNumber": "14",
+              "lapsCompleted": "22",
+              "raceTime": "40:46.443",
+              "racingNumber": "20",
+              "constructorSeasonName": null,
+              "driverId": 1244,
+              "driverFirstName": "Alex",
+              "driverLastName": "Powell",
+              "driverShortName": "A. Powell",
+              "driverReference": "ALEPOW01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 608,
+              "driverTLA": "POW",
+              "driverKey": "1280",
+              "teamKey": "630",
+              "teamName": "PREMA Racing",
+              "displayPosition": "14",
+              "displayTeamName": "PREMA Racing",
+              "displayTime": "+10.956s",
+              "teamColourCode": "f00000",
+              "teamAccessibleColourCode": "720000",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/premaracing/alepow01/2026premaracingalepow01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/premaracing/alepow01/2026premaracingalepow01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/premaracing/alepow01/2026premaracingalepow01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/premaracing/2026premaracinglogowhite"
+              },
+              "driverPageUrl": "/en/drivers/alex-powell"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "11.526",
+              "gapToPrevious": "0.57",
+              "lapsBehindLeader": "0",
+              "positionValue": "15",
+              "positionNumber": "15",
+              "lapsCompleted": "22",
+              "raceTime": "40:47.013",
+              "racingNumber": "26",
+              "constructorSeasonName": null,
+              "driverId": 1242,
+              "driverFirstName": "Ricardo",
+              "driverLastName": "Escotto",
+              "driverShortName": "R. Escotto",
+              "driverReference": "RICESC01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 644,
+              "driverTLA": "ESC",
+              "driverKey": "1274",
+              "teamKey": "676",
+              "teamName": "AIX Racing",
+              "displayPosition": "15",
+              "displayTeamName": "AIX Racing",
+              "displayTime": "+11.526s",
+              "teamColourCode": "64f00f",
+              "teamAccessibleColourCode": "1f8700",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/aixracing/ricesc01/2026aixracingricesc01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/aixracing/ricesc01/2026aixracingricesc01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/aixracing/ricesc01/2026aixracingricesc01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/aixracing/2026aixracinglogowhite"
+              },
+              "driverPageUrl": "/en/drivers/ricardo-escotto"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "12.292",
+              "gapToPrevious": "0.766",
+              "lapsBehindLeader": "0",
+              "positionValue": "16",
+              "positionNumber": "16",
+              "lapsCompleted": "22",
+              "raceTime": "40:47.779",
+              "racingNumber": "6",
+              "constructorSeasonName": null,
+              "driverId": 1229,
+              "driverFirstName": "Matteo",
+              "driverLastName": "De Palo",
+              "driverShortName": "M. De Palo",
+              "driverReference": "MATDEP01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 609,
+              "driverTLA": "DEP",
+              "driverKey": "1249",
+              "teamKey": "631",
+              "teamName": "TRIDENT",
+              "displayPosition": "16",
+              "displayTeamName": "TRIDENT",
+              "displayTime": "+12.292s",
+              "teamColourCode": "6464ff",
+              "teamAccessibleColourCode": "2d00a6",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/trident/matdep01/2026tridentmatdep01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/trident/matdep01/2026tridentmatdep01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/trident/matdep01/2026tridentmatdep01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/trident/2026tridentlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/matteo-de-palo"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "14.938",
+              "gapToPrevious": "2.646",
+              "lapsBehindLeader": "0",
+              "positionValue": "17",
+              "positionNumber": "17",
+              "lapsCompleted": "22",
+              "raceTime": "40:50.425",
+              "racingNumber": "1",
+              "constructorSeasonName": null,
+              "driverId": 1221,
+              "driverFirstName": "Théophile",
+              "driverLastName": "Naël",
+              "driverShortName": "T. Naël",
+              "driverReference": "THENAE01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 600,
+              "driverTLA": "NAE",
+              "driverKey": "1190",
+              "teamKey": "623",
+              "teamName": "Campos Racing",
+              "displayPosition": "17",
+              "displayTeamName": "Campos Racing",
+              "displayTime": "+14.938s",
+              "teamColourCode": "7c7c7c",
+              "teamAccessibleColourCode": "323232",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/camposracing/thenae01/2026camposracingthenae01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/camposracing/thenae01/2026camposracingthenae01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/camposracing/thenae01/2026camposracingthenae01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/camposracing/2026camposracinglogowhite"
+              },
+              "driverPageUrl": "/en/drivers/theophile-nael"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "15.62",
+              "gapToPrevious": "0.682",
+              "lapsBehindLeader": "0",
+              "positionValue": "18",
+              "positionNumber": "18",
+              "lapsCompleted": "22",
+              "raceTime": "40:51.107",
+              "racingNumber": "11",
+              "constructorSeasonName": null,
+              "driverId": 1232,
+              "driverFirstName": "Maciej",
+              "driverLastName": "Gladysz",
+              "driverShortName": "M. Gladysz",
+              "driverReference": "MACGLA01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 599,
+              "driverTLA": "GLA",
+              "driverKey": "1252",
+              "teamKey": "622",
+              "teamName": "ART Grand Prix",
+              "displayPosition": "18",
+              "displayTeamName": "ART Grand Prix",
+              "displayTime": "+15.620s",
+              "teamColourCode": "af2f22",
+              "teamAccessibleColourCode": "2d0000",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/artgrandprix/macgla01/2026artgrandprixmacgla01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/artgrandprix/macgla01/2026artgrandprixmacgla01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/artgrandprix/macgla01/2026artgrandprixmacgla01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/artgrandprix/2026artgrandprixlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/maciej-gladysz"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "18.425",
+              "gapToPrevious": "2.805",
+              "lapsBehindLeader": "0",
+              "positionValue": "19",
+              "positionNumber": "19",
+              "lapsCompleted": "22",
+              "raceTime": "40:53.912",
+              "racingNumber": "7",
+              "constructorSeasonName": null,
+              "driverId": 1230,
+              "driverFirstName": "Mattia",
+              "driverLastName": "Colnaghi",
+              "driverShortName": "M. Colnaghi",
+              "driverReference": "MATCOL01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 606,
+              "driverTLA": "COL",
+              "driverKey": "1250",
+              "teamKey": "629",
+              "teamName": "MP Motorsport",
+              "displayPosition": "19",
+              "displayTeamName": "MP Motorsport",
+              "displayTime": "+18.425s",
+              "teamColourCode": "ff9141",
+              "teamAccessibleColourCode": "9b4000",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/mpmotorsport/matcol01/2026mpmotorsportmatcol01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/mpmotorsport/matcol01/2026mpmotorsportmatcol01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/mpmotorsport/matcol01/2026mpmotorsportmatcol01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/mpmotorsport/2026mpmotorsportlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/mattia-colnaghi"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "22.399",
+              "gapToPrevious": "3.974",
+              "lapsBehindLeader": "0",
+              "positionValue": "20",
+              "positionNumber": "20",
+              "lapsCompleted": "22",
+              "raceTime": "40:57.886",
+              "racingNumber": "25",
+              "constructorSeasonName": null,
+              "driverId": 1238,
+              "driverFirstName": "Jin",
+              "driverLastName": "Nakamura",
+              "driverShortName": "J. Nakamura",
+              "driverReference": "JINNAK01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 603,
+              "driverTLA": "NAK",
+              "driverKey": "1258",
+              "teamKey": "626",
+              "teamName": "Hitech",
+              "displayPosition": "20",
+              "displayTeamName": "Hitech",
+              "displayTime": "+22.399s",
+              "teamColourCode": "a0b4c8",
+              "teamAccessibleColourCode": "4e6072",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/hitech/jinnak01/2026hitechjinnak01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/hitech/jinnak01/2026hitechjinnak01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/hitech/jinnak01/2026hitechjinnak01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/hitech/2026hitechlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/jin-nakamura"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "25.317",
+              "gapToPrevious": "2.918",
+              "lapsBehindLeader": "0",
+              "positionValue": "21",
+              "positionNumber": "21",
+              "lapsCompleted": "22",
+              "raceTime": "41:00.804",
+              "racingNumber": "17",
+              "constructorSeasonName": null,
+              "driverId": 1236,
+              "driverFirstName": "Pedro",
+              "driverLastName": "Clerot",
+              "driverShortName": "P. Clerot",
+              "driverReference": "PEDCLE01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 645,
+              "driverTLA": "CLE",
+              "driverKey": "1256",
+              "teamKey": "677",
+              "teamName": "Rodin Motorsport",
+              "displayPosition": "21",
+              "displayTeamName": "Rodin Motorsport",
+              "displayTime": "+25.317s",
+              "teamColourCode": "c3a752",
+              "teamAccessibleColourCode": "6f5400",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/rodinmotorsport/pedcle01/2026rodinmotorsportpedcle01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/rodinmotorsport/pedcle01/2026rodinmotorsportpedcle01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/rodinmotorsport/pedcle01/2026rodinmotorsportpedcle01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/rodinmotorsport/2026rodinmotorsportlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/pedro-clerot"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "25.935",
+              "gapToPrevious": "0.618",
+              "lapsBehindLeader": "0",
+              "positionValue": "22",
+              "positionNumber": "22",
+              "lapsCompleted": "22",
+              "raceTime": "41:01.422",
+              "racingNumber": "23",
+              "constructorSeasonName": null,
+              "driverId": 1212,
+              "driverFirstName": "Woohyun",
+              "driverLastName": "Shin",
+              "driverShortName": "W. Shin",
+              "driverReference": "WOOSHI01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 603,
+              "driverTLA": "SHI",
+              "driverKey": "1151",
+              "teamKey": "626",
+              "teamName": "Hitech",
+              "displayPosition": "22",
+              "displayTeamName": "Hitech",
+              "displayTime": "+25.935s",
+              "teamColourCode": "a0b4c8",
+              "teamAccessibleColourCode": "4e6072",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/hitech/wooshi01/2026hitechwooshi01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/hitech/wooshi01/2026hitechwooshi01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/hitech/wooshi01/2026hitechwooshi01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/hitech/2026hitechlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/michael-woohyun-shin"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "45.365",
+              "gapToPrevious": "19.43",
+              "lapsBehindLeader": "0",
+              "positionValue": "23",
+              "positionNumber": "23",
+              "lapsCompleted": "22",
+              "raceTime": "41:20.852",
+              "racingNumber": "30",
+              "constructorSeasonName": null,
+              "driverId": 1239,
+              "driverFirstName": "Nandhavud",
+              "driverLastName": "Bhirombhakdi",
+              "driverShortName": "N. Bhirombhakdi",
+              "driverReference": "NANBHI01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 639,
+              "driverTLA": "BHI",
+              "driverKey": "1259",
+              "teamKey": "665",
+              "teamName": "DAMS Lucas Oil",
+              "displayPosition": "23",
+              "displayTeamName": "DAMS Lucas Oil",
+              "displayTime": "+45.365s",
+              "teamColourCode": "00b4ff",
+              "teamAccessibleColourCode": "005e94",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/damslucasoil/nanbhi01/2026damslucasoilnanbhi01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/damslucasoil/nanbhi01/2026damslucasoilnanbhi01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/damslucasoil/nanbhi01/2026damslucasoilnanbhi01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/damslucasoil/2026damslucasoillogowhite"
+              },
+              "driverPageUrl": "/en/drivers/nandhavud-bhirombhakdi"
+            },
+            {
+              "completionStatusCode": "OK",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "47.645",
+              "gapToPrevious": "2.28",
+              "lapsBehindLeader": "0",
+              "positionValue": "24",
+              "positionNumber": "24",
+              "lapsCompleted": "22",
+              "raceTime": "41:23.132",
+              "racingNumber": "18",
+              "constructorSeasonName": null,
+              "driverId": 1216,
+              "driverFirstName": "Brando",
+              "driverLastName": "Badoer",
+              "driverShortName": "B. Badoer",
+              "driverReference": "BRABAD01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 645,
+              "driverTLA": "BAD",
+              "driverKey": "1184",
+              "teamKey": "677",
+              "teamName": "Rodin Motorsport",
+              "displayPosition": "24",
+              "displayTeamName": "Rodin Motorsport",
+              "displayTime": "+47.645s",
+              "teamColourCode": "c3a752",
+              "teamAccessibleColourCode": "6f5400",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/rodinmotorsport/brabad01/2026rodinmotorsportbrabad01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/rodinmotorsport/brabad01/2026rodinmotorsportbrabad01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/rodinmotorsport/brabad01/2026rodinmotorsportbrabad01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/rodinmotorsport/2026rodinmotorsportlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/brando-badoer"
+            },
+            {
+              "completionStatusCode": "DNF",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "0",
+              "gapToPrevious": null,
+              "lapsBehindLeader": null,
+              "positionValue": "25",
+              "positionNumber": "25",
+              "lapsCompleted": "20",
+              "raceTime": "37:25.902",
+              "racingNumber": "9",
+              "constructorSeasonName": null,
+              "driverId": 1220,
+              "driverFirstName": "Alessandro",
+              "driverLastName": "Giusti",
+              "driverShortName": "A. Giusti",
+              "driverReference": "ALEGUS01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 606,
+              "driverTLA": "GIU",
+              "driverKey": "1189",
+              "teamKey": "629",
+              "teamName": "MP Motorsport",
+              "displayPosition": "25",
+              "displayTeamName": "MP Motorsport",
+              "displayTime": "DNF",
+              "teamColourCode": "ff9141",
+              "teamAccessibleColourCode": "9b4000",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/mpmotorsport/alegus01/2026mpmotorsportalegus01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/mpmotorsport/alegus01/2026mpmotorsportalegus01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/mpmotorsport/alegus01/2026mpmotorsportalegus01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/mpmotorsport/2026mpmotorsportlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/alessandro-giusti"
+            },
+            {
+              "completionStatusCode": "DNF",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "0",
+              "gapToPrevious": null,
+              "lapsBehindLeader": null,
+              "positionValue": "",
+              "positionNumber": "666",
+              "lapsCompleted": "18",
+              "raceTime": "34:00.688",
+              "racingNumber": "28",
+              "constructorSeasonName": null,
+              "driverId": 1227,
+              "driverFirstName": "Fernando",
+              "driverLastName": "Barrichello",
+              "driverShortName": "F. Barrichello",
+              "driverReference": "FERBAR01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 644,
+              "driverTLA": "BAR",
+              "driverKey": "1235",
+              "teamKey": "676",
+              "teamName": "AIX Racing",
+              "displayPosition": "NC",
+              "displayTeamName": "AIX Racing",
+              "displayTime": "DNF",
+              "teamColourCode": "64f00f",
+              "teamAccessibleColourCode": "1f8700",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/aixracing/ferbar01/2026aixracingferbar01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/aixracing/ferbar01/2026aixracingferbar01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/aixracing/ferbar01/2026aixracingferbar01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/aixracing/2026aixracinglogowhite"
+              },
+              "driverPageUrl": "/en/drivers/fernando-barrichello"
+            },
+            {
+              "completionStatusCode": "DNF",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "0",
+              "gapToPrevious": null,
+              "lapsBehindLeader": null,
+              "positionValue": "",
+              "positionNumber": "666",
+              "lapsCompleted": "12",
+              "raceTime": "21:50.211",
+              "racingNumber": "5",
+              "constructorSeasonName": null,
+              "driverId": 1225,
+              "driverFirstName": "Freddie",
+              "driverLastName": "Slater",
+              "driverShortName": "F. Slater",
+              "driverReference": "FRESLA01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 609,
+              "driverTLA": "SLA",
+              "driverKey": "1198",
+              "teamKey": "631",
+              "teamName": "TRIDENT",
+              "displayPosition": "NC",
+              "displayTeamName": "TRIDENT",
+              "displayTime": "DNF",
+              "teamColourCode": "6464ff",
+              "teamAccessibleColourCode": "2d00a6",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/trident/fresla01/2026tridentfresla01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/trident/fresla01/2026tridentfresla01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/trident/fresla01/2026tridentfresla01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/trident/2026tridentlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/freddie-slater"
+            },
+            {
+              "completionStatusCode": "DNF",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "0",
+              "gapToPrevious": null,
+              "lapsBehindLeader": null,
+              "positionValue": "",
+              "positionNumber": "666",
+              "lapsCompleted": "12",
+              "raceTime": "22:27.795",
+              "racingNumber": "3",
+              "constructorSeasonName": null,
+              "driverId": 1241,
+              "driverFirstName": "Ernesto",
+              "driverLastName": "Rivera",
+              "driverShortName": "E. Rivera",
+              "driverReference": "ERNRIV01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 600,
+              "driverTLA": "RIV",
+              "driverKey": "1273",
+              "teamKey": "623",
+              "teamName": "Campos Racing",
+              "displayPosition": "NC",
+              "displayTeamName": "Campos Racing",
+              "displayTime": "DNF",
+              "teamColourCode": "7c7c7c",
+              "teamAccessibleColourCode": "323232",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/camposracing/ernriv01/2026camposracingernriv01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/camposracing/ernriv01/2026camposracingernriv01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/camposracing/ernriv01/2026camposracingernriv01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/camposracing/2026camposracinglogowhite"
+              },
+              "driverPageUrl": "/en/drivers/ernesto-rivera"
+            },
+            {
+              "completionStatusCode": "DNF",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "0",
+              "gapToPrevious": null,
+              "lapsBehindLeader": null,
+              "positionValue": "",
+              "positionNumber": "666",
+              "lapsCompleted": "2",
+              "raceTime": "3:35.392",
+              "racingNumber": "24",
+              "constructorSeasonName": null,
+              "driverId": 1237,
+              "driverFirstName": "Fionn",
+              "driverLastName": "Mclaughlin",
+              "driverShortName": "F. Mclaughlin",
+              "driverReference": "FIOMCL01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 603,
+              "driverTLA": "MCL",
+              "driverKey": "1257",
+              "teamKey": "626",
+              "teamName": "Hitech",
+              "displayPosition": "NC",
+              "displayTeamName": "Hitech",
+              "displayTime": "DNF",
+              "teamColourCode": "a0b4c8",
+              "teamAccessibleColourCode": "4e6072",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/hitech/fiomcl01/2026hitechfiomcl01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/hitech/fiomcl01/2026hitechfiomcl01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/hitech/fiomcl01/2026hitechfiomcl01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/hitech/2026hitechlogowhite"
+              },
+              "driverPageUrl": "/en/drivers/fionn-mclaughlin"
+            },
+            {
+              "completionStatusCode": "DNF",
+              "racePoints": 0,
+              "version": "Final",
+              "gapToLeader": "0",
+              "gapToPrevious": null,
+              "lapsBehindLeader": null,
+              "positionValue": "",
+              "positionNumber": "666",
+              "lapsCompleted": "2",
+              "raceTime": "4:07.975",
+              "racingNumber": "31",
+              "constructorSeasonName": null,
+              "driverId": 1218,
+              "driverFirstName": "Gerrard",
+              "driverLastName": "Xie",
+              "driverShortName": "G. Xie",
+              "driverReference": "GERXIE01",
+              "driverNameFormat": "FirstNameIsPrimary",
+              "teamId": 639,
+              "driverTLA": "XIE",
+              "driverKey": "1187",
+              "teamKey": "665",
+              "teamName": "DAMS Lucas Oil",
+              "displayPosition": "NC",
+              "displayTeamName": "DAMS Lucas Oil",
+              "displayTime": "DNF",
+              "teamColourCode": "00b4ff",
+              "teamAccessibleColourCode": "005e94",
+              "driverAvatarImage": {
+                "public_id": "common/f3/2026/damslucasoil/gerxie01/2026damslucasoilgerxie01right",
+                "default_image": "common/f3/2026/fallback/driver/2026fallbackdriverright"
+              },
+              "driverNumberImage": {
+                "public_id": "common/f3/2026/damslucasoil/gerxie01/2026damslucasoilgerxie01numberwhite"
+              },
+              "driverNumberFramelessImage": {
+                "public_id": "common/f3/2026/damslucasoil/gerxie01/2026damslucasoilgerxie01numberwhitefrless"
+              },
+              "teamLogoImage": {
+                "public_id": "common/f3/2026/damslucasoil/2026damslucasoillogowhite"
+              },
+              "driverPageUrl": "/en/drivers/gerrard-xie"
+            }
+          ]
         }
       ]
     },
@@ -2900,7 +4222,7 @@
           "session": "Practice 0",
           "shortName": "Practice",
           "description": "Practice",
-          "startTime": "2026-09-11T10:05:00",
+          "startTime": "2026-09-11T09:55:00",
           "endTime": "2026-09-11T10:40:00",
           "gmtOffset": "+02:00",
           "sessionType": "Practice",
@@ -2980,8 +4302,8 @@
           "session": "Race 3",
           "shortName": "Feature Race 2",
           "description": "Race",
-          "startTime": "2026-09-13T09:55:00",
-          "endTime": "2026-09-13T10:45:00",
+          "startTime": "2026-09-13T09:45:00",
+          "endTime": "2026-09-13T10:35:00",
           "gmtOffset": "+02:00",
           "sessionType": "Race",
           "sessionNumber": 3,
