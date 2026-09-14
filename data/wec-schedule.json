@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T09:19:29.603Z",
+  "generatedAt": "2026-09-14T09:58:01.213Z",
   "series": "wec",
   "events": [
     {
@@ -83,31 +83,31 @@
         {
           "name": "Free Practice 3",
           "sessionType": "free_practice",
-          "startUtc": "2026-09-26T00:50:00.000Z",
+          "startUtc": "2026-09-26T00:30:00.000Z",
           "durationMin": 60
         },
         {
           "name": "Qualifying - LMGT3",
           "sessionType": "qualifying",
-          "startUtc": "2026-09-26T05:20:00.000Z",
+          "startUtc": "2026-09-26T05:00:00.000Z",
           "durationMin": 15
         },
         {
           "name": "Hyperpole - LMGT3",
           "sessionType": "qualifying",
-          "startUtc": "2026-09-26T05:40:00.000Z",
+          "startUtc": "2026-09-26T05:20:00.000Z",
           "durationMin": 10
         },
         {
           "name": "Qualifying - HYPERCAR",
           "sessionType": "qualifying",
-          "startUtc": "2026-09-26T06:00:00.000Z",
+          "startUtc": "2026-09-26T05:40:00.000Z",
           "durationMin": 15
         },
         {
           "name": "Hyperpole - HYPERCAR",
           "sessionType": "qualifying",
-          "startUtc": "2026-09-26T06:20:00.000Z",
+          "startUtc": "2026-09-26T06:00:00.000Z",
           "durationMin": 10
         },
         {
