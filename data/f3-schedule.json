@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T09:57:55.602Z",
+  "generatedAt": "2026-09-21T09:59:56.796Z",
   "series": "f3",
   "events": [
     {
@@ -5329,7 +5329,7 @@
             {
               "completionStatusCode": "OK",
               "racePoints": 0,
-              "version": "Provisional",
+              "version": "Final",
               "gapToLeader": "15.619",
               "gapToPrevious": "0.518",
               "lapsBehindLeader": "0",
@@ -5347,7 +5347,7 @@
               "driverNameFormat": "FirstNameIsPrimary",
               "teamId": 645,
               "driverTLA": "MAC",
-              "driverKey": "1276",
+              "driverKey": "1281",
               "teamKey": "677",
               "teamName": "Rodin Motorsport",
               "displayPosition": "24",
@@ -5369,31 +5369,6 @@
                 "public_id": "common/f3/2026/rodinmotorsport/2026rodinmotorsportlogowhite"
               },
               "driverPageUrl": "/en/drivers/niccolo-maccagnani"
-            },
-            {
-              "completionStatusCode": "OK",
-              "racePoints": 0,
-              "version": "Final",
-              "gapToLeader": "15.619",
-              "gapToPrevious": "0.518",
-              "lapsBehindLeader": "0",
-              "positionValue": "24",
-              "positionNumber": "24",
-              "lapsCompleted": "19",
-              "raceTime": "37:41.026",
-              "racingNumber": "19",
-              "constructorSeasonName": null,
-              "teamId": 645,
-              "teamKey": "677",
-              "teamName": "Rodin Motorsport",
-              "displayPosition": "24",
-              "displayTeamName": "Rodin Motorsport",
-              "displayTime": "+15.619s",
-              "teamColourCode": "c3a752",
-              "teamAccessibleColourCode": "6f5400",
-              "teamLogoImage": {
-                "public_id": "common/f3/2026/rodinmotorsport/2026rodinmotorsportlogowhite"
-              }
             },
             {
               "completionStatusCode": "OK",
