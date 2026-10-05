@@ -169,7 +169,53 @@
           "unconfirmed": false
         }
       ]
+    },
+    {
+      "raceId": 27,
+      "round": 5,
+      "name": "Austin",
+      "track": "Austin",
+      "country": "United States",
+      "countryCode": "US",
+      "dateRange": "2026-10-22 / 2026-10-25",
+      "sessions": [
+        {
+          "name": "Free Practice",
+          "sessionType": "PRACTICE",
+          "startIso": "2026-10-22T12:25:00-05:00",
+          "endIso": "2026-10-22T13:05:00-05:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Qualifying",
+          "sessionType": "QUALIFYING",
+          "startIso": "2026-10-22T16:30:00-05:00",
+          "endIso": "2026-10-22T17:00:00-05:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Opening Race",
+          "sessionType": "RESULT",
+          "startIso": "2026-10-23T17:50:00-05:00",
+          "endIso": "2026-10-23T18:25:00-05:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Reverse Grid Race",
+          "sessionType": "RESULT",
+          "startIso": "2026-10-24T14:45:00-05:00",
+          "endIso": "2026-10-24T15:20:00-05:00",
+          "unconfirmed": false
+        },
+        {
+          "name": "Feature Race",
+          "sessionType": "RESULT",
+          "startIso": "2026-10-25T10:40:00-05:00",
+          "endIso": "2026-10-25T11:10:00-05:00",
+          "unconfirmed": false
+        }
+      ]
     }
   ],
-  "generatedAt": "2026-09-28T10:52:21.091Z"
+  "generatedAt": "2026-10-05T11:33:52.678Z"
 }
