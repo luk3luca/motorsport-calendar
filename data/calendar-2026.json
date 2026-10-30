@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T09:36:51.799Z",
+  "generatedAt": "2026-10-30T11:06:57.722Z",
   "windowStart": "2026-10-12T00:00:00.000Z",
   "windowEnd": "2026-12-31T23:59:59.999Z",
   "seriesIncluded": [
@@ -6635,26 +6635,6 @@
       "countryFlagEmoji": "🇲🇾",
       "city": null,
       "mapUrl": null,
-      "isEstimatedStart": false,
-      "isEstimatedEnd": true
-    },
-    {
-      "id": "2409922",
-      "series": "nascar",
-      "leagueName": "NASCAR Cup Series",
-      "name": "Xfinity 500",
-      "sessionType": "race",
-      "eventKey": "xfinity_500",
-      "round": 35,
-      "season": "2026",
-      "startUtc": "2026-11-01T19:00:00Z",
-      "endUtc": "2026-11-01T22:30:00.000Z",
-      "durationMin": 210,
-      "venue": "Martinsville Speedway",
-      "country": "United States",
-      "countryFlagEmoji": "🇺🇸",
-      "city": "Martinsville, Virginia",
-      "mapUrl": "https://r2.thesportsdb.com/images/media/event/map/vevzxi1760786368.jpg",
       "isEstimatedStart": false,
       "isEstimatedEnd": true
     },
